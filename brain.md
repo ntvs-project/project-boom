@@ -1,13 +1,11 @@
 
 # Brain
 
----
 
 ## Ideas
 
 - use buzzer to create music
 
----
 
 ## Problems
 
