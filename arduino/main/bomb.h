@@ -1,5 +1,5 @@
 
 class Bomb {
   public:
-    String version = "notevenprealpha";
+    String version = "test";
 };
