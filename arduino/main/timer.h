@@ -1,3 +1,4 @@
+#pragma once
 
 class Timer {
   public:
@@ -6,6 +7,7 @@ class Timer {
 
     void initTime();
     void adjustTime();
+    String getTime();
     void displayTime();
     void displayDigit();
     void displaySegment();
@@ -24,16 +26,22 @@ void Timer::adjustTime() {
     SECOND = 59;
     MINUTE--;
   } else {
-    T.fini();
+    fini();
   }
 }
 
 void Timer::fini() {
-  Serial.println("\nfinish");
-  while (true) {}
+  Serial.println("\nTIMEOUT");
+  B.fini();
+}
+
+String Timer::getTime() {
+  return \
+    String(MINUTE / 10) + String(MINUTE % 10) + ":" + \
+    String(SECOND / 10) + String(SECOND % 10) + " ";
 }
 
 void Timer::displayTime() {
-  Serial.print(String(T.MINUTE) + ":" + String(T.SECOND) + " ");
+  Serial.print(String(MINUTE) + ":" + String(SECOND) + " ");
 }
 

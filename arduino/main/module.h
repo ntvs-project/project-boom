@@ -1,3 +1,4 @@
+#pragma once
 
 class Module {
   public:
@@ -44,3 +45,61 @@ class Test2 : public Module {
       index++;
     }
 }; Test2 test2;
+
+class Test3 : public Module {
+  public:
+    String name = "test3";
+    void init() override {
+      Serial.print(name + ".init ");
+    }
+    void loop() override {
+      Serial.print(name + ".loop ");
+      if (Serial.available()) {
+        Serial.read();
+        fini();
+      }
+    }
+    void fini() override {
+      Serial.print(name + ".fini ");
+      index++;
+    }
+}; Test3 test3;
+
+class Test4 : public Module {
+  public:
+    String name = "test4";
+    void init() override {
+      Serial.print(name + ".init ");
+    }
+    void loop() override {
+      Serial.print(name + ".loop ");
+      if (Serial.available()) {
+        Serial.read();
+        fini();
+      }
+    }
+    void fini() override {
+      Serial.print(name + ".fini ");
+      index++;
+    }
+}; Test4 test4;
+
+class Test5 : public Module {
+  public:
+    String name = "test5";
+    void init() override {
+      Serial.print(name + ".init ");
+    }
+    void loop() override {
+      Serial.print(name + ".loop ");
+      if (Serial.available()) {
+        Serial.read();
+        fini();
+      }
+    }
+    void fini() override {
+      Serial.print(name + ".fini ");
+      index++;
+    }
+}; Test5 test5;
+

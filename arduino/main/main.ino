@@ -5,19 +5,27 @@
 Module* MODULES[] = {
   &test1,
   &test2,
+  &test3,
+  &test4,
+  &test5,
 };
 
 ul prev, duration;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("start");
+  Serial.println("!! start");
 
-  Serial.println("init pins");
-  Serial.println("pick modules");
+  for (ui pin : OUT) pinMode(pin, OUTPUT);
+  for (ui pin : IN)  pinMode(pin, INPUT);
 
-  Serial.println("waiting for signal to start");
-  while (!Serial.available()) {}
+  randomSeed(micros());
+  for (int i = length(MODULES) - 1; i > 0; i--)
+    swap(MODULES[i], MODULES[random(i + 1)]);
+  Serial.println("# slice modules");
+
+  Serial.println("!! waiting for signal to start");
+  while (!Serial.available());
   Serial.read();
 
   index = 0;
@@ -28,7 +36,7 @@ void setup() {
 void loop() {
   if (index >= length(MODULES)) {
     Serial.println("\nFINISH");
-    while (true) {}
+    B.fini();
   }
   MODULES[index]->loop();
   
@@ -39,6 +47,5 @@ void loop() {
     prev = millis();
   }
 
-  T.displayTime();
-  Serial.println();
+  Serial.println(T.getTime());
 }
