@@ -17,7 +17,10 @@ void setup() {
   Serial.println("!! start");
 
   for (ui pin : OUT) pinMode(pin, OUTPUT);
-  for (ui pin : IN)  pinMode(pin, INPUT);
+  for (ui pin : IN) pinMode(pin, INPUT_PULLUP);
+  for (int j = 0; j < length(PIN_EB); j++)
+    for (int i = 0; i < PIN_EB_LEN[j]; i++)
+      PIN_EB[j][i].begin();
 
   randomSeed(micros());
   for (int i = length(MODULES) - 1; i > 0; i--)
@@ -25,7 +28,7 @@ void setup() {
   Serial.println("# slice modules");
 
   Serial.println("!! waiting for signal to start");
-  while (!Serial.available());
+  while (!Serial.available() && !PIN_FN[0].wasReleased()) PIN_FN[0].read();
   Serial.read();
 
   index = 0;
@@ -34,12 +37,19 @@ void setup() {
 }
 
 void loop() {
+  for (int j = 0; j < length(PIN_EB); j++)
+    for (int i = 0; i < PIN_EB_LEN[j]; i++)
+      PIN_EB[j][i].read();
+
   if (index >= length(MODULES)) {
-    Serial.println("\nFINISH");
+    Serial.print("\nFINISH ");
+    Serial.println(T.getTime());
     B.fini();
   }
+  // if (PIN_FN[1].wasReleased()) B.reset();
+
   MODULES[index]->loop();
-  
+
   duration = millis() - prev;
   if (duration >= 1000) {
     T.adjustTime();

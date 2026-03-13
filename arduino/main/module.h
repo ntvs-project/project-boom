@@ -16,8 +16,7 @@ class Test1 : public Module {
     }
     void loop() override {
       Serial.print(name + ".loop ");
-      if (Serial.available()) {
-        Serial.read();
+      if (PIN_TEST[0].wasReleased()) {
         fini();
       }
     }
@@ -35,8 +34,7 @@ class Test2 : public Module {
     }
     void loop() override {
       Serial.print(name + ".loop ");
-      if (Serial.available()) {
-        Serial.read();
+      if (PIN_TEST[1].wasReleased()) {
         fini();
       }
     }
@@ -54,8 +52,7 @@ class Test3 : public Module {
     }
     void loop() override {
       Serial.print(name + ".loop ");
-      if (Serial.available()) {
-        Serial.read();
+      if (PIN_TEST[2].wasReleased()) {
         fini();
       }
     }
@@ -73,8 +70,7 @@ class Test4 : public Module {
     }
     void loop() override {
       Serial.print(name + ".loop ");
-      if (Serial.available()) {
-        Serial.read();
+      if (PIN_TEST[3].wasReleased()) {
         fini();
       }
     }
@@ -92,8 +88,7 @@ class Test5 : public Module {
     }
     void loop() override {
       Serial.print(name + ".loop ");
-      if (Serial.available()) {
-        Serial.read();
+      if (PIN_TEST[4].wasReleased()) {
         fini();
       }
     }

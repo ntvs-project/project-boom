@@ -41,7 +41,10 @@ String Timer::getTime() {
     String(SECOND / 10) + String(SECOND % 10) + " ";
 }
 
+#if defined(__AVR_ATmega328P__) // UNO
+void Timer::displayTime() {}
+#elif defined(__AVR_ATmega2560__) // MEGA
 void Timer::displayTime() {
-  Serial.print(String(MINUTE) + ":" + String(SECOND) + " ");
+  
 }
-
+#endif
