@@ -32,7 +32,7 @@ void Timer::adjustTime() {
 
 void Timer::fini() {
   Serial.println("\nTIMEOUT");
-  B.fini();
+  B.restart();
 }
 
 String Timer::getTime() {
