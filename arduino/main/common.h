@@ -11,15 +11,15 @@ typedef EasyButton eb;
 #if defined(__AVR_ATmega328P__) // UNO
 
 #elif defined(__AVR_ATmega2560__) // MEGA
-const ui PIN_SEG[] = { 3, 4, 5, 6, 7, 8, 9 };
-const ui PIN_DIG[] = { 10, 11, 12, 13 };
+const ui PIN_ABCD[]  = { 3, 4, 5, 6 };
+const ui PIN_DIG[]   = { 7, 8, 9, 10 };
 const ui PIN_GREEN[] = { 22, 23, 24, 25, 26 };
 const ui PIN_RED[]   = { 27, 28, 29 };
 const ui OUT[] = {
-  3, 4, 5, 6, 7, 8, 9, // seg a~g
-  10, 11, 12, 13,      // D1~4
-  22, 23, 24, 25, 26,  // green
-  27, 28, 29,          // red
+  3, 4, 5, 6,         // seg a~g
+  7, 8, 9, 10,        // D1~4
+  22, 23, 24, 25, 26, // green
+  27, 28, 29,         // red
 };
 
 const eb  PIN_FN[]     = { eb(30) }; // start reset

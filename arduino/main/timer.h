@@ -45,6 +45,11 @@ String Timer::getTime() {
 void Timer::displayTime() {}
 #elif defined(__AVR_ATmega2560__) // MEGA
 void Timer::displayTime() {
+  ui time = {
+    (MINUTE / 10), (MINUTE % 10),
+    (SECOND / 10), (SECOND % 10),
+  };
+
   
 }
 #endif
