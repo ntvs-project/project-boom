@@ -28,15 +28,12 @@ class Test : public Module {
     void loop() override {
       // Serial.print(name + ".loop ");
 
-      // for (int i=0; i<length(PIN_TEST); i++) {
-      //   if (i != pin_idx && PIN_TEST[i].wasReleased()) {
-      //     B.missed();
-      //   }
-      // }
-      if (PIN_FN[1].wasReleased()) {
-        B.missed();
+      for (int i=0; i<length(IDX_TEST); i++) {
+        if (i != pin_idx && BTN.wasReleased(IDX_TEST[i]) == 1) {
+          B.missed();
+        }
       }
-      if (PIN_FN[0].wasReleased()) {
+      if (BTN.wasReleased(IDX_TEST[pin_idx]) == 1) {
         fini();
       }
     }
@@ -52,6 +49,3 @@ Test test2("test2", 1);
 Test test3("test3", 2);
 Test test4("test4", 3);
 Test test5("test5", 4);
-Test test6("test6", 5);
-Test test7("test7", 6);
-Test test8("test8", 7);

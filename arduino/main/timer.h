@@ -1,6 +1,6 @@
 #pragma once
 
-TM1637Display clock(PIN_7SEG[1], PIN_7SEG[0]);
+TM1637Display clock(PIN_7SEG[0], PIN_7SEG[1]);
 
 class Timer {
   public:
@@ -35,6 +35,9 @@ void Timer::adjustTime() {
 
 void Timer::fini() {
   Serial.println("\nTIMEOUT");
+
+  TONE.boom();
+
   B.restart();
 }
 
