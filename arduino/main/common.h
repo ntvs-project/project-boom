@@ -1,6 +1,6 @@
 #pragma once
 
-#include <LiquidCrystal_I2C.h>
+//#include <LiquidCrystal_I2C.h>
 #include <TM1637Display.h>
 #include "pitches.h"
 
@@ -10,15 +10,17 @@ typedef unsigned int  ui;
 #define length(arr) (sizeof(arr) / sizeof(arr[0]))
 
 const ui PIN_TONE[]  = { 15 };
-const ui PIN_7SEG[]  = { 2, 3 }; // CLK DIO
+const ui PIN_TIME[]  = { 2, 3 }; // CLK DIO
+// latch data clk
 const ui PIN_LED[] = { 12, 11, 13 }; // GGGGGRRR
 const ui PIN_BTN[] = { 10, 8, 9 };   // 12345 Start Reset
-
+const ui PIN_7SEG[] = { 16, 17, 18, 19 }; // A2 A3 A4 A5
 const ui OUT[] = {
-  9, 10, 11, 12, 13
+  9, 10, 11, 12, 13,
+  16, 17, 18, 19
 };
 const ui  IN[]  = {
-  8
+  8,
 };
 const ui VCC[] = { 4 };
 const ui GND[] = { 5 };
@@ -31,8 +33,6 @@ ui TIME[] = { 1, 0 };
 ui MODULE_COUNT = 5;
 ui MISS_COUNT   = 3;
 byte led_byte = 0b00000000;
-
-// LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 bool next = true;
 ui index = 0;
@@ -61,7 +61,7 @@ class Button {
       digitalWrite(PIN_BTN[2], LOW);
 
       raw = shiftIn(PIN_BTN[1], PIN_BTN[2], LSBFIRST);
-      
+    
       // for (int i = 0; i <= 7; i++) Serial.print(bitRead(raw, i));
       // Serial.println();
 

@@ -1,6 +1,6 @@
 #pragma once
 
-TM1637Display clock(PIN_7SEG[0], PIN_7SEG[1]);
+TM1637Display clock(PIN_TIME[0], PIN_TIME[1]);
 
 class Timer {
   public:

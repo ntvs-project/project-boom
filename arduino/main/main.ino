@@ -2,6 +2,10 @@
 #include "timer.h"
 #include "module.h"
 
+// #include <Wire.h>
+// #include <hd44780.h>
+// #include <hd44780ioClass/hd44780_I2Cexp.h>
+
 Module* MODULES[] = {
   &test1,
   &test2,
@@ -35,6 +39,12 @@ void setup() {
   clock.setBrightness(0x0f);
   clock.clear();
   B.led_set();
+  for (int i=0; i<4; i++) digitalWrite(PIN_7SEG[i], bitRead(15, i));
+
+  // hd44780_I2Cexp lcd;
+  // lcd.begin(16, 2);
+  // lcd.backlight();
+  // lcd.print("hello");
 
   clock.showNumberDecEx(0, 0b01000000, true);
 

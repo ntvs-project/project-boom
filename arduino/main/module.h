@@ -22,7 +22,8 @@ class Test : public Module {
     }
 
     void init() override {
-      Serial.println(name + ".init ");
+      // Serial.println(name + ".init ");
+      for (int i=0; i<4; i++) digitalWrite(PIN_7SEG[i], bitRead(pin_idx + 1, i));
     }
 
     void loop() override {
@@ -39,7 +40,8 @@ class Test : public Module {
     }
 
     void fini() override {
-      Serial.println(name + ".fini ");
+      // Serial.println(name + ".fini ");
+      for (int i=0; i<4; i++) digitalWrite(PIN_7SEG[i], bitRead(15, i));
       B.fini();
     }
 };
