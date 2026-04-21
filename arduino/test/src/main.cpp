@@ -1,30 +1,24 @@
 #include <Arduino.h>
 
-// put function declarations here:
-void noise(int);
+const uint8_t PIN_RCLK  = 3;
+const uint8_t PIN_SER   = 2;
+const uint8_t PIN_SRCLK = 4;
+
+uint16_t led_byte = 0b0101010101010101;
+
+void led_set(uint16_t value) {
+  digitalWrite(PIN_RCLK, LOW);                              // hold latch low while shifting
+  shiftOut(PIN_SER, PIN_SRCLK, MSBFIRST, (value >> 8) & 0xFF); // high byte → chip #2
+  shiftOut(PIN_SER, PIN_SRCLK, MSBFIRST,  value       & 0xFF); // low byte  → chip #1
+  digitalWrite(PIN_RCLK, HIGH);                             // rising edge latches to outputs
+}
 
 void setup() {
-  pinMode(4, OUTPUT);
-  pinMode(8, OUTPUT);
+  pinMode(PIN_RCLK,  OUTPUT);
+  pinMode(PIN_SER,   OUTPUT);
+  pinMode(PIN_SRCLK, OUTPUT);
 
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  digitalWrite(9,  1);
-  digitalWrite(10, 0);
-
-  randomSeed(analogRead(0));
-
-  digitalWrite(8, 1);
-  noise(5000);
-  digitalWrite(8, 0);
+  led_set(led_byte);
 }
 
 void loop() {}
-
-// put function definitions here:
-void noise(int duration) {
-  for (int i=0; i < duration; i++) {
-    tone(4, random(20, 300)); delay(1);
-  }
-  noTone(4);
-}
