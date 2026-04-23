@@ -34,29 +34,67 @@ void init_morse() {
   morse['Z'] = "--..";
 }
 
-void send_morse(char code) {
-  unsigned int short_ = 150;
-  unsigned int long_  = 3 * short_;
+// dit = 1200 / wpm
+unsigned int freq = 700;
+unsigned int dit  = 60; // 20 wpm
+unsigned int dah  = 3 * dit;
 
+unsigned int send_morse(char code) {
   const char *sound = morse[(unsigned char)code];
   for (int i=0; sound[i] != '\0'; i++) {
-    tone(2, 248, sound[i] == '-' ? long_ : short_);
-    delay(sound[i] == '-' ? long_ : short_);
-    delay(short_);
+    tone(6, freq);
+    delay(sound[i] == '.' ? dit : dah);
+    noTone(6);
+    delay(dit);
   }
+
+  return sound;
 }
 
 void setup() {
-  pinMode(2, OUTPUT);
-  pinMode(3, INPUT_PULLUP);
+  pinMode(6, OUTPUT); // BUZ
+  pinMode(2, INPUT_PULLUP); // BTN
+  pinMode(10, OUTPUT); // LED
   init_morse();
-//  for (int i=65; i<65+26; i++) {
-//    send_morse(i);
-//    delay(300);
-//  }
+  randomSeed(analogRead(A0));
+  Serial.begin(9600);
+  // for (int i=65; i<65+26; i++) {
+  //   delay( send_morse(i) );
+  // }
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+char letter, *output;
+bool state = 0;
 
+bool raw = 1, curr = 1, prev = 1, hold = 0;
+unsigned long debounceStart = 0, holdStart = 0, holdT = 0;
+char input[5] = "";
+int inputLen = 0;
+
+void loop() {
+  if (state == 0) {
+    letter = 'A' + random(26);
+    output = send_morse(letter);
+    state = 1;
+  } else {
+    prev = curr;
+    curr = digitalRead(2);
+
+    if (curr != prev && !debounceStart) debounceStart = millis();
+    if (debounceStart && millis() - debounceStart > 20) {
+      debounceStart = 0;
+      if (curr) {
+        input[inputLen++] = hold ? '-' : '.';
+        input[inputLen] = '\0';
+        if (strcmp(input, output) == 0) {
+          digitalWrite(10, 1);
+        }
+        Serial.println(input);
+        holdStart = 0;
+        hold = false;
+      }
+      if (!curr && !holdStart) holdStart = millis();
+    }
+    if (!curr && holdStart && millis() - holdStart > dah) hold = true;
+  }
 }
