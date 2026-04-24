@@ -6,8 +6,11 @@ class Output {
     uint8_t PIN_CLK;
     uint8_t registerCount;
 
-    unsigned int bin = 0;
-    uint8_t len = sizeof(bin) * 8 - 1;
+    uint32_t bin = 0;
+    uint8_t len;
+
+    int  dutyCount = 0;
+    long prev;
 
   public:
     Output(uint8_t ser, uint8_t lk, uint8_t clk, uint8_t regCount) {
@@ -15,6 +18,8 @@ class Output {
       PIN_LK  = lk;
       PIN_CLK = clk;
       registerCount = regCount;
+      len = regCount * 8 - 1;
+      prev = micros();
 
       pinMode(PIN_SER, OUTPUT);
       pinMode(PIN_LK , OUTPUT);
@@ -25,6 +30,10 @@ class Output {
       bitWrite(bin, len - pin, signal_);
     }
 
+    void writeAll(uint32_t signal_) {
+      for (int i=0; i<=len; i++) bitWrite(bin, i, bitRead(signal_, i));
+    }
+
     void all(int signal_) {
       for (int i=0; i<=len; i++) bitWrite(bin, i, signal_);
     }
@@ -33,12 +42,30 @@ class Output {
       return bitRead(bin, len - pin);
     }
 
-    void update() {
+    void simple_update() {
       digitalWrite(PIN_LK, 0);
       for (int i=0; i<registerCount; i++) {
         shiftOut(PIN_SER, PIN_CLK, LSBFIRST, (bin >> (8 * i)) & 0xFF);
       }
       digitalWrite(PIN_LK, 1);
+    }
+
+    void pwm_update() {
+      uint32_t bin_bk = bin;
+      if (micros() - prev >= 200) {
+        dutyCount++;
+        if (dutyCount <= 1) {
+          writeAll(bin);
+        } else {
+          all(0);
+          bin = bin_bk;
+        }
+        if (dutyCount >= 10) {
+          dutyCount = 0;
+        }
+        prev = micros();
+      }
+      simple_update();
     }
 }; Output output(8, 9, 10, 2);
 
