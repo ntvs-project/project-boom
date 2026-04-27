@@ -13,6 +13,7 @@ class Output {
     int dutyCount = 0;
     int dutyPositive = 1;
     uint32_t prev;
+    uint8_t* bin_bk;
 
     void getSetPin(int8_t &set, uint8_t &pin) {
       if (set == -1) {
@@ -34,6 +35,7 @@ class Output {
 
       bin = new uint8_t[registerCount]();
       pwm = new uint8_t[registerCount]();
+      bin_bk = new uint8_t[registerCount]();
       prev = micros();
 
       pinMode(PIN_DATA , OUTPUT);
@@ -43,11 +45,34 @@ class Output {
 
     // update
     void simple_update() {
-      //
+      digitalWrite(PIN_LATCH, 0);
+      for (int i=registerCount; i>=0; i--) {
+        shiftOut(PIN_DATA, PIN_CLK, MSBFIRST, bin[i]);
+      }
+      digitalWrite(PIN_LATCH, 1);
     }
 
     void update() {
-      //
+      memcpy(bin_bk, bin, registerCount);
+
+      if (micros() - prev >= 200) {
+        dutyCount = (dutyCount + 1) % 10;
+        if (dutyCount <= dutyPositive) {
+          writeAll(bin, false);
+        } else {
+          writeAll(0, false);
+        }
+        prev = micros();
+      }
+
+      simple_update();
+      memcpy(bin, bin_bk, registerCount);
+    }
+
+    // read
+    bool read(int8_t set, uint8_t pin) {
+      getSetPin(set, pin);
+      return bitRead(bin[set], pin);
     }
 
     // write
@@ -75,20 +100,27 @@ class Output {
       }
     }
 
-    void writeAll(const char* sig) {
-      writeRange(0, 0, registerCount - 1, 7, sig);
+    void writeAll(uint8_t sig[], bool reversed=true) {
+      for (int i=0; i<registerCount; i++) {
+        if (reversed) {
+          uint8_t before = sig[i];
+          uint8_t after  = 0;
+          for (int _ = 0; _ < 8; _++) {
+            after <<= 1;
+            after |= (before & 1);
+            before >>= 1;
+          }
+          bin[i] = after;
+        } else {
+          bin[i] = sig[i];
+        }
+      }
     }
 
     void writeAll(bool sig) {
       for (uint8_t s = 0; s < registerCount; s++) {
         bin[s] = sig ? 0xFF : 0x00;
       }
-    }
-
-    // read
-    bool read(int8_t set, uint8_t pin) {
-      getSetPin(set, pin);
-      return bitRead(bin[set], pin);
     }
 
     // pwm
@@ -116,8 +148,17 @@ class Output {
       }
     }
 
-    void pwmAll(const char* sig) {
-      pwmRange(0, 0, registerCount - 1, 7, sig);
+    void pwmAll(uint8_t sig[]) {
+      for (int i=0; i<registerCount; i++) {
+        uint8_t before = sig[i];
+        uint8_t after  = 0;
+        for (int _ = 0; _ < 8; _++) {
+          after <<= 1;
+          after |= (before & 1);
+          before >>= 1;
+        }
+        bin[i] = after;
+      }
     }
 
     void pwmAll(bool sig) {
@@ -125,4 +166,4 @@ class Output {
         pwm[s] = sig ? 0xFF : 0x00;
       }
     }
-};
+}; Output output(8, 9, 10, 2);
