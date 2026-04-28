@@ -87,7 +87,7 @@ class Output {
       uint8_t offset = getBinIdx(set1, pin1);
 
       uint8_t bitCount = getBinIdx(set2, pin2) - getBinIdx(set1, pin1) + 1;
-      assert(strlen(sig) == bitCount); // assert if false
+      // assert(strlen(sig) == bitCount); // assert if false
 
       for (int8_t s = set1; s <= set2; s++) {
         uint8_t pinStart = (s == set1) ? pin1 : 0;

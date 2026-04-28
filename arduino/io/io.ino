@@ -18,27 +18,21 @@ void setup() {
   }
 }
 
-char* b2s(uint8_t value) {
-    static char s[9];  // 8 bits + null terminator
-    for (int i = 7; i >= 0; i--) {
-        s[7 - i] = (value & (1 << i)) ? '1' : '0';
-    }
-    s[8] = '\0';  // null-terminate
-    return s;
-}
-
 void loop() {
   output.update();
 
   if (millis() - prev >= 500) {
     i = (i + 1) % 4;
 
-    uint16_t bin = 0;
+    char bin[17] = "0000000000000000";
     for (int j=0; j<4; j++) {
-      bin = (bin << 3) + patterns[j][i];
+      bin[3 * j + 0] = ((patterns[j][i] >> 0) & 1) + '0';
+      bin[3 * j + 1] = ((patterns[j][i] >> 1) & 1) + '0';
+      bin[3 * j + 2] = ((patterns[j][i] >> 2) & 1) + '0';
     }
-    output.writeRange(0, 0, 0, 7, b2s(bin >> 8));
-    output.writeRange(1, 0, 1, 7, b2s(bin & 0xFF));
+
+    output.writeRange(0, 0, 0, 7, bin);
+    output.writeRange(1, 0, 1, 7, bin + 8);
 
     prev = millis();
   }
