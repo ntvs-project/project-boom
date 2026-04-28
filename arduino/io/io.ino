@@ -29,11 +29,11 @@ void loop() {
       bin[3 * j + 0] = ((patterns[j][i] >> 0) & 1) + '0';
       bin[3 * j + 1] = ((patterns[j][i] >> 1) & 1) + '0';
       bin[3 * j + 2] = ((patterns[j][i] >> 2) & 1) + '0';
-    }
+     }
 
     output.writeRange(0, 0, 0, 7, bin);
     output.writeRange(1, 0, 1, 7, bin + 8);
 
-    prev = millis();
+    prev += 500;
   }
 }

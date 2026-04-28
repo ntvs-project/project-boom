@@ -46,7 +46,7 @@ class Output {
     // update
     void simple_update() {
       digitalWrite(PIN_LATCH, 0);
-      for (int i=registerCount; i>=0; i--) {
+      for (int i=registerCount-1; i>=0; i--) {
         shiftOut(PIN_DATA, PIN_CLK, MSBFIRST, bin[i]);
       }
       digitalWrite(PIN_LATCH, 1);
@@ -62,7 +62,7 @@ class Output {
         } else {
           writeAll(0, false);
         }
-        prev = micros();
+        prev += 200;
       }
 
       simple_update();
@@ -81,7 +81,7 @@ class Output {
       bitWrite(bin[set], pin, sig);
     }
 
-    void writeRange(int8_t set1, uint8_t pin1, int8_t set2, uint8_t pin2, const char* sig) {
+    void writeRange(int8_t set1, uint8_t pin1, int8_t set2, uint8_t pin2, const char* sig, bool reversed=true) {
       getSetPin(set1, pin1);
       getSetPin(set2, pin2);
       uint8_t offset = getBinIdx(set1, pin1);
@@ -94,7 +94,8 @@ class Output {
         uint8_t pinEnd   = (s == set2) ? pin2 : 7;
 
         for (uint8_t p = pinStart; p <= pinEnd; p++) {
-          uint8_t sigIdx = bitCount - (getBinIdx(s, p) - offset) - 1;
+          uint8_t sigIdx = getBinIdx(s, p) - offset;
+          if (!reversed) sigIdx = bitCount - sigIdx - 1;
           write(s, p, sig[sigIdx] == '1');
         }
       }
@@ -127,38 +128,6 @@ class Output {
     void pwmSet(int8_t set, uint8_t pin, bool sig) {
       getSetPin(set, pin);
       bitWrite(pwm[set], pin, sig);
-    }
-
-    void pwmRange(int8_t set1, uint8_t pin1, int8_t set2, uint8_t pin2, const char* sig) {
-      getSetPin(set1, pin1);
-      getSetPin(set2, pin2);
-      uint8_t offset = getBinIdx(set1, pin1);
-
-      uint8_t bitCount = getBinIdx(set2, pin2) - getBinIdx(set1, pin1) + 1;
-      assert(strlen(sig) == bitCount); // assert if false
-
-      for (int8_t s = set1; s <= set2; s++) {
-        uint8_t pinStart = (s == set1) ? pin1 : 0;
-        uint8_t pinEnd   = (s == set2) ? pin2 : 7;
-
-        for (uint8_t p = pinStart; p <= pinEnd; p++) {
-          uint8_t sigIdx = bitCount - (getBinIdx(s, p) - offset) - 1;
-          pwmSet(s, p, sig[sigIdx] == '1');
-        }
-      }
-    }
-
-    void pwmAll(uint8_t sig[]) {
-      for (int i=0; i<registerCount; i++) {
-        uint8_t before = sig[i];
-        uint8_t after  = 0;
-        for (int _ = 0; _ < 8; _++) {
-          after <<= 1;
-          after |= (before & 1);
-          before >>= 1;
-        }
-        bin[i] = after;
-      }
     }
 
     void pwmAll(bool sig) {
