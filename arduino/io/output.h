@@ -44,7 +44,7 @@ class Output {
     }
 
     // update
-    void simple_update() {
+    void simpleUpdate() {
       digitalWrite(PIN_LATCH, 0);
       for (int i=registerCount-1; i>=0; i--) {
         shiftOut(PIN_DATA, PIN_CLK, MSBFIRST, bin[i]);
@@ -65,7 +65,7 @@ class Output {
         prev += 200;
       }
 
-      simple_update();
+      simpleUpdate();
       memcpy(bin, bin_bk, registerCount);
     }
 
