@@ -15,11 +15,13 @@ class Input {
 
     unsigned long holdT = 500;
 
-    void getSetPin(int8_t &set, uint8_t &pin) {
+    void getSetPin(uint8_t INOFF, int8_t &set, uint8_t &pin) {
       if (set == -1) {
         set = pin / 8;
         pin = pin % 8;
       }
+  
+      set += INOFF;
     }
 
     uint8_t getBinIdx(int8_t set, uint8_t pin) {
@@ -93,15 +95,15 @@ class Input {
     }
 
     // read
-    bool readPressed(int8_t set, uint8_t pin) {
-      getSetPin(set, pin);
+    bool readPressed(uint8_t INOFF, int8_t set, uint8_t pin) {
+      getSetPin(INOFF, set, pin);
       bool val = bitRead(bin[set], 7 - pin);
       bitClear(bin[set], 7 - pin);
       return val;
     }
 
-    bool readHold(int8_t set, uint8_t pin) {
-      getSetPin(set, pin);
+    bool readHold(uint8_t INOFF, int8_t set, uint8_t pin) {
+      getSetPin(INOFF, set, pin);
       return bitRead(binHold[set], 7 - pin);
     }
 

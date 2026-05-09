@@ -15,11 +15,13 @@ class Output {
     uint32_t prev;
     uint8_t* bin_bk;
 
-    void getSetPin(int8_t &set, uint8_t &pin) {
+    void getSetPin(uint8_t OUTOFF, int8_t &set, uint8_t &pin) {
       if (set == -1) {
         set = pin / 8;
         pin = pin % 8;
       }
+  
+      set += OUTOFF;
     }
 
     uint8_t getBinIdx(int8_t set, uint8_t pin) {
@@ -60,7 +62,7 @@ class Output {
         if (dutyCount <= dutyPositive) {
           writeAll(bin, false);
         } else {
-          writeAll(0, false);
+        writeAll(false);
         }
         prev += 200;
       }
@@ -70,20 +72,20 @@ class Output {
     }
 
     // read
-    bool read(int8_t set, uint8_t pin) {
-      getSetPin(set, pin);
+    bool read(uint8_t OUTOFF, int8_t set, uint8_t pin) {
+      getSetPin(OUTOFF, set, pin);
       return bitRead(bin[set], pin);
     }
 
     // write
-    void write(int8_t set, uint8_t pin, bool sig) {
-      getSetPin(set, pin);
+    void write(uint8_t OUTOFF, int8_t set, uint8_t pin, bool sig) {
+      getSetPin(OUTOFF, set, pin);
       bitWrite(bin[set], pin, sig);
     }
 
-    void writeRange(int8_t set1, uint8_t pin1, int8_t set2, uint8_t pin2, const char* sig, bool reversed=true) {
-      getSetPin(set1, pin1);
-      getSetPin(set2, pin2);
+    void writeRange(uint8_t OUTOFF, int8_t set1, uint8_t pin1, int8_t set2, uint8_t pin2, const char* sig, bool reversed=true) {
+      getSetPin(OUTOFF, set1, pin1);
+      getSetPin(OUTOFF, set2, pin2);
       uint8_t offset = getBinIdx(set1, pin1);
 
       uint8_t bitCount = getBinIdx(set2, pin2) - getBinIdx(set1, pin1) + 1;
@@ -96,7 +98,7 @@ class Output {
         for (uint8_t p = pinStart; p <= pinEnd; p++) {
           uint8_t sigIdx = getBinIdx(s, p) - offset;
           if (!reversed) sigIdx = bitCount - sigIdx - 1;
-          write(s, p, sig[sigIdx] == '1');
+          write(0, s, p, sig[sigIdx] == '1');
         }
       }
     }
@@ -125,8 +127,8 @@ class Output {
     }
 
     // pwm
-    void pwmSet(int8_t set, uint8_t pin, bool sig) {
-      getSetPin(set, pin);
+    void pwmSet(uint8_t OUTOFF, int8_t set, uint8_t pin, bool sig) {
+      getSetPin(OUTOFF, set, pin);
       bitWrite(pwm[set], pin, sig);
     }
 
