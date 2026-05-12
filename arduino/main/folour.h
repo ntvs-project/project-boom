@@ -3,7 +3,7 @@
 #define G 2
 #define B 1
 
-const uint8_t memPatterns[][4][6] PROGMEM = {
+const uint8_t memFolourPatterns[][4][6] PROGMEM = {
   {
     {G, R, B, B},
     {R, B, R, B, G},
@@ -30,14 +30,14 @@ const uint8_t memPatterns[][4][6] PROGMEM = {
   }
 };
 
-const uint8_t memLength[][4] PROGMEM = {
+const uint8_t memFolourLength[][4] PROGMEM = {
   {4, 5, 5, 4},
   {4, 3, 5, 3},
   {5, 5, 4, 4},
   {4, 5, 4, 5}
 };
 
-const uint8_t memAnswers[][4] PROGMEM = {
+const uint8_t memFolourAnswers[][4] PROGMEM = {
   {R, R, B, G},
   {G, R, B, G},
   {R, B, R, B},
@@ -77,9 +77,9 @@ class Folour {
       prev = millis();
       blinkPrev = millis();
 
-      memcpy_P(patterns,   memPatterns[YB], sizeof(patterns));
-      memcpy_P(answer,     memAnswers[YB] , sizeof(answer));
-      memcpy_P(patternLen, memLength[YB]  , sizeof(patternLen));
+      memcpy_P(patterns,   memFolourPatterns[YB], sizeof(patterns));
+      memcpy_P(answer,     memFolourAnswers[YB] , sizeof(answer));
+      memcpy_P(patternLen, memFolourLength[YB]  , sizeof(patternLen));
 
       for (int i=0; i<4; i++) {
         const int length = patternLen[i];
