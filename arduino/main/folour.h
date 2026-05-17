@@ -69,8 +69,8 @@ class Folour {
 
   public:
     Folour(uint8_t outputOffset, uint8_t inputOffset) {
-      INOFF  = inputOffset;
       OUTOFF = outputOffset;
+      INOFF  = inputOffset;
     }
 
     void init() {
@@ -132,7 +132,7 @@ class Folour {
       }
 
       for (int btnIdx=0; btnIdx < 4; btnIdx++) {
-        if (input.readPressed(0, -1, btnIdx)) {
+        if (input.readReleased(INOFF, -1, btnIdx)) {
           bitWrite(fixed, btnIdx, !bitRead(fixed, btnIdx));
         }
       }

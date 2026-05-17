@@ -1,13 +1,17 @@
 #include "output.h"
 #include "input.h"
 
+Output output(8, 9, 10, 3);
+Input input(11, 12, 13, 2);
+
+#define BUZZER 2
 uint8_t YB;
 
 #include "folour.h"
-#include "matrix.h"
+#include "grey.h"
 
 Folour folour(0, 0);
-Matrix matrix(0, 0);
+Grey   grey  (2, 1);
 
 void setup() {
   Serial.begin(9600);
@@ -15,23 +19,32 @@ void setup() {
   output.pwmAll(true);
   randomSeed(analogRead(A0));
 
-  YB = random(0, 4);
-  YB = 0;
+  pinMode(BUZZER, OUTPUT);
+
+  // YB = random(0, 4);
+  YB = 2;
   Serial.println();
   Serial.println(YB);
   
-  matrix.init();
+  folour.init();
+  grey.init();
 }
 
 void loop() {
   output.update();
   input.update();
 
-  switch (matrix.check()) {
-    case  1: matrix.fini(); break;
-    case  0: matrix.miss(); break;
+  switch (folour.check()) {
+    case  1: folour.fini(); break;
+    case  0: folour.miss(); break;
+    case -1: break;
+  }
+  switch (grey.check()) {
+    case  1: grey.fini(); break;
+    case  0: grey.miss(); break;
     case -1: break;
   }
 
-  matrix.loop();
+  folour.loop();
+  grey.loop();
 }
