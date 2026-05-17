@@ -7,7 +7,7 @@ class Input {
     uint8_t PIN_CLK;
     uint8_t registerCount;
 
-    uint8_t *bin;
+    uint8_t *binReleased;
     uint8_t *binHold;
     uint8_t *curr;
     uint8_t *prev;
@@ -24,10 +24,6 @@ class Input {
       set += INOFF;
     }
 
-    uint8_t getBinIdx(int8_t set, uint8_t pin) {
-      return (set == -1) ? pin : (set * 8 + pin);
-    }
-
   public:
     Input(uint8_t data, uint8_t latch, uint8_t clock, uint8_t regCount) {
       PIN_DATA  = data;
@@ -35,10 +31,10 @@ class Input {
       PIN_CLK   = clock;
       registerCount = regCount;
 
-      bin      = new uint8_t[registerCount]();
-      binHold  = new uint8_t[registerCount]();
-      curr     = new uint8_t[registerCount]();
-      prev     = new uint8_t[registerCount]();
+      binReleased = new uint8_t[registerCount]();
+      binHold    = new uint8_t[registerCount]();
+      curr       = new uint8_t[registerCount]();
+      prev       = new uint8_t[registerCount]();
       debounceStart = new unsigned long*[registerCount]();
       holdStart     = new unsigned long*[registerCount]();
       for (int i = 0; i < registerCount; i++) {
@@ -51,41 +47,29 @@ class Input {
       pinMode(PIN_CLK  , OUTPUT);
     }
 
-    // update
     void update() {
       digitalWrite(PIN_LATCH, 0);
       delayMicroseconds(5);
       digitalWrite(PIN_LATCH, 1);
 
-      for (int i=0; i < registerCount; i++) {
-        prev[i] = curr[i];
+      for (int i = 0; i < registerCount; i++) {
         curr[i] = 0;
+        binReleased[i] = 0;
 
-        for (int b=0; b < 8; b++) {
+        for (int b = 0; b < 8; b++) {
           bitWrite(curr[i], b, digitalRead(PIN_DATA));
           bool currBit = bitRead(curr[i], b);
           bool prevBit = bitRead(prev[i], b);
 
-          if (currBit != prevBit && !debounceStart[i][b]) {
-            debounceStart[i][b] = millis();
-          }
-          if (holdStart[i][b] && millis() - holdStart[i][b] > holdT) {
-            bitWrite(binHold[i], b, 1);
-          }
-
-          if (debounceStart[i][b] && millis() - debounceStart[i][b] > 20) {
-            debounceStart[i][b] = 0;
-
-            if (currBit) {
-              bitWrite(bin[i], b, 1);
-              if (!holdStart[i][b]) {
-                holdStart[i][b] = millis();
+          if (currBit != prevBit) {
+            if (currBit == 0 && debounceStart[i][b]) {
+              if (millis() - debounceStart[i][b] >= 20 && millis() - debounceStart[i][b] < holdT) {
+                bitWrite(binReleased[i], b, 1);
               }
-            } else {
-              holdStart[i][b] = 0;  
-              bitWrite(bin[i], b, 0);
-              bitWrite(binHold[i], b, 0);
+              debounceStart[i][b] = 0;
             }
+            if (currBit == 1 && !debounceStart[i][b]) debounceStart[i][b] = millis();
+            bitWrite(prev[i], b, currBit);
           }
 
           digitalWrite(PIN_CLK, 1);
@@ -95,16 +79,20 @@ class Input {
     }
 
     // read
-    bool readPressed(uint8_t INOFF, int8_t set, uint8_t pin) {
+
+    bool readReleased(uint8_t INOFF, int8_t set, uint8_t pin) {
       getSetPin(INOFF, set, pin);
-      bool val = bitRead(bin[set], 7 - pin);
-      bitClear(bin[set], 7 - pin);
-      return val;
+      return bitRead(binReleased[set], 7 - pin);
     }
 
     bool readHold(uint8_t INOFF, int8_t set, uint8_t pin) {
       getSetPin(INOFF, set, pin);
-      return bitRead(binHold[set], 7 - pin);
+      pin = 7 - pin;
+      if (debounceStart[set][pin] && millis() - debounceStart[set][pin] >= holdT) {
+        debounceStart[set][pin] = 0;
+        return true;
+      } else {
+        return false;
+      }
     }
-
-}; Input input(11, 12, 13, 1);
+};

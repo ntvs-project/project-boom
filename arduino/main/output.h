@@ -137,4 +137,4 @@ class Output {
         pwm[s] = sig ? 0xFF : 0x00;
       }
     }
-}; Output output(8, 9, 10, 2);
+};
