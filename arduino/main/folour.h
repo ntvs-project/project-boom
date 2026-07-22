@@ -1,32 +1,32 @@
 
-#define R 4
-#define G 2
-#define B 1
+#define _R 4
+#define _G 2
+#define _B 1
 
 const uint8_t memFolourPatterns[][4][6] PROGMEM = {
   {
-    {G, R, B, B},
-    {R, B, R, B, G},
-    {R, R, B, G, G},
-    {B, B, R, G},
+    {_G, _R, _B, _B},
+    {_R, _B, _R, _B, _G},
+    {_R, _R, _B, _G, _G},
+    {_B, _B, _R, _G},
   },
   {
-    {G, R, G, B},
-    {R, B, G},
-    {G, R, B, R, G},
-    {G, B, R},
+    {_G, _R, _G, _B},
+    {_R, _B, _G},
+    {_G, _R, _B, _R, _G},
+    {_G, _B, _R},
   },
   {
-    {R, G, B, G, R},
-    {B, G, R, G, G},
-    {B, R, G, B},
-    {G, R, R, B},
+    {_R, _G, _B, _G, _R},
+    {_B, _G, _R, _G, _G},
+    {_B, _R, _G, _B},
+    {_G, _R, _R, _B},
   },
   {
-    {R, G, B, B},
-    {R, G, B, G, B},
-    {B, R, G, R},
-    {G, G, R, G, R},
+    {_R, _G, _B, _B},
+    {_R, _G, _B, _G, _B},
+    {_B, _R, _G, _R},
+    {_G, _G, _R, _G, _R},
   }
 };
 
@@ -38,10 +38,10 @@ const uint8_t memFolourLength[][4] PROGMEM = {
 };
 
 const uint8_t memFolourAnswers[][4] PROGMEM = {
-  {R, R, B, G},
-  {G, R, B, G},
-  {R, B, R, B},
-  {R, G, G, R}
+  {_R, _R, _B, _G},
+  {_G, _R, _B, _G},
+  {_R, _B, _R, _B},
+  {_R, _G, _G, _R}
 };
 
 class Folour {
@@ -99,11 +99,13 @@ class Folour {
     }
 
     void fini() {
-      output.writeRange(OUTOFF, 1, 4, 1, 5, "01");
+      // output.writeRange(OUTOFF, 1, 4, 1, 5, "01");
+      output.writeAll(true);
     }
 
     void miss() {
-      output.writeRange(OUTOFF, 1, 4, 1, 5, "10");
+      // output.writeRange(OUTOFF, 1, 4, 1, 5, "10");
+      // output.writeAll(false);
     }
 
     void loop() {
@@ -133,7 +135,8 @@ class Folour {
 
       for (int btnIdx=0; btnIdx < 4; btnIdx++) {
         if (input.readReleased(INOFF, -1, btnIdx)) {
-          bitWrite(fixed, btnIdx, !bitRead(fixed, btnIdx));
+          bitWrite(fixed, 3 - btnIdx, !bitRead(fixed, 3 - btnIdx));
+          Serial.println(3 - btnIdx);
         }
       }
     }

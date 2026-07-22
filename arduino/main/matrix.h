@@ -43,8 +43,9 @@ class Matrix {
     uint8_t answer[16];
 
     uint8_t idx = 0;
-    uint8_t n = 1;
-    unsigned long prev;
+    uint8_t n = 0;
+    uint8_t led = 0;
+    unsigned long prevT;
 
   public:
     Matrix(uint8_t outputOffset, uint8_t inputOffset) {
@@ -53,7 +54,7 @@ class Matrix {
     }
 
     void init() {
-      prev = millis();
+      prevT = millis();
       pinMode(4, INPUT_PULLUP);
 
       memcpy_P(patterns, memMatrixPatterns[2], sizeof(patterns));
