@@ -4,10 +4,11 @@
 Output output(8, 9, 10, 2);
 Input input(11, 12, 13, 1);
 
-#define BUZZER 2
+#define BUZZER 5
 #define YELLOW 7
 #define BLUE   6
 
+bool buzzing = false;
 uint8_t YB, Y, B;
 
 #include "test.h"
@@ -29,7 +30,7 @@ void setup() {
   pinMode(BLUE, OUTPUT);
 
   // YB = 2;
-  YB = random(1, 4);
+  YB = random(0, 4);
   Y  = (YB >> 1);
   B  = (YB % 2);
 

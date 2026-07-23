@@ -94,6 +94,9 @@ class Folour {
     int8_t check() {
       if (fixed == 0b1111) {
         return ( memcmp(answer, prevPattern, sizeof(answer)) == 0 );
+      } else {
+        noTone(BUZZER);
+        buzzing = false;
       }
       return -1;
     }
@@ -105,7 +108,10 @@ class Folour {
 
     void miss() {
       // output.writeRange(OUTOFF, 1, 4, 1, 5, "10");
-      // output.writeAll(false);
+      if (!buzzing) {
+        tone(BUZZER, 340);
+        buzzing = true;
+      }
     }
 
     void loop() {
