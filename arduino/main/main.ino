@@ -6,13 +6,16 @@
 
 #define BUZZER 5
 
-bool buzzing = false;
+#define OUTPUT_AMOUNT 3
+#define INPUT_AMOUNT  1
+
 uint8_t YB, Y, B, mis;
 
-Output output(8, 9, 10, 2);
-Input input(11, 12, 13, 1);
+Output output(8, 9, 10, OUTPUT_AMOUNT);
+Input input(11, 12, 13, INPUT_AMOUNT);
 
 TM1637Display timer(3, 4, 10); // CLK DIO
+ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 
 #include "MB.h"
 #include "folour.h"
@@ -21,7 +24,7 @@ TM1637Display timer(3, 4, 10); // CLK DIO
 
 // Test test(0, 0);
 MB mb(0, 0);
-// Folour folour(0, 0);
+Folour folour(1, 0);
 // Grey   grey  (2, 1);
 
 void setup() {
@@ -29,24 +32,23 @@ void setup() {
 
   output.pwmAll(false);
   randomSeed(analogRead(A0));
-
-  pinMode(BUZZER, OUTPUT);
   
   mb.init();
-  // folour.init();
+  folour.init();
   // grey.init();
   // test.init();
 }
 
 void loop() {
+  buzzer.loop();
   output.update();
   input.update();
 
-  // switch (folour.check()) {
-  //   case  1: folour.fini(); break;
-  //   case  0: folour.miss(); break;
-  //   case -1: break;
-  // }
+  switch (folour.check()) {
+    case  1: folour.fini(); break;
+    case  0: folour.miss(); break;
+    case -1: break;
+  }
   // switch (grey.check()) {
   //   case  1: grey.fini(); break;
   //   case  0: grey.miss(); break;
@@ -54,7 +56,7 @@ void loop() {
   // }
 
   mb.loop();
-  // folour.loop();
+  folour.loop();
   // grey.loop();
   // test.loop();
 }

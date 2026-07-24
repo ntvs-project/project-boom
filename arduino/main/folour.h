@@ -53,6 +53,7 @@ class Folour {
     uint8_t patternLen[4];
     uint8_t prevPattern[4];
     uint8_t answer[4];
+    bool checked = false;
     uint8_t fixed = 0b0000;
     int colourIdx = 0;
 
@@ -88,15 +89,17 @@ class Folour {
         patternLen[i]++;
       }
 
-      output.writeRange(OUTOFF, 1, 4, 1, 5, "11");
+      // output.writeRange(OUTOFF, 1, 4, 1, 5, "11");
     }
 
     int8_t check() {
       if (fixed == 0b1111) {
-        return ( memcmp(answer, prevPattern, sizeof(answer)) == 0 );
+        if (!checked) {
+          checked = true;
+          return ( memcmp(answer, prevPattern, sizeof(answer)) == 0 );
+        }
       } else {
-        noTone(BUZZER);
-        buzzing = false;
+        checked = false;
       }
       return -1;
     }
@@ -107,11 +110,7 @@ class Folour {
     }
 
     void miss() {
-      // output.writeRange(OUTOFF, 1, 4, 1, 5, "10");
-      if (!buzzing) {
-        tone(BUZZER, 340);
-        buzzing = true;
-      }
+      mis++;
     }
 
     void loop() {
@@ -142,7 +141,7 @@ class Folour {
       for (int btnIdx=0; btnIdx < 4; btnIdx++) {
         if (input.readReleased(INOFF, -1, btnIdx)) {
           bitWrite(fixed, 3 - btnIdx, !bitRead(fixed, 3 - btnIdx));
-          Serial.println(3 - btnIdx);
+          // Serial.println(3 - btnIdx);
         }
       }
     }

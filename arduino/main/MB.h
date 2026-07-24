@@ -5,7 +5,7 @@ class MB {
     uint8_t OUTOFF;
 
     uint8_t minute = 10;
-    uint8_t second = 1;
+    uint8_t second = 0;
 
     uint8_t prevMis = 0;
     bool blink = true;
@@ -33,13 +33,18 @@ class MB {
       blinkPrev = millis();
     }
 
+    void miss() {
+      buzzer.beep(3000, 0, NOTE_C8);
+      while (true) {
+        buzzer.loop();
+        output.update();
+      }
+    }
+
     void setYB() {
       YB = random(0, 4);
       Y  = (YB >> 1);
       B  = (YB % 2);
-
-      digitalWrite(YELLOW, Y);
-      digitalWrite(BLUE, B);
 
       Serial.println("\n-----");
       Serial.print(Y);
@@ -50,13 +55,14 @@ class MB {
     void loop() {
       if (Serial.available()) {
         Serial.read();
-        mis = (mis + 1) % 4;
+        mis++;
       }
 
       if (millis() - blinkPrev >= 500) {
         blink = !blink;
 
         if (!blink) {
+          buzzer.beep(random(100, 200), random(0, 100), NOTE_AS4);
           if (second != 0) {
             second--;
           } else {
@@ -66,7 +72,8 @@ class MB {
             } else {
               minute = 0;
               second = 0;
-              while (true);
+              miss();
+              while (true) output.update();
             }
           }
         }
@@ -80,6 +87,8 @@ class MB {
         output.write(OUTOFF, 0, 3, mis >= 2);
         output.write(OUTOFF, 0, 4, mis == 3);
         prevMis = mis;
+
+        if (mis >= 3) miss();
       }
     }
 };
