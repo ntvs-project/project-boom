@@ -11,7 +11,6 @@ class Test {
     }
 
     void init() {
-      output.writeAll(false);
     }
 
     int8_t check() {
@@ -24,10 +23,5 @@ class Test {
     }
 
     void loop() {
-      for (int btnIdx=0; btnIdx < 4; btnIdx++) {
-        if (input.readReleased(INOFF, -1, btnIdx)) {
-          Serial.println(btnIdx);
-        }
-      }
     }
 };
