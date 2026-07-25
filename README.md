@@ -3,10 +3,11 @@
 
 - Zina
 - Kuku
-- Yi
+- Yiyi
 
 ---
 
 - [GitHub](https://github.com/ntvs-project/project-boom/)
-- [HackMD](https://hackmd.io/6Ic-omSDQT-OIS2o7djPAg)
 - [Prism](https://prism.openai.com/?u=65ae6e7a-4f30-4b3b-a894-47b0c6f672e8&pg=1)
+- [HackMD - Brain](https://hackmd.io/6Ic-omSDQT-OIS2o7djPAg)
+- [HackMD - GDD](https://hackmd.io/XEWOY8ufTnWjvY05pFDO2Q)
