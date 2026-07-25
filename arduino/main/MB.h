@@ -52,34 +52,42 @@ class MB {
       Serial.println("\n-----");
     }
 
+    void updateTimer() {
+      blink = !blink;
+
+      if (blink) {
+        if (second != 0) {
+          second--;
+        } else {
+          second = 59;
+          if (minute != 0) {
+            minute--;
+          } else {
+            minute = 0;
+            second = 0;
+            miss();
+            while (true) output.update();
+          }
+        }
+        if (second != 59 && second != 0) {
+          buzzer.beep(random(100, 150), random(0, 100), NOTE_AS4);
+        } else if (second == 0) {
+          buzzer.beep(1000 - 200 * mis, 0, NOTE_AS4);
+        }
+      }
+
+      timer.showNumberDecEx(minute * 100 + second, blink ? 64 : 0, true);
+      blinkPrev = millis();
+    }
+
     void loop() {
       if (Serial.available()) {
         Serial.read();
         mis++;
       }
 
-      if (millis() - blinkPrev >= 500) {
-        blink = !blink;
-
-        if (!blink) {
-          buzzer.beep(random(100, 200), random(0, 100), NOTE_AS4);
-          if (second != 0) {
-            second--;
-          } else {
-            second = 59;
-            if (minute != 0) {
-              minute--;
-            } else {
-              minute = 0;
-              second = 0;
-              miss();
-              while (true) output.update();
-            }
-          }
-        }
-
-        timer.showNumberDecEx(minute * 100 + second, blink ? 64 : 0, true);
-        blinkPrev = millis();
+      if ( millis() - blinkPrev >= (500 - 100 * mis) ) {
+        updateTimer(); 
       }
 
       if (mis != prevMis) {
