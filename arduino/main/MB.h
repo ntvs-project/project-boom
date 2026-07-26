@@ -41,15 +41,24 @@ class MB {
       }
     }
 
+    void resetTimer() {
+      minute = 10;
+      second = 0;
+    }
+
     void setYB() {
       YB = random(0, 4);
       Y  = (YB >> 1);
       B  = (YB % 2);
 
       Serial.println("\n-----");
+      Serial.print("YB: ");
       Serial.print(Y);
       Serial.print(B);
       Serial.println("\n-----");
+
+      digitalWrite(YELLOW, Y);
+      digitalWrite(BLUE  , B);
     }
 
     void updateTimer() {
@@ -69,10 +78,10 @@ class MB {
             while (true) output.update();
           }
         }
-        if (second != 59 && second != 0) {
+        if (second != 0) {
           buzzer.beep(random(100, 150), random(0, 100), NOTE_AS4);
         } else if (second == 0) {
-          buzzer.beep(1000 - 200 * mis, 0, NOTE_AS4);
+          buzzer.beep(1000 - 300 * mis, 0, NOTE_AS4);
         }
       }
 

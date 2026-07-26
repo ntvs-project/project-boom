@@ -1,3 +1,8 @@
+// TEST, SINGLE, FULL
+#define FULL
+// DEBUG, NODEBUG
+#define NODEBUG
+
 #include <ezBuzzer.h>
 #include <TM1637Display.h>
 
@@ -5,6 +10,8 @@
 #include "input.h"
 
 #define BUZZER 5
+#define YELLOW 7
+#define BLUE   6
 
 #define OUTPUT_AMOUNT 3
 #define INPUT_AMOUNT  1
@@ -22,28 +29,57 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 #include "grey.h"
 #include "test.h"
 
-// Test test(0, 0);
+#ifdef FULL
 MB mb(0, 0);
 Folour folour(1, 0);
 // Grey   grey  (2, 1);
+#endif
+
+#ifdef SINGLE;
+MB mb(2, 0);
+Folour folour(0, 0);
+#endif
+
+#ifdef TEST;
+Test test(0, 0);
+#endif
 
 void setup() {
   Serial.begin(9600);
 
   output.pwmAll(false);
   randomSeed(analogRead(A0));
-  
+
+  pinMode(YELLOW, OUTPUT);
+  pinMode(BLUE  , OUTPUT);
+
+  #ifdef FULL
   mb.init();
   folour.init();
   // grey.init();
-  // test.init();
+  #endif
+
+  #ifdef SINGLE;
+  mb.init();
+  folour.init();
+  #endif
+
+  #ifdef TEST;
+  test.init();
+  #endif
 }
 
 void loop() {
+  #ifdef DEBUG
+  mis = 0;
+  mb.resetTimer();
+  #endif
+
   buzzer.loop();
   output.update();
   input.update();
 
+  #ifdef FULL
   switch (folour.check()) {
     case  1: folour.fini(); break;
     case  0: folour.miss(); break;
@@ -54,9 +90,28 @@ void loop() {
   //   case  0: grey.miss(); break;
   //   case -1: break;
   // }
+  #endif
 
+  #ifdef SINGLE;
+  switch (folour.check()) {
+    case  1: folour.fini(); break;
+    case  0: folour.miss(); break;
+    case -1: break;
+  }
+  #endif
+
+  #ifdef FULL
   mb.loop();
   folour.loop();
   // grey.loop();
-  // test.loop();
+  #endif
+
+  #ifdef SINGLE;
+  mb.loop();
+  folour.loop();
+  #endif
+
+  #ifdef TEST
+  test.loop();
+  #endif
 }
