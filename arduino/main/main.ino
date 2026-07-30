@@ -1,7 +1,7 @@
 // TEST, SINGLE, FULL
-#define FULL
+#define SINGLE
 // DEBUG, NODEBUG
-#define NODEBUG
+#define DEBUG
 
 #include <ezBuzzer.h>
 #include <TM1637Display.h>
@@ -13,7 +13,7 @@
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 3
+#define OUTPUT_AMOUNT 2
 #define INPUT_AMOUNT  1
 
 uint8_t YB, Y, B, mis;
@@ -27,6 +27,7 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 #include "MB.h"
 #include "folour.h"
 #include "grey.h"
+#include "caesar.h"
 #include "test.h"
 
 #ifdef FULL
@@ -36,8 +37,9 @@ Folour folour(1, 0);
 #endif
 
 #ifdef SINGLE;
-MB mb(2, 0);
-Folour folour(0, 0);
+MB mb(2, 1);
+Grey   grey(0, 0);
+Caesar caesar(0, 0);
 #endif
 
 #ifdef TEST;
@@ -61,7 +63,11 @@ void setup() {
 
   #ifdef SINGLE;
   mb.init();
-  folour.init();
+  if (Y != B) {
+    grey.init();
+  } else {
+    caesar.init();
+  }
   #endif
 
   #ifdef TEST;
@@ -93,10 +99,18 @@ void loop() {
   #endif
 
   #ifdef SINGLE;
-  switch (folour.check()) {
-    case  1: folour.fini(); break;
-    case  0: folour.miss(); break;
-    case -1: break;
+  if (Y != B) {
+    switch (grey.check()) {
+      case  1: grey.fini(); break;
+      case  0: grey.miss(); break;
+      case -1: break;
+    }
+  } else {
+    switch (caesar.check()) {
+      case  1: caesar.fini(); break;
+      case  0: caesar.miss(); break;
+      case -1: break;
+    }
   }
   #endif
 
@@ -108,7 +122,11 @@ void loop() {
 
   #ifdef SINGLE;
   mb.loop();
-  folour.loop();
+  if (Y != B) {
+    grey.loop();
+  } else {
+    caesar.loop();
+  }
   #endif
 
   #ifdef TEST

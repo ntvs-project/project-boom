@@ -11,6 +11,7 @@ class Test {
     }
 
     void init() {
+      output.writeAll(true);
     }
 
     int8_t check() {
@@ -23,5 +24,10 @@ class Test {
     }
 
     void loop() {
+      if (input.readReleased(0, 0, 0)) {
+        delay(20);
+        while (input.readReleased(0, 0, 0));
+        Serial.println("pressed");
+      }
     }
 };

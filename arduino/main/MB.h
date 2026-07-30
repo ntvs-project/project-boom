@@ -48,6 +48,7 @@ class MB {
 
     void setYB() {
       YB = random(0, 4);
+      // YB = 3;
       Y  = (YB >> 1);
       B  = (YB % 2);
 
@@ -78,11 +79,11 @@ class MB {
             while (true) output.update();
           }
         }
-        if (second != 0) {
-          buzzer.beep(random(100, 150), random(0, 100), NOTE_AS4);
-        } else if (second == 0) {
-          buzzer.beep(1000 - 300 * mis, 0, NOTE_AS4);
-        }
+        // if (second != 0) {
+        //   buzzer.beep(random(100, 150), random(0, 100), NOTE_AS4);
+        // } else if (second == 0) {
+        //   buzzer.beep(1000 - 300 * mis, 0, NOTE_AS4);
+        // }
       }
 
       timer.showNumberDecEx(minute * 100 + second, blink ? 64 : 0, true);
