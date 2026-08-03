@@ -61,8 +61,8 @@ class Grey {
     int8_t check() {
       if (idx == 4) {
         idx = 0;
-        Serial.print("user: ");
-        Serial.println(user, BIN);
+        // Serial.print("user: ");
+        // Serial.println(user, BIN);
         return (user == answer);
       } else {
         return -1;
@@ -72,7 +72,11 @@ class Grey {
     void fini() {
       output.write(OUTOFF, 1, 0, 1);
       output.writeRange(OUTOFF, 0, 0, 0, 7, "00000000");
-      while (true) output.update();
+      while (true) {
+        output.update();
+        buzzer.turnOFF();
+        buzzer.loop();
+      }
     }
 
     void miss() {
@@ -89,11 +93,11 @@ class Grey {
       bool hold    = input.readHold(INOFF, 0, 0);
 
       if (pressed) {
-        Serial.println("pressed");
+        // Serial.println("pressed");
         bitWrite(user, 3 - idx, 0);
       }
       if (hold) {
-        Serial.println("hold");
+        // Serial.println("hold");
         bitWrite(user, 3 - idx, 1);
       }
       if (pressed || hold) {

@@ -25,15 +25,16 @@ class Caesar {
 
     uint8_t idx = 0;
     char    led[8];
-    unsigned int length;
+    unsigned int ansLength;
+    unsigned int origLength;
   
     short highFreq = 1000;
     short lowFreq  = 500;
     short dit = 100;
     short dah = 3 * dit;
   
-    int melody[8];
-    int duration[8];
+    int melody[20];
+    int duration[20];
     int melodyIdx = 0;
 
     short leftShift(int original, int shiftAmount) {
@@ -52,6 +53,7 @@ class Caesar {
 
     void init() {
       original = random(0, 26);
+      origLength = morseLength[original];
       Serial.print("orig: ");
       Serial.write('A' + original);
       Serial.print(" ");
@@ -65,17 +67,17 @@ class Caesar {
 
       if (YB == 0) answer = leftShift (original, shiftAmount);
       if (YB == 3) answer = rightShift(original, shiftAmount);
+      ansLength = morseLength[answer];
       Serial.print("ans : ");
       Serial.write('A' + answer);
       Serial.print(" ");
       Serial.println(morseCode[answer]);
 
-      length = morseLength[answer];
-      for (int i = 0; i < length; i++) {
+      for (int i = 0; i < ansLength; i++) {
         led[i * 2] = '1';
         led[i * 2 + 1] = '1';
       }
-      for (int i = length; i < 4; i++) {
+      for (int i = ansLength; i < 4; i++) {
         led[i * 2] = '0';
         led[i * 2 + 1] = '0';
       }
@@ -84,21 +86,30 @@ class Caesar {
       output.write(OUTOFF, 1, 0, 0);
       output.writeRange(OUTOFF, 0, 0, 0, 7, led);
 
-      // for (int i=length-1; i>=0; i--) {
-      //   int j = (length - 1 - i) * 2;
+      for (int i=0; i<origLength; i++) {
+        int j = i * 2;
 
-      //   melody[j] = highFreq;
-      //   melody[j + 1] = 0;
-      //   duration[j] = bitRead(original, i) ? dah : dit;
-      //   duration[j + 1] = dit;
-      // }
+        melody[j] = highFreq;
+        melody[j + 1] = 0;
+        duration[j] = morseCode[original][i] == '1' ? dah : dit;
+        duration[j + 1] = dit;
+      }
+
+      for (int i=2; i>=0; i--) {
+        int j = (2 - i) * 2 + origLength * 2;
+
+        melody[j] = lowFreq;
+        melody[j + 1] = 0;
+        duration[j] = bitRead(shiftAmount, i) == 1 ? dah : dit;
+        duration[j + 1] = dit;
+      }
     }
 
     int8_t check() {
       if (idx == morseLength[answer]) {
         idx = 0;
-        Serial.print("user: ");
-        Serial.println(user);
+        // Serial.print("user: ");
+        // Serial.println(user);
         return (strcmp(user, morseCode[answer]) == 0);
       } else {
         return -1;
@@ -108,7 +119,11 @@ class Caesar {
     void fini() {
       output.write(OUTOFF, 1, 0, 1);
       output.writeRange(OUTOFF, 0, 0, 0, 7, "00000000");
-      while (true) output.update();
+      while (true) {
+        output.update();
+        buzzer.turnOFF();
+        buzzer.loop();
+      }
     }
 
     void miss() {
@@ -116,10 +131,10 @@ class Caesar {
     }
 
     void loop() {
-      // if (buzzer.getState() == BUZZER_IDLE) {
-      //   buzzer.beep(duration[melodyIdx], (melodyIdx == 0) ? 2 * dah : 0, melody[melodyIdx]);
-      //   melodyIdx = (melodyIdx + 1) % 8;
-      // }
+      if (buzzer.getState() == BUZZER_IDLE) {
+        buzzer.beep(duration[melodyIdx], (melodyIdx == 0) ? 2 * dah : 0, melody[melodyIdx]);
+        melodyIdx = (melodyIdx + 1) % 20;
+      }
 
       bool pressed = input.readReleased(INOFF, 0, 0);
       bool hold    = input.readHold(INOFF, 0, 0);

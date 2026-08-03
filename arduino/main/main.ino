@@ -50,7 +50,7 @@ void setup() {
   Serial.begin(9600);
 
   output.pwmAll(false);
-  randomSeed(analogRead(A0));
+  randomSeed(analogRead(A0) + micros());
 
   pinMode(YELLOW, OUTPUT);
   pinMode(BLUE  , OUTPUT);
