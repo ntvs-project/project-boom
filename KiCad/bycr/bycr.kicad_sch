@@ -3027,7 +3027,6 @@
 	)
 	(label "input_clk"
 		(at 158.75 147.32 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3038,7 +3037,6 @@
 	)
 	(label "output_latch"
 		(at 196.85 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3049,7 +3047,6 @@
 	)
 	(label "input_clk"
 		(at 57.15 147.32 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3060,7 +3057,6 @@
 	)
 	(label "output_latch"
 		(at 57.15 43.18 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3071,7 +3067,6 @@
 	)
 	(label "input_clk"
 		(at 104.14 151.13 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3082,7 +3077,6 @@
 	)
 	(label "input_latch"
 		(at 57.15 149.86 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3093,7 +3087,6 @@
 	)
 	(label "output_latch"
 		(at 92.71 45.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3104,7 +3097,6 @@
 	)
 	(label "input_latch"
 		(at 109.22 148.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3115,7 +3107,6 @@
 	)
 	(label "output_clk"
 		(at 196.85 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3126,7 +3117,6 @@
 	)
 	(label "input_latch"
 		(at 158.75 149.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3137,7 +3127,6 @@
 	)
 	(label "output_clk"
 		(at 57.15 40.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3148,7 +3137,6 @@
 	)
 	(label "output_clk"
 		(at 144.78 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3159,7 +3147,6 @@
 	)
 	(label "output_clk"
 		(at 85.09 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3170,7 +3157,6 @@
 	)
 	(label "output_latch"
 		(at 152.4 45.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4755,7 +4741,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "New_Library:Resistor"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
 			(at 131.826 95.504 90)
 			(effects
 				(font
