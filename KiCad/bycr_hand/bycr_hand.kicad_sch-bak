@@ -2757,16 +2757,6 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 33.02) (xy 85.09 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e602230-fea0-4dbc-8c0f-1b51146287db")
-	)
-	(wire
-		(pts
 			(xy 95.25 76.2) (xy 156.21 76.2)
 		)
 		(stroke
@@ -2857,16 +2847,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 29.21) (xy 92.71 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6b3d0ea-f3fd-4b2e-9aad-1a08642db44c")
-	)
-	(wire
-		(pts
 			(xy 95.25 66.04) (xy 95.25 76.2)
 		)
 		(stroke
@@ -2894,16 +2874,6 @@
 			(type default)
 		)
 		(uuid "b107dfb2-c637-4068-954b-e310c016b25f")
-	)
-	(wire
-		(pts
-			(xy 144.78 31.75) (xy 144.78 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b2b51ccb-0f47-44dd-a77c-3f8128db03ed")
 	)
 	(wire
 		(pts
@@ -3004,16 +2974,6 @@
 			(type default)
 		)
 		(uuid "e19d5b11-567d-4691-9afa-c7e8f98aa7fc")
-	)
-	(wire
-		(pts
-			(xy 152.4 31.75) (xy 152.4 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1b5272b-a8d9-4a91-9635-682064bb1c15")
 	)
 	(wire
 		(pts
@@ -3126,7 +3086,7 @@
 		(uuid "3753b281-f105-449a-be50-ced17cb3277c")
 	)
 	(label "output_latch"
-		(at 92.71 29.21 0)
+		(at 92.71 45.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3176,7 +3136,7 @@
 		(uuid "d3e3b2eb-9927-447b-a729-7a363a5f9d0a")
 	)
 	(label "output_clk"
-		(at 144.78 31.75 180)
+		(at 144.78 45.72 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3186,7 +3146,7 @@
 		(uuid "d5fbef99-a1b5-48ac-9ecf-008e8b48ec8b")
 	)
 	(label "output_clk"
-		(at 85.09 33.02 180)
+		(at 85.09 45.72 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3196,7 +3156,7 @@
 		(uuid "e53d6624-6ce4-4699-98e5-c83756e9e38d")
 	)
 	(label "output_latch"
-		(at 152.4 31.75 0)
+		(at 152.4 45.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
