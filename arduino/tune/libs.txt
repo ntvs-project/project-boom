@@ -1,0 +1,5 @@
+Adafruit ST7735 and ST7789 Library@1.11.0|Adafruit
+- Adafruit BusIO
+- Adafruit GFX Library
+- Adafruit seesaw Library
+- SD
