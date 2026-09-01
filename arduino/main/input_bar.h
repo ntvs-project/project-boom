@@ -57,7 +57,7 @@ class Input {
         curr[i] = 0;
 
         for (int b = 0; b < 8; b++) {
-          bitWrite(curr[i], b, !digitalRead(PIN_DATA));
+          bitWrite(curr[i], b, digitalRead(PIN_DATA));
           bool currBit = bitRead(curr[i], b);
           bool prevBit = bitRead(prev[i], b);
 

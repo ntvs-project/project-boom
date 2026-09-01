@@ -136,8 +136,8 @@ class Caesar {
         melodyIdx = (melodyIdx + 1) % 20;
       }
 
-      bool pressed = input.readReleased(INOFF, 0, 0);
-      bool hold    = input.readHold(INOFF, 0, 0);
+      bool pressed = input.readReleased(INOFF, 0, 2);
+      bool hold    = input.readHold(INOFF, 0, 2);
 
       if (pressed) {
         Serial.println("pressed");

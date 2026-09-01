@@ -89,15 +89,15 @@ class Grey {
         melodyIdx = (melodyIdx + 1) % 8;
       }
 
-      bool pressed = input.readReleased(INOFF, 0, 0);
-      bool hold    = input.readHold(INOFF, 0, 0);
+      bool pressed = input.readReleased(INOFF, 0, 2);
+      bool hold    = input.readHold(INOFF, 0, 2);
 
       if (pressed) {
-        // Serial.println("pressed");
+        Serial.println("pressed");
         bitWrite(user, 3 - idx, 0);
       }
       if (hold) {
-        // Serial.println("hold");
+        Serial.println("hold");
         bitWrite(user, 3 - idx, 1);
       }
       if (pressed || hold) {
