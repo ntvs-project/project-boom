@@ -11,6 +11,11 @@ bool dirtyL = true;
 bool dirtyC = true;
 bool dirtyR = true;
 
+bool debugDirtyF = true;
+bool debugDirtyL = true;
+bool debugDirtyC = true;
+bool debugDirtyR = true;
+
 void initScreen() {
   tft.init(240, 320);
 
@@ -21,7 +26,9 @@ void initScreen() {
   tft.setTextColor(0xFFFF, 0x0);
   tft.setTextSize(3);
   tft.setTextWrap(false);
+}
 
+void initDebugScreen() {
   tft.setCursor(20, 20);
   tft.print("YB:");
   tft.setCursor(75, 17);
@@ -30,29 +37,67 @@ void initScreen() {
   tft.print(B);
 }
 
-void requestF() { dirtyF = true; }
-void requestL() { dirtyL = true; }
-void requestC() { dirtyC = true; }
-void requestR() { dirtyR = true; }
+void requestF() { dirtyF = true; debugDirtyF = true; }
+void requestL() { dirtyL = true; debugDirtyL = true; }
+void requestC() { dirtyC = true; debugDirtyC = true; }
+void requestR() { dirtyR = true; debugDirtyR = true; }
 
 void drawF();
 void drawL();
 void drawC();
 void drawR();
 
-void debugScreen() {
-  if (dirtyF) drawF();
-  if (dirtyL) drawL();
-  if (dirtyC) drawC();
-  if (dirtyR) drawR();
+void debugDrawF();
+void debugDrawL();
+void debugDrawC();
+void debugDrawR();
 
-  dirtyF = false;
-  dirtyL = false;
-  dirtyC = false;
-  dirtyR = false;
+void initCircuitScreen() {
+  tft.fillScreen(0x0);
+
+  tft.drawLine(53, 159, 53, 69, 0xFFFF);
+  tft.drawLine(53, 69, 108, 69, 0xFFFF);
+  tft.drawLine(136, 69, 190, 69, 0xFFFF);
+  tft.drawLine(190, 70, 190, 117, 0xFFFF);
+  tft.drawLine(190, 124, 190, 182, 0xFFFF);
+  tft.drawLine(189, 212, 189, 256, 0xFFFF);
+  tft.drawLine(53, 256, 189, 256, 0xFFFF);
+  tft.drawLine(53, 168, 53, 256, 0xFFFF);
+
+  tft.drawRGBBitmap(30,  159, image_power_pixels,     48,  10);
+  tft.drawRGBBitmap(187, 182, image_inductor_pixels,  8,   31);
+  tft.drawRGBBitmap(182, 117, image_capacitor_pixels, 18,  8);
+  tft.drawRGBBitmap(105, 65,  image_resistor_pixels,  36,  8);
 }
 
-void drawF() {
+void drawCircuitScreen() {
+  tft.setTextColor(0xFFFF);
+  tft.setTextWrap(false);
+  tft.setTextSize(1);
+
+  tft.setCursor(114, 80);
+  tft.print("RRR");
+
+  tft.setCursor(155, 118);
+  tft.print("CCC");
+
+  tft.setCursor(155, 194);
+  tft.print("LLL");
+}
+
+void drawDebugScreen() {
+  if (debugDirtyF) debugDrawF();
+  if (debugDirtyL) debugDrawL();
+  if (debugDirtyC) debugDrawC();
+  if (debugDirtyR) debugDrawR();
+
+  debugDirtyF = false;
+  debugDirtyL = false;
+  debugDirtyC = false;
+  debugDirtyR = false;
+}
+
+void debugDrawF() {
   tft.fillRect(70, 60, 170, 21, 0x0);
   tft.setTextSize(3);
 
@@ -67,7 +112,7 @@ void drawF() {
   tft.print(getUnit(KNOB_F, pgm_read_word(&power_F[getKnobValue(KNOB_F) / 10])));
 }
 
-void drawL() {
+void debugDrawL() {
   tft.fillRect(70, 100, 170, 21, 0x0);
   tft.setTextSize(3);
 
@@ -82,7 +127,7 @@ void drawL() {
   tft.print(getUnit(KNOB_L, pgm_read_word(&power_L[getKnobValue(KNOB_L)])));
 }
 
-void drawC() {
+void debugDrawC() {
   tft.fillRect(70, 140, 170, 21, 0x0);
   tft.setTextSize(3);
 
@@ -97,7 +142,7 @@ void drawC() {
   tft.print(getUnit(KNOB_C, pgm_read_word(&power_C[getKnobValue(KNOB_C)])));
 }
 
-void drawR() {
+void debugDrawR() {
   tft.fillRect(70, 180, 170, 21, 0x0);
   tft.setTextSize(3);
 
@@ -148,7 +193,7 @@ void drawQRCode() {
   // White background
   tft.fillScreen(ST77XX_WHITE);
 
-  // Draw QR code
+  // debugDraw QR code
   for (uint8_t row = 0; row < qrcode.size; row++) {
     for (uint8_t col = 0; col < qrcode.size; col++) {
       if (qrcode_getModule(&qrcode, col, row)) {

@@ -112,6 +112,8 @@ void setup() {
   YB = Y << 1 + B;
 
   initScreen();
+  // initDebugScreen();
+  initCircuitScreen();
   resonance.init();
 }
 
@@ -120,7 +122,8 @@ void loop() {
 
   if (digitalRead(PIN_MODE) == 0) {
     // printDebug();
-    debugScreen();
+    // drawDebugScreen();
+    drawCircuitScreen();
 
     switch (resonance.check()) {
       case  1: resonance.fini(); break;
@@ -132,5 +135,7 @@ void loop() {
   } else if (digitalRead(PIN_MODE) == 1) {
     drawQRCode();
     while (digitalRead(PIN_MODE) == 1);
+    initScreen();
+    initCircuitScreen();
   }
 }

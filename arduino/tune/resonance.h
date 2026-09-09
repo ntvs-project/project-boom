@@ -102,7 +102,7 @@ class Resonance {
       digitalWrite(PIN_DONE, 1);
       while (true) {
         // printDebug();
-        debugScreen();
+        drawDebugScreen();
         output.update();
       }
     }
