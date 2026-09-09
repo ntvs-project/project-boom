@@ -3,3 +3,5 @@ Adafruit ST7735 and ST7789 Library@1.11.0|Adafruit
 - Adafruit GFX Library
 - Adafruit seesaw Library
 - SD
+
+QRCode@0.0.1|Richard Moore

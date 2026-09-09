@@ -103,9 +103,8 @@ void setup() {
   pinMode(PIN_DONE, OUTPUT);
   pinMode(PIN_SIG_Y, INPUT_PULLUP);
   pinMode(PIN_SIG_B, INPUT_PULLUP);
-  pinMode(PIN_SIG_MISS, OUTPUT);
+  // pinMode(PIN_SIG_MISS, OUTPUT);
   // pinMode(PIN_ACK_MISS, INPUT_PULLUP);
-  pinMode(PIN_ACK_MISS, OUTPUT);
 
   digitalWrite(PIN_DONE, 0);
   Y = digitalRead(PIN_SIG_Y);
@@ -114,16 +113,15 @@ void setup() {
 
   initScreen();
   resonance.init();
-  debugScreen();
 }
 
 void loop() {
   output.simpleUpdate();
 
-  // printDebug();
-  // debugScreen();
-
   if (digitalRead(PIN_MODE) == 0) {
+    // printDebug();
+    debugScreen();
+
     switch (resonance.check()) {
       case  1: resonance.fini(); break;
       case  0: resonance.miss(); break;
@@ -131,5 +129,8 @@ void loop() {
     }
 
     resonance.loop();
+  } else if (digitalRead(PIN_MODE) == 1) {
+    drawQRCode();
+    while (digitalRead(PIN_MODE) == 1);
   }
 }

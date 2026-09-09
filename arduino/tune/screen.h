@@ -2,6 +2,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_ST7789.h>
 #include <SPI.h>
+#include <qrcode.h>
 
 Adafruit_ST7789 tft = Adafruit_ST7789(PIN_CS, PIN_DC, PIN_RST);
 
@@ -109,4 +110,56 @@ void drawR() {
   tft.print(pgm_read_float(&value_R[getKnobValue(KNOB_R)]));
   tft.setCursor(200, 187);
   tft.print(getUnit(KNOB_R, pgm_read_word(&power_R[getKnobValue(KNOB_R)])));
+}
+
+void drawQRCode() {
+  // Initialize TFT
+  tft.init(240, 320);
+  tft.setRotation(2);
+  tft.fillScreen(ST77XX_WHITE);
+
+  // Create QR code
+  QRCode qrcode;
+
+  // Version 4 = 33x33 modules
+  uint8_t qrcodeData[qrcode_getBufferSize(4)];
+
+  qrcode_initText(
+    &qrcode,
+    qrcodeData,
+    4,
+    ECC_LOW,
+    "https://projectboom.rf.gd/analyze.php?code=t120m2"
+  );
+
+  // Size of each QR module in pixels
+  int scale = 5;
+
+  // Add 4-module quiet zone
+  int border = 4 * scale;
+
+  // Total QR size including border
+  int qrPixelSize = qrcode.size * scale + border * 2;
+
+  // Center on 240x320 screen
+  int x = (240 - qrPixelSize) / 2;
+  int y = (320 - qrPixelSize) / 2;
+
+  // White background
+  tft.fillScreen(ST77XX_WHITE);
+
+  // Draw QR code
+  for (uint8_t row = 0; row < qrcode.size; row++) {
+    for (uint8_t col = 0; col < qrcode.size; col++) {
+      if (qrcode_getModule(&qrcode, col, row)) {
+        tft.fillRect(
+          x + border + col * scale,
+          y + border + row * scale,
+          scale,
+          scale,
+          ST77XX_BLACK
+        );
+      }
+    }
+  }
 }
