@@ -95,8 +95,11 @@ class Caesar {
         duration[j + 1] = dit;
       }
 
+      melody[origLength * 2] = 0;
+      duration[origLength * 2] = dah;
+
       for (int i=2; i>=0; i--) {
-        int j = (2 - i) * 2 + origLength * 2;
+        int j = (2 - i) * 2 + origLength * 2 + 1;
 
         melody[j] = lowFreq;
         melody[j + 1] = 0;

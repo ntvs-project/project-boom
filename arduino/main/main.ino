@@ -32,8 +32,7 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 
 #ifdef FULL
 MB mb(0, 0);
-Folour folour(1, 0);
-// Grey   grey  (2, 1);
+Folour folour(0, 0); // 1, 0 (bar)
 #endif
 
 #ifdef SINGLE;
@@ -58,7 +57,6 @@ void setup() {
   #ifdef FULL
   mb.init();
   folour.init();
-  // grey.init();
   #endif
 
   #ifdef SINGLE;
@@ -91,11 +89,6 @@ void loop() {
     case  0: folour.miss(); break;
     case -1: break;
   }
-  // switch (grey.check()) {
-  //   case  1: grey.fini(); break;
-  //   case  0: grey.miss(); break;
-  //   case -1: break;
-  // }
   #endif
 
   #ifdef SINGLE;
@@ -116,8 +109,7 @@ void loop() {
 
   #ifdef FULL
   mb.loop();
-  folour.loop();
-  // grey.loop();
+  if (!folour.finished) folour.loop();
   #endif
 
   #ifdef SINGLE;

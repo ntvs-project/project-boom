@@ -69,6 +69,8 @@ class Folour {
     }
 
   public:
+    bool finished = false;
+
     Folour(uint8_t outputOffset, uint8_t inputOffset) {
       OUTOFF = outputOffset;
       INOFF  = inputOffset;
@@ -88,8 +90,6 @@ class Folour {
         swap(patterns[i][idx], patterns[i][length]);
         patternLen[i]++;
       }
-
-      // output.writeRange(OUTOFF, 1, 4, 1, 5, "11");
     }
 
     int8_t check() {
@@ -105,8 +105,8 @@ class Folour {
     }
 
     void fini() {
-      // output.writeRange(OUTOFF, 1, 4, 1, 5, "01");
-      output.writeAll(true);
+      output.write(OUTOFF, 1, 4, 1);
+      finished = true;
     }
 
     void miss() {
