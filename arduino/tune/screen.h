@@ -6,7 +6,6 @@
 
 Adafruit_ST7789 tft = Adafruit_ST7789(PIN_CS, PIN_DC, PIN_RST);
 
-bool dirtyF = true;
 bool dirtyL = true;
 bool dirtyC = true;
 bool dirtyR = true;
@@ -37,12 +36,11 @@ void initDebugScreen() {
   tft.print(B);
 }
 
-void requestF() { dirtyF = true; debugDirtyF = true; }
-void requestL() { dirtyL = true; debugDirtyL = true; }
-void requestC() { dirtyC = true; debugDirtyC = true; }
-void requestR() { dirtyR = true; debugDirtyR = true; }
+void requestF() { debugDirtyF = true; }
+void requestL() { debugDirtyL = true; dirtyL = true; }
+void requestC() { debugDirtyC = true; dirtyC = true; }
+void requestR() { debugDirtyR = true; dirtyR = true; }
 
-void drawF();
 void drawL();
 void drawC();
 void drawR();
@@ -75,14 +73,40 @@ void drawCircuitScreen() {
   tft.setTextWrap(false);
   tft.setTextSize(1);
 
-  tft.setCursor(114, 80);
-  tft.print("RRR");
+  if (dirtyL) drawL();
+  if (dirtyC) drawC();
+  if (dirtyR) drawR();
 
-  tft.setCursor(155, 118);
-  tft.print("CCC");
+  dirtyL = false;
+  dirtyC = false;
+  dirtyR = false;
+}
 
-  tft.setCursor(155, 194);
-  tft.print("LLL");
+void drawR() {
+  tft.fillRect(94, 79, 54, 7, 0x0);
+
+  tft.setCursor(94, 79);
+  tft.print( pgm_read_float(&value_R[getKnobValue(KNOB_R)]) );
+  tft.setCursor(137, 79);
+  tft.print( getUnit(KNOB_R, pgm_read_word(&power_R[getKnobValue(KNOB_R)])) );
+}
+
+void drawC() {
+  tft.fillRect(124, 118, 54, 7, 0x0);
+
+  tft.setCursor(124, 118);
+  tft.print( pgm_read_float(&value_C[getKnobValue(KNOB_C)]) );
+  tft.setCursor(167, 118);
+  tft.print( getUnit(KNOB_C, pgm_read_word(&power_C[getKnobValue(KNOB_C)])) );
+}
+
+void drawL() {
+  tft.fillRect(124, 193, 54, 7, 0x0);
+
+  tft.setCursor(124, 193);
+  tft.print( pgm_read_float(&value_L[getKnobValue(KNOB_L)]) );
+  tft.setCursor(167, 193);
+  tft.print( getUnit(KNOB_L, pgm_read_word(&power_L[getKnobValue(KNOB_L)])) );
 }
 
 void drawDebugScreen() {
