@@ -9,7 +9,7 @@ class Grey {
     short user;
 
     uint8_t idx = 0;
-    char*   led = "11111111";
+    char led[9] = "11111111";
     unsigned long prev;
     short freq = 700;
     short dit = 100;
@@ -80,7 +80,8 @@ class Grey {
     }
 
     void miss() {
-      output.writeRange(OUTOFF, 0, 0, 0, 7, "10101010");
+      strcpy(led, "11111111");
+      output.writeRange(OUTOFF, 0, 0, 0, 7, led);
     }
 
     void loop() {

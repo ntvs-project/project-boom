@@ -41,7 +41,7 @@ const uint8_t memFolourAnswers[][4] PROGMEM = {
   {_R, _R, _B, _G},
   {_G, _R, _B, _G},
   {_R, _B, _R, _B},
-  {_R, _G, _G, _R}
+  {_B, _G, _G, _R}
 };
 
 class Folour {

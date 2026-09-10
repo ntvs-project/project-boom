@@ -24,7 +24,8 @@ class Caesar {
     char user[5] = "----";
 
     uint8_t idx = 0;
-    char    led[8];
+    char led[9];
+    char ledBackup[9];
     unsigned int ansLength;
     unsigned int origLength;
   
@@ -82,6 +83,7 @@ class Caesar {
         led[i * 2 + 1] = '0';
       }
       led[4 * 2] = '\0';
+      strcpy(ledBackup, led);
 
       output.write(OUTOFF, 1, 0, 0);
       output.writeRange(OUTOFF, 0, 0, 0, 7, led);
@@ -130,7 +132,8 @@ class Caesar {
     }
 
     void miss() {
-      output.writeRange(OUTOFF, 0, 0, 0, 7, "10101010");
+      strcpy(led, ledBackup);
+      output.writeRange(OUTOFF, 0, 0, 0, 7, led);
     }
 
     void loop() {
