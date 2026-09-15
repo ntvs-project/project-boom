@@ -79,19 +79,34 @@ class Resonance {
       answerIndex = random(0, 8);
       memcpy_P(answer,memResonanceAnswers[answerIndex], sizeof(answer) - 1);
       answer[3] = pgm_read_byte(&memResonanceAnswers[answerIndex][YB + 3]);
-      for (int a : answer) {
-        Serial.print(a);
-        Serial.print(" ");
-      }
+      
+      Serial.print("answer | F:");
+      Serial.print( pgm_read_float(&value_F[answer[0]]) );
+      Serial.print( getUnit(KNOB_F, pgm_read_word(&power_F[answer[0]])) );
+      Serial.print(" L:");
+      Serial.print( pgm_read_float(&value_L[answer[1]]) );
+      Serial.print( getUnit(KNOB_L, pgm_read_word(&power_L[answer[1]])) );
+      Serial.print(" C:");
+      Serial.print( pgm_read_float(&value_C[answer[2]]) );
+      Serial.print( getUnit(KNOB_C, pgm_read_word(&power_C[answer[2]])) );
+      Serial.print(" R:");
+      Serial.print( pgm_read_float(&value_R[answer[3]]) );
+      Serial.print( getUnit(KNOB_R, pgm_read_word(&power_R[answer[3]])) );
+      Serial.println();
     }
 
     int8_t check() {
+      // if (memcmp(answer, user, sizeof(answer)) == 0) {
+      //   return 1;
+      // }
+      // return -1;
+
       if (memcmp(answer, user, sizeof(answer)) != 0) {
         prevCheck = millis();
         return -1;
       }
 
-      if (millis() - prevCheck > 1000) {
+      if (millis() - prevCheck >= 1000) {
         return 1;
       }
 
@@ -100,34 +115,46 @@ class Resonance {
 
     void fini() {
       digitalWrite(PIN_DONE, 1);
+
+      output.write(0, 0, 0, 0);
+      output.write(0, 0, 1, 0);
+      output.writeRange(OUTOFF, -1, 2, -1, 11, "0000000000");
+
+      drawCircuitScreen();
       while (true) {
         // printDebug();
-        drawDebugScreen();
-        output.update();
+        drawCircuitScreen();
+        // drawDebugScreen();
+        output.simpleUpdate();
       }
     }
 
-    void miss() {
-      // output.writeRange(OUTOFF, 0, 0, 0, 7, "10101010");
-    }
+    void miss() {} 
 
     void loop() {
+      uint8_t temp[] = {
+        getKnobValue(KNOB_F) / 10,
+        getKnobValue(KNOB_L),
+        getKnobValue(KNOB_C),
+        getKnobValue(KNOB_R)
+      };
       ledBar[user[0]] = '0';
-      if (user[0] != getKnobValue(KNOB_F) / 10) requestF();
-      if (user[1] != getKnobValue(KNOB_L)) requestL();
-      if (user[2] != getKnobValue(KNOB_C)) requestC();
-      if (user[3] != getKnobValue(KNOB_R)) requestR();
-      user[0] = getKnobValue(KNOB_F) / 10;
-      user[1] = getKnobValue(KNOB_L);
-      user[2] = getKnobValue(KNOB_C);
-      user[3] = getKnobValue(KNOB_R);
+      if (user[0] != temp[0]) requestF();
+      if (user[1] != temp[1]) requestL();
+      if (user[2] != temp[2]) requestC();
+      if (user[3] != temp[3]) requestR();
+      user[0] = temp[0];
+      user[1] = temp[1];
+      user[2] = temp[2];
+      user[3] = temp[3];
       ledBar[user[0]] = '1';
 
-      gapL = 5 + user[0] - answer[0];
-      gapR = 10 - gapL;
+      gapL = 8 + (user[0] - answer[0]);
+      gapR = 16 - gapL;
       if (gapL == gapR) blinkL = blinkR;
-      output.writeRange(OUTOFF, -1, 2, -1, 11, ledBar);
-
+      // Serial.print(gapL); Serial.print(" "); Serial.println(gapR);
       blink();
+
+      output.writeRange(OUTOFF, -1, 2, -1, 11, ledBar);
     }
 };

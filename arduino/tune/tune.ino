@@ -27,6 +27,12 @@ Output output(PIN_DATA, PIN_LATCH, PIN_CLOCK, OUTPUT_AMOUNT);
 
 uint8_t YB, Y, B;
 
+int readRaw(int pin) {
+  long sum = 0;
+  for (int i = 0; i < 8; i++) sum += analogRead(pin);
+  return sum / 8;
+}
+
 int clamp(int min, int val, int max) {
   if (val < min) return min;
   if (val > max) return max;
@@ -34,7 +40,9 @@ int clamp(int min, int val, int max) {
 }
 
 int getKnobValue(int knob) {
-  return (clamp(12, analogRead(knob), 1011) - 12) / 10;
+  const int MIN = 50;
+  const int MAX = 950;
+  return map(clamp(MIN, readRaw(knob), MAX), MIN, MAX, 0, 99);
 }
 
 String getUnit(int knob, int power) {
@@ -109,7 +117,7 @@ void setup() {
   digitalWrite(PIN_DONE, 0);
   Y = digitalRead(PIN_SIG_Y);
   B = digitalRead(PIN_SIG_B);
-  YB = Y << 1 + B;
+  YB = (Y << 1) + B;
 
   initScreen();
   // initDebugScreen();
