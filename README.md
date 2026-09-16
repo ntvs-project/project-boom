@@ -12,3 +12,5 @@
 - [HackMD - Brain](https://hackmd.io/6Ic-omSDQT-OIS2o7djPAg)
 - [HackMD - EN GDD](https://hackmd.io/XEWOY8ufTnWjvY05pFDO2Q)
 - [HackMD - ZH GDD](https://hackmd.io/@yiyi127/HkivyuwBGe)
+- [Canva](https://canva.link/cj269q2w8vbrt4i)
+- [Canva - View](https://canva.link/uwmv3buu2oc3tob)
