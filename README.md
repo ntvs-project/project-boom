@@ -1,9 +1,9 @@
 
 # Project BOOM!<br>孩子，你炸了！
 
-- Zina
-- Kuku
-- Yiyi
+- Zina `#ffccdd`
+- Kuku `#ffdd44`
+- Yiyi `#00cccc`
 
 ---
 
