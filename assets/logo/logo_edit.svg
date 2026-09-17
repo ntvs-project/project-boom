@@ -28,8 +28,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.4142136"
-     inkscape:cx="263.39727"
-     inkscape:cy="584.42374"
+     inkscape:cx="232.99168"
+     inkscape:cy="647.35626"
      inkscape:window-width="1920"
      inkscape:window-height="1018"
      inkscape:window-x="0"
@@ -58,7 +58,7 @@
        id="linearGradient9"
        inkscape:collect="always"><stop
          style="stop-color:#ffdd44;stop-opacity:0;"
-         offset="0"
+         offset="0.10006794"
          id="stop10" /><stop
          style="stop-color:#ffdd44;stop-opacity:1;"
          offset="0.80310804"
@@ -73,10 +73,10 @@
          id="stop86" /></linearGradient><linearGradient
        id="linearGradient83"
        inkscape:collect="always"><stop
-         style="stop-color:#365fba;stop-opacity:0;"
-         offset="0"
+         style="stop-color:#00cccc;stop-opacity:0;"
+         offset="0.09963485"
          id="stop83" /><stop
-         style="stop-color:#6699cc;stop-opacity:1;"
+         style="stop-color:#00cccc;stop-opacity:0.60000002;"
          offset="1"
          id="stop82" /></linearGradient><radialGradient
        inkscape:collect="always"
