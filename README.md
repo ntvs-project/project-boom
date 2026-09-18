@@ -15,7 +15,7 @@
 
 ---
 
-- [Realtime Colours](https://www.realtimecolors.com/?colors=07090e-f2f4f9-5974b1-d29fcd-c585a1&fonts=Inter-Inter)
+- [Realtime Colours](https://www.realtimecolors.com/?colors=07090e-f2f4f9-ffccdd-ffdd44-7799e5&fonts=Inter-Inter)
 - [Reference News](https://thembombs.com/daily-dramas/Zina-saves-11-people-on-an-airplane?champion)
 
 ---
