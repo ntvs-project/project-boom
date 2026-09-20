@@ -1,5 +1,5 @@
 // TEST, SINGLE, FULL
-#define FULL
+#define SINGLE
 // DEBUG, NODEBUG
 #define DEBUG
 
@@ -28,10 +28,11 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 #include "folour.h"
 #include "grey.h"
 #include "caesar.h"
-#include "test.h"
+#include "tune.h"
+// #include "test.h"
 
 #ifdef FULL
-MB mb(0, 0);
+MB mb(3, 3);
 Folour folour(0, 0); // 1, 0 (bar)
 Grey   grey(2, 1);
 Caesar caesar(2, 1);
@@ -39,8 +40,7 @@ Caesar caesar(2, 1);
 
 #ifdef SINGLE;
 MB mb(2, 1);
-Grey   grey(0, 0);
-Caesar caesar(0, 0);
+Tune tune(0, 0);
 #endif
 
 #ifdef TEST;
@@ -68,11 +68,7 @@ void setup() {
 
   #ifdef SINGLE;
   mb.init();
-  if (Y != B) {
-    grey.init();
-  } else {
-    caesar.init();
-  }
+  tune.init();
   #endif
 
   #ifdef TEST;
@@ -112,18 +108,10 @@ void loop() {
   #endif
 
   #ifdef SINGLE;
-  if (Y != B) {
-    switch (grey.check()) {
-      case  1: grey.fini(); break;
-      case  0: grey.miss(); break;
-      case -1: break;
-    }
-  } else {
-    switch (caesar.check()) {
-      case  1: caesar.fini(); break;
-      case  0: caesar.miss(); break;
-      case -1: break;
-    }
+  switch (tune.check()) {
+    case  1: tune.fini(); break;
+    case  0: tune.miss(); break;
+    case -1: break;
   }
   #endif
 
@@ -134,16 +122,12 @@ void loop() {
     grey.loop();
   } else {
     caesar.loop();
-  } 
+  }
   #endif
 
   #ifdef SINGLE;
   mb.loop();
-  if (Y != B) {
-    grey.loop();
-  } else {
-    caesar.loop();
-  }
+  tune.loop();
   #endif
 
   #ifdef TEST

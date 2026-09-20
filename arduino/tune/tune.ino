@@ -123,6 +123,7 @@ void setup() {
   // initDebugScreen();
   initCircuitScreen();
   resonance.init();
+  Serial.println("init");
 }
 
 void loop() {
@@ -142,8 +143,10 @@ void loop() {
     resonance.loop();
   } else if (digitalRead(PIN_MODE) == 1) {
     drawQRCode();
+    Serial.println("QR");
     while (digitalRead(PIN_MODE) == 1);
     initScreen();
     initCircuitScreen();
+    Serial.println("resonance");
   }
 }
