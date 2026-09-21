@@ -1,9 +1,4 @@
 
-const link = document.createElement("link");
-link.rel = "stylesheet";
-link.href = "./lib/components.css";
-document.head.appendChild(link);
-
 $("led").each( function () {
     this.setON = function () {
         $(this).attr("state", 1);
@@ -35,3 +30,23 @@ $("led").each( function () {
     if (state == 1) this.setON();
     if (state == 0) this.setOFF();
 } );
+
+var ctx = null;
+function beep(freq, ms, wait) {
+  if (wait === undefined) wait = 50;
+
+  if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+  ctx.resume();
+
+  var osc = ctx.createOscillator();
+  var gain = ctx.createGain();
+  osc.type = "square";
+  osc.frequency.value = freq;
+  gain.gain.value = 0.15;
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start();
+  osc.stop(ctx.currentTime + ms / 1000);
+
+  return new Promise(function (done) { setTimeout(done, ms + wait); });
+}
