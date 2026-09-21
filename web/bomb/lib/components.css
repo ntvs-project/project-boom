@@ -1,0 +1,17 @@
+
+led {
+    display: inline-block;
+    border-radius: 50%;
+    width:  30px;
+    height: 30px;
+}
+
+btn {
+    display: inline-block;
+    border-radius: 10px;
+    width:  30px;
+    height: 30px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
