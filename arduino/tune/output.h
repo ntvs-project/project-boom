@@ -8,7 +8,6 @@ class Output {
     uint8_t registerCount;
 
     uint8_t *bin;
-    uint8_t *pwm;
 
     int dutyCount = 0;
     int dutyPositive = 1;
@@ -36,7 +35,6 @@ class Output {
       registerCount = regCount;
 
       bin = new uint8_t[registerCount]();
-      pwm = new uint8_t[registerCount]();
       bin_bk = new uint8_t[registerCount]();
       prev = micros();
 
@@ -52,23 +50,6 @@ class Output {
         shiftOut(PIN_DATA, PIN_CLK, MSBFIRST, bin[i]);
       }
       digitalWrite(PIN_LATCH, 1);
-    }
-
-    void update() {
-      memcpy(bin_bk, bin, registerCount);
-
-      if (micros() - prev >= 200) {
-        dutyCount = (dutyCount + 1) % 10;
-        if (dutyCount <= dutyPositive) {
-          writeAll(bin, false);
-        } else {
-        writeAll(false);
-        }
-        prev += 200;
-      }
-
-      simpleUpdate();
-      memcpy(bin, bin_bk, registerCount);
     }
 
     // read
@@ -123,18 +104,6 @@ class Output {
     void writeAll(bool sig) {
       for (uint8_t s = 0; s < registerCount; s++) {
         bin[s] = sig ? 0xFF : 0x00;
-      }
-    }
-
-    // pwm
-    void pwmSet(uint8_t OUTOFF, int8_t set, uint8_t pin, bool sig) {
-      getSetPin(OUTOFF, set, pin);
-      bitWrite(pwm[set], pin, sig);
-    }
-
-    void pwmAll(bool sig) {
-      for (uint8_t s = 0; s < registerCount; s++) {
-        pwm[s] = sig ? 0xFF : 0x00;
       }
     }
 };

@@ -125,7 +125,7 @@ class Caesar {
       output.write(OUTOFF, 1, 0, 1);
       output.writeRange(OUTOFF, 0, 0, 0, 7, "00000000");
       while (true) {
-        output.update();
+        output.simpleUpdate();
         buzzer.turnOFF();
         buzzer.loop();
       }

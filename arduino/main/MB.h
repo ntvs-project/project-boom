@@ -37,7 +37,7 @@ class MB {
       buzzer.beep(3000, 0, NOTE_C8);
       while (true) {
         buzzer.loop();
-        output.update();
+        output.simpleUpdate();
       }
     }
 
@@ -76,7 +76,7 @@ class MB {
             minute = 0;
             second = 0;
             miss();
-            while (true) output.update();
+            while (true) output.simpleUpdate();
           }
         }
         // if (second != 0) {

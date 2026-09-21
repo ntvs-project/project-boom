@@ -13,8 +13,8 @@
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 4
-#define INPUT_AMOUNT  2
+#define OUTPUT_AMOUNT 1 //4
+#define INPUT_AMOUNT  1 //2
 
 uint8_t YB, Y, B, mis;
 
@@ -50,7 +50,6 @@ Test test(0, 0);
 void setup() {
   Serial.begin(9600);
 
-  output.pwmAll(false);
   randomSeed(analogRead(A0) + micros());
 
   pinMode(YELLOW, OUTPUT);
@@ -83,7 +82,7 @@ void loop() {
   #endif
 
   buzzer.loop();
-  output.update();
+  output.simpleUpdate();
   input.update();
 
   #ifdef FULL
