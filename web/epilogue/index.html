@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project BOOM</title>
+
+    <script src="./htmx.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main hx-trigger="load"
+          hx-get="./epilogue.php"
+          hx-vals="js:{...Object.fromEntries(new URLSearchParams(location.search))}">
+          你是誰？
+    </main>
+</body>
+</html>

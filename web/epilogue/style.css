@@ -1,0 +1,23 @@
+
+* {
+    font-size: 30px;
+}
+
+body {
+    width:  100dvw;
+    height: 100dvh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
