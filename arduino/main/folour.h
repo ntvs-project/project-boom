@@ -107,6 +107,7 @@ class Folour {
     void fini() {
       output.write(OUTOFF, 1, 4, 1);
       finished = true;
+      moduleFinished++;
     }
 
     void miss() {

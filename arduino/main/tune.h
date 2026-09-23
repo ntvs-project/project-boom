@@ -3,7 +3,7 @@ class Tune {
   private:
     uint8_t INOFF;
     uint8_t OUTOFF;
-    bool isQR = true;
+    bool isQR = 0;
 
   public:
     Tune(uint8_t outputOffset, uint8_t inputOffset) {
@@ -27,5 +27,12 @@ class Tune {
     }
 
     void loop() {
+      isQR = input.readRaw(OUTOFF, 0, 0);
+      if (isQR) {
+        Serial.println(isQR);
+        output.write(OUTOFF, 0, 0, isQR);
+        output.simpleUpdate();
+        while (1) {}
+      }
     }
 };

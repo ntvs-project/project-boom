@@ -109,5 +109,11 @@ class Input {
       return false;
     }
 
+    bool readRaw(uint8_t INOFF, int8_t set, uint8_t pin) {
+      getSetPin(INOFF, set, pin);
+      pin = 7 - pin;
+      return bitRead(curr[set], pin);
+    }
+
     uint8_t raw(uint8_t i) { return curr[i]; }
 };

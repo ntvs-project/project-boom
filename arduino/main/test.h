@@ -24,10 +24,12 @@ class Test {
     }
 
     void loop() {
-      if (input.readReleased(0, 0, 0)) {
-        delay(20);
-        while (input.readReleased(0, 0, 0));
-        Serial.println("pressed");
+      for (int i=0; i<16; i++) {
+        if (input.readReleased(INOFF, -1, i)) {
+          delay(20);
+          while (input.readReleased(INOFF, -1, i));
+          Serial.println(i);
+        }
       }
     }
 };

@@ -1,5 +1,5 @@
 // TEST, SINGLE, FULL
-#define SINGLE
+#define FULL
 // DEBUG, NODEBUG
 #define DEBUG
 
@@ -13,10 +13,12 @@
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 1 //4
-#define INPUT_AMOUNT  1 //2
+#define OUTPUT_AMOUNT 4
+#define INPUT_AMOUNT  2
+#define BOARD_AMOUNT  2
 
 uint8_t YB, Y, B, mis;
+uint8_t moduleFinished = 0;
 
 Output output(8, 9, 10, OUTPUT_AMOUNT);
 Input input(11, 12, 13, INPUT_AMOUNT);
@@ -29,7 +31,7 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 #include "grey.h"
 #include "caesar.h"
 #include "tune.h"
-// #include "test.h"
+#include "test.h"
 
 #ifdef FULL
 MB mb(3, 3);
@@ -78,10 +80,9 @@ void setup() {
 void loop() {
   #ifdef DEBUG
   mis = 0;
-  mb.resetTimer();
+  // mb.resetTimer();
   #endif
 
-  buzzer.loop();
   output.simpleUpdate();
   input.update();
 
@@ -117,10 +118,15 @@ void loop() {
   #ifdef FULL
   mb.loop();
   if (!folour.finished) folour.loop();
-  if (Y != B) {
-    grey.loop();
-  } else {
-    caesar.loop();
+
+  if (moduleFinished == BOARD_AMOUNT - 1) {
+    buzzer.loop();
+
+    if (Y != B) {
+      grey.loop();
+    } else {
+      caesar.loop();
+    }
   }
   #endif
 

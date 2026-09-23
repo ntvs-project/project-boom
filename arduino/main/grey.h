@@ -31,6 +31,8 @@ class Grey {
     }
 
   public:
+    bool finished = false;
+
     Grey(uint8_t outputOffset, uint8_t inputOffset) {
       OUTOFF = outputOffset;
       INOFF  = inputOffset;
@@ -72,6 +74,7 @@ class Grey {
     void fini() {
       output.write(OUTOFF, 1, 0, 1);
       output.writeRange(OUTOFF, 0, 0, 0, 7, "00000000");
+      finished++;
       while (true) {
         output.simpleUpdate();
         buzzer.turnOFF();

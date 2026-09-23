@@ -107,7 +107,7 @@ void setup() {
   Serial.begin(9600);
   randomSeed(analogRead(PIN_RANDOM));
 
-  pinMode(PIN_MODE, INPUT_PULLUP);
+  pinMode(PIN_MODE, INPU);
   pinMode(PIN_DONE, OUTPUT);
   pinMode(PIN_SIG_Y, INPUT_PULLUP);
   pinMode(PIN_SIG_B, INPUT_PULLUP);
