@@ -53,6 +53,7 @@ let user      = ["-", "-", "-", "-"];
 let inputIdx  = 0;
 
 function check () {
+    console.log("inputIdx: " + inputIdx);
     if (isGrey) {
         return ( toBinary(answer) == user.join("") );
     } else {
@@ -66,7 +67,7 @@ function setup() {
             this.setColour("white")
             this.setON();
         } else {
-            if (morseCode[cipher].split("")[idx] == "-") {
+            if (morseCode[answer].split("")[idx] == "-") {
                 this.setOFF();
             } else {
                 this.setColour("white");
@@ -95,14 +96,14 @@ function update() {
 }
 
 $("#btn").on("pressed", () => {
-    console.log(inputIdx);
+    console.log("pressed: " + inputIdx);
     user[inputIdx] = 0;
     
     update();
 });
 
 $("#btn").on("hold", () => {
-    console.log(inputIdx);
+    console.log("hold: " + inputIdx);
     user[inputIdx] = 1;
     
     update();

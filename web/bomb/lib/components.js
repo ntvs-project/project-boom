@@ -34,29 +34,33 @@ $("led").each( function () {
 } );
 
 // button
-$("btn").each( function () {
+$("btn").each(function () {
     const holdDuration = 500;
     let holdTimer;
     let holdFired = false;
 
-    $(this).on("mousedown touchstart", function (e) {
+    $(this).on("pointerdown", function (e) {
+        e.preventDefault();
+
         holdFired = false;
         clearTimeout(holdTimer);
+
         holdTimer = setTimeout(() => {
             holdFired = true;
             $(this).trigger("hold");
         }, holdDuration);
     });
-    
-    $(this).on("mouseup touchend touchcancel", function () {
-        clearTimeout(holdTimer);
-        if (!holdFired) $(this).trigger("pressed");
-    });
 
-    $(this).on("mouseleave", function () {
+    $(this).on("pointerup pointercancel pointerleave", function (e) {
+        e.preventDefault();
+
         clearTimeout(holdTimer);
+
+        if (!holdFired && e.type === "pointerup") {
+            $(this).trigger("pressed");
+        }
     });
-} );
+});
 
 // buzzer
 var ctx = null;
