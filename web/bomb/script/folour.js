@@ -2,32 +2,32 @@
 const _R = "red";
 const _G = "green";
 const _B = "blue";
-const _W = "white";
+const _T = "transparent";
 
 const memFolourPatterns = [
     [
-        [_G, _R, _B, _B, _W],
-        [_R, _B, _R, _B, _G, _W],
-        [_R, _R, _B, _G, _G, _W],
-        [_B, _B, _R, _G, _W],
+        [_G, _R, _B, _B, _T],
+        [_R, _B, _R, _B, _G, _T],
+        [_R, _R, _B, _G, _G, _T],
+        [_B, _B, _R, _G, _T],
     ],
     [
-        [_G, _R, _G, _B, _W],
-        [_R, _B, _G, _W],
-        [_G, _R, _B, _R, _G, _W],
-        [_G, _B, _R, _W],
+        [_G, _R, _G, _B, _T],
+        [_R, _B, _G, _T],
+        [_G, _R, _B, _R, _G, _T],
+        [_G, _B, _R, _T],
     ],
     [
-        [_R, _G, _B, _G, _R, _W],
-        [_B, _G, _R, _G, _G, _W],
-        [_B, _R, _G, _B, _W],
-        [_G, _R, _R, _B, _W],
+        [_R, _G, _B, _G, _R, _T],
+        [_B, _G, _R, _G, _G, _T],
+        [_B, _R, _G, _B, _T],
+        [_G, _R, _R, _B, _T],
     ],
     [
-        [_R, _G, _B, _B, _W],
-        [_R, _G, _B, _G, _B, _W],
-        [_B, _R, _G, _R, _W],
-        [_G, _G, _R, _G, _R, _W],
+        [_R, _G, _B, _B, _T],
+        [_R, _G, _B, _G, _B, _T],
+        [_B, _R, _G, _R, _T],
+        [_G, _G, _R, _G, _R, _T],
     ],
 ];
 

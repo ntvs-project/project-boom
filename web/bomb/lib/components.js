@@ -1,13 +1,14 @@
 
+// led
 $("led").each( function () {
-    this.setON = function () {
-        $(this).attr("state", 1);
+    this.setON = function (inner=false) {
+        if (!inner) $(this).attr("state", 1);
         $(this).css("backgroundColor", $(this).attr("colour"));
         $(this).css("border", "");
     }
     
-    this.setOFF = function () {
-        $(this).attr("state", 0);
+    this.setOFF = function (inner=false) {
+        if (!inner) $(this).attr("state", 0);
         $(this).css("backgroundColor", "transparent");
         $(this).css("border", "2px solid black");
     }
@@ -20,7 +21,8 @@ $("led").each( function () {
 
     this.setColour = function (colour) {
         $(this).attr("colour", colour);
-        if ($(this).attr("state") == "1") $(this).css("backgroundColor", colour);
+        if ($(this).attr("state") == "0" || colour == "transparent") this.setOFF(true);
+        else this.setON(true);
     }
 
     this.setColour($(this).attr("colour"));
@@ -31,6 +33,32 @@ $("led").each( function () {
     if (state == 0) this.setOFF();
 } );
 
+// button
+$("btn").each( function () {
+    const holdDuration = 500;
+    let holdTimer;
+    let holdFired = false;
+
+    $(this).on("mousedown touchstart", function (e) {
+        holdFired = false;
+        clearTimeout(holdTimer);
+        holdTimer = setTimeout(() => {
+            holdFired = true;
+            $(this).trigger("hold");
+        }, holdDuration);
+    });
+    
+    $(this).on("mouseup touchend touchcancel", function () {
+        clearTimeout(holdTimer);
+        if (!holdFired) $(this).trigger("pressed");
+    });
+
+    $(this).on("mouseleave", function () {
+        clearTimeout(holdTimer);
+    });
+} );
+
+// buzzer
 var ctx = null;
 function beep(freq, ms, wait) {
   if (wait === undefined) wait = 50;
@@ -42,7 +70,7 @@ function beep(freq, ms, wait) {
   var gain = ctx.createGain();
   osc.type = "square";
   osc.frequency.value = freq;
-  gain.gain.value = 0.15;
+  gain.gain.value = 0.05; // volume
   osc.connect(gain);
   gain.connect(ctx.destination);
   osc.start();
