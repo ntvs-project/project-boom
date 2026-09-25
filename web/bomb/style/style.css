@@ -1,14 +1,29 @@
 
+@font-face {
+  font-family: "jf";
+  src: url("/assets/jf-openhuninn-1.1.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    min-height: 100dvh;
     overflow: hidden;
-    width:  100dvw;
-    height: 100dvh;
-    user-select: none;
+
+    font-family: "jf";
     background-color: #ddd;
+    user-select: none;
 }
 
 div.col {
@@ -16,7 +31,7 @@ div.col {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 div.row {
@@ -24,7 +39,7 @@ div.row {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 main {
@@ -34,4 +49,49 @@ main {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+#back, #float {
+    position: fixed;
+    left: 10px;
+    top:  10px;
+
+    width: 50px;
+    height: 50px;
+
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>⬅</text></svg>"), auto;
+    
+    &:hover  { background-color: #eee; }
+    &:active { background-color: #aaa; }
+
+    a {
+        all: unset;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+        font-size: 30px;
+        font-weight: 1000;
+    }
+}
+
+#float {
+    left: initial;
+    top:  initial;
+    right:  20px; 
+    bottom: 20px;
+
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>↗</text></svg>"), auto;
 }
