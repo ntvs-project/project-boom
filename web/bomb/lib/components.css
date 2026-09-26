@@ -13,8 +13,6 @@ led {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    width:  60px;
-    height: 60px;
 }
 
 seg7 {
@@ -29,7 +27,6 @@ seg7 {
 
     border: 2px solid #000;
     border-radius: 10px;
-    /* padding: var(--padding); */
 
     & > * {
         position: absolute;
@@ -47,51 +44,95 @@ seg7 {
         /* border: 2px solid #000; */
     }
 
-    digit7a, digit7d, digit7g {
+    seg7a, seg7d, seg7g {
         width:  var(--length);
         height: var(--width);
     }
 
-    digit7a {
+    seg7a {
         top:  calc(var(--padding));
         left: calc(var(--padding) + 1 * var(--width));
     }
 
-    digit7b {
+    seg7b {
         top:  calc(var(--padding) + 1 * var(--width));
         left: calc(var(--padding) + 1 * var(--length) + 1 * var(--width));
     }
 
-    digit7c {
+    seg7c {
         top:  calc(var(--padding) + 1 * var(--length) + 2 * var(--width));
         left: calc(var(--padding) + 1 * var(--length) + 1 * var(--width));
     }
 
-    digit7d {
+    seg7d {
         top:  calc(var(--padding) + 2 * var(--width) + 2 * var(--length));
         left: calc(var(--padding) + 1 * var(--width));
     }
 
-    digit7e {
+    seg7e {
         top:  calc(var(--padding) + 1 * var(--length) + 2 * var(--width));
         left: calc(var(--padding));
     }
 
-    digit7f {
+    seg7f {
         top:  calc(var(--padding) + 1 * var(--width));
         left: calc(var(--padding));
     }
 
-    digit7g {
+    seg7g {
         left: calc(var(--padding) + 1 * var(--width));
         top:  calc(var(--padding) + 1 * var(--width) + 1 * var(--length));
     }
 
-    digit7p {
+    seg7p {
         left: calc(var(--padding) + 2 * var(--width) + 1 * var(--length));
         top:  calc(var(--padding) + 2 * var(--width) + 2 * var(--length));
         width:  var(--width);
         height: var(--width);
+    }
+}
+
+seg7quad {
+    background-color: #fff;
+    display: inline-flex;
+    border: 2px solid #000;
+    border-radius: 10px;
+
+    seg7 {
+        border: none;
+        background-color: transparent;
+    }
+
+    seg7colon {
+        --width: 5px;
+
+        width: var(--width);
+        display: inline-flex;
+        position: relative;
+
+        & > * {
+            position: absolute;
+            display: block;
+            width:  var(--width);
+            height: var(--width);
+        }
+
+        & > *:nth-child(1) {
+            top: calc(5 * var(--width));
+        }
+
+        & > *:nth-child(2) {
+            top: calc(9 * var(--width));
+        }
+
+        &[state="1"] > * {
+            background-color: red;
+        }
+
+        &[state="0"] > * {
+            background-color: transparent;
+            border: 2px solid #000;
+        }
     }
 }
 
@@ -102,8 +143,6 @@ btn {
     align-items: center;
     background-color: #fff;
     border-radius: 20px;
-    width:  60px;
-    height: 60px;
     cursor: pointer;
     border: 2px solid black;
 
@@ -126,4 +165,31 @@ matrix {
     border: 2px solid #000;
     border-radius: 20px;
     background-color: #eee;
+}
+
+knob {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 3px solid #000;
+
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    cursor: ns-resize;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: calc(50% - 1.5px);
+        top: 0;
+        width:  3px;
+        height: 15px;
+        background-color: black;
+    }
+
+    rotate: -170deg;
 }

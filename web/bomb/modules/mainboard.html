@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainboard</title>
+    <script src="/bomb/lib/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="/bomb/lib/components.css">
+    <link rel="stylesheet" href="/bomb/style/style.css">
+    <link rel="stylesheet" href="/bomb/style/mainboard.css">
+</head>
+<body>
+    <div id="back">
+        <a href="/bomb/index.html">&lt;</a>
+    </div>
+    <div id="float">
+        <a href="https://projectboom.rf.gd/manual.pdf#page=4" target="_blank">📘</a>
+    </div>
+
+    <h1>Mainboard</h1>
+	<main>
+        <div>
+            <seg7quad num="1000"></seg7quad>
+            <div id="YB">
+                <led id="ledY" colour="yellow"></led>
+                <led id="ledB" colour="blue"></led>
+            </div>
+        </div>
+        <div>
+            <div id="miss">
+                <led id="ledM1" colour="red" state="0"></led>
+                <led id="ledM2" colour="red" state="0"></led>
+                <led id="ledM3" colour="red" state="0"></led>
+            </div>
+        </div>
+    </main>
+
+	<script src="/bomb/lib/components.js"></script>
+    <script src="/bomb/script/mainboard.js"></script>
+</body>
+</html>

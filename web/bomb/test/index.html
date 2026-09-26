@@ -6,6 +6,7 @@
     <script src="/bomb/lib/jquery-4.0.0.min.js"></script>
 	<link rel="stylesheet" href="/bomb/style/style.css">
 	<link rel="stylesheet" href="/bomb/lib/components.css">
+	<link rel="stylesheet" href="/bomb/test/test.css">
 </head>
 <body>
 	<h1>Test</h1>
@@ -16,10 +17,13 @@
 		<led id="led2" colour="red"  state="0"></led>
 		
 		<h3>7 Segment Display</h3>
-		<seg7 id="7seg1">1111110_0</seg7>
+		<seg7 id="7seg1" colour="green" seg="1111110_0"></seg7>
 		<seg7 id="7seg2" num="3."></seg7>
 		<seg7 id="7seg3" num="1"></seg7>
-		<seg7 id="7seg4">1011111_0</seg7>
+		<seg7 id="7seg4" size="6" seg="1011111_0"></seg7>
+		
+		<h3>Quad 7 Segment Display</h3>
+		<seg7quad num="1234" colour="pink"></seg7quad>
 
 		<h3>Button</h3>
 		<btn id="btn1"></btn>
@@ -48,9 +52,15 @@
 			<btn value="D">D</btn>
 		</matrix>
 
+		<h3>Knob</h3>
+		<knob min="0" max="9"></knob>
+		<knob min="0" max="99"></knob>
+
 		<h3>Buzzer</h3>
 		<btn id="btn3">grey</btn>
 		<btn id="btn4">caesar</btn>
+
+		<br><br><br>
 	</div>
 
 	<script src="/bomb/lib/components.js"></script>

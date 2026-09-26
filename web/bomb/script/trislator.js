@@ -4,7 +4,7 @@ $("#ledY")[0].setState(YB >> 1);
 $("#ledB")[0].setState(YB % 2);
 
 const answer = [
-    "0454", "0316", "0268", "2502"
+    "0454", "0326", "0268", "2502"
 ];
 
 let segments;
@@ -61,35 +61,37 @@ function setup() {
     $second[3].setSegment("");
 }
 
-async function check () {
+function check () {
     return (user.join("") == answer[YB]);
-}
-
-function update() {
-    $second[inputIdx].setSegment(segNumber[user[inputIdx]] + (inputIdx == 0 ? "1" : "0"));
-    inputIdx++;
-
-    if (inputIdx == 4) {
-        if (check()) {
-            alert("you win!");
-            location.href = "/";
-        } else {
-            inputIdx = 0;
-            user = ["", "", "", ""];
-
-            setup();
-        }
-    }
 }
 
 $("matrix btn").each(function (idx) {
     $(this).on("click", () => {
         value = $(this).attr("value");
         if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(value)) {
+            if (inputIdx >= 4) return;
             user[inputIdx] = value;
-            update();
+            $second[inputIdx].setSegment(segNumber[user[inputIdx]] + (inputIdx == 0 ? "1" : "0"));
+            inputIdx++;
         }
 
+        if (value == "*") {
+            if (inputIdx <= 0) return;
+            user[--inputIdx] = "";
+            $second[inputIdx].setSegment("0000000" + (inputIdx == 0 ? "1" : "0"));
+        }
+
+        if (value == "#") {
+            if (check()) {
+                alert("you win!");
+                location.href = "/";
+            } else {
+                inputIdx = 0;
+                user = ["", "", "", ""];
+
+                setup();
+            }
+        }
     });
 });
 
