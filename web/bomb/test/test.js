@@ -41,4 +41,4 @@ $("#btn4").on("click", async function () {
 
 $("matrix")[0].setColour("#F5DEB3");
 $("matrix btn").each( function () { this.setColour("#FAEBD7"); } )
-$("matrix btn").on("click", function () { alert(`button "${ $(this).text() }" is clicked`); } );
+$("matrix btn").on("click", function () { alert(`button "${ $(this).attr("value") }" is clicked`); } );

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folour</title>
+    <script src="/bomb/lib/jquery-4.0.0.min.js"></script>
+    <link rel="stylesheet" href="/bomb/lib/components.css">
+    <link rel="stylesheet" href="/bomb/style/style.css">
+    <link rel="stylesheet" href="/bomb/style/trislator.css">
+</head>
+<body>
+    <div id="back">
+        <a href="/bomb/index.html">&lt;</a>
+    </div>
+    <div id="float">
+        <a href="https://projectboom.rf.gd/manual.pdf#page=8" target="_blank">📘</a>
+    </div>
+
+    <h1>Trislator</h1>
+    <div id="YB">
+        <led id="ledY" colour="yellow"></led>
+        <led id="ledB" colour="blue"></led>
+    </div>
+	<main>
+        <div class="col" id="display">
+            <div class="row">
+                <seg7 class="hidden"></seg7>
+                <seg7 id="seg11"></seg7>
+                <seg7 id="seg12"></seg7>
+                <seg7 id="seg13"></seg7>
+                <seg7 id="seg14"></seg7>
+                <seg7 id="seg15"></seg7>
+                <seg7 id="seg16"></seg7>
+            </div>
+            <div class="row">
+                <seg7>0001001</seg7>
+                <seg7 id="seg21">00000001</seg7>
+                <seg7 id="seg22"></seg7>
+                <seg7 id="seg23"></seg7>
+                <seg7 id="seg24"></seg7>
+            </div>
+        </div>
+
+        <matrix col="4" row="4" gap="10">
+			<btn id="btn1" value="1">1</btn>
+			<btn id="btn2" value="2">2</btn>
+			<btn id="btn3" value="3">3</btn>
+			<btn id="btnA" value="A">A</btn>
+
+			<btn id="btn4" value="4">4</btn>
+			<btn id="btn5" value="5">5</btn>
+			<btn id="btn6" value="6">6</btn>
+			<btn id="btnB" value="B">B</btn>
+
+			<btn id="btn7" value="7">7</btn>
+			<btn id="btn8" value="8">8</btn>
+			<btn id="btn9" value="9">9</btn>
+			<btn id="btnC" value="C">C</btn>
+
+			<btn id="btnT" value="*">*</btn>
+			<btn id="btn0" value="0">0</btn>
+			<btn id="btnH" value="#">#</btn>
+			<btn id="btnD" value="D">D</btn>
+		</matrix>
+    </main>
+
+	<script src="/bomb/lib/components.js"></script>
+    <script src="/bomb/script/trislator.js"></script>
+</body>
+</html>

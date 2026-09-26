@@ -1,0 +1,14 @@
+
+#display {
+    gap: 5px;
+    align-items: start;
+
+    & > div {
+        gap: 5px;
+    }
+}
+
+main {
+    justify-content: center;
+    gap: 10%;
+}

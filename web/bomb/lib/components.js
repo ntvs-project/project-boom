@@ -36,7 +36,7 @@ $("led").each( function () {
 } );
 
 // 7seg
-const segments = [
+const segmentsNumber = [
     "1111110",
     "0110000",
     "1101101",
@@ -71,7 +71,7 @@ $("seg7").each( function () {
     let $seg = ($(this).text()).replace("_", "");
     let $num = $(this).attr("num");
     if ($num) {
-        $seg = segments[+$num] + ($num[1] == "." ? "1" : "0");
+        $seg = segmentsNumber[+$num] + ($num[1] == "." ? "1" : "0");
     }
 
     $(this).text("");
