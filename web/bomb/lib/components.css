@@ -1,9 +1,9 @@
 
-html, body {
-    touch-action: manipulation;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
+html, body, * {
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+  touch-action: manipulation;
 }
 
 led {
