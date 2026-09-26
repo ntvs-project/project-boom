@@ -1,29 +1,22 @@
 
-$led1 = $("#led1");
-$led2 = $("#led2");
-
-$btn1 = $("#btn1");
-$btn2 = $("#btn2");
-$btn3 = $("#btn3");
-$btn4 = $("#btn4");
-
-$btn1.on("click", function () {
-    if ($led1.attr("colour") == "magenta") {
-        $led1[0].setColour("orange");
+$("#btn1").on("click", function () {
+    if ($("#led1").attr("colour") == "magenta") {
+        $("#led1")[0].setColour("orange");
     } else {
-        $led1[0].setColour("magenta");
+        $("#led1")[0].setColour("magenta");
     }
 });
 
-$btn2.on("click", function () {
-    if ($led2.attr("state") == 1) {
-        $led2[0].setOFF();
+$("#btn2")[0].setColour("red");
+$("#btn2").on("click", function () {
+    if ($("#led2").attr("state") == 1) {
+        $("#led2")[0].setOFF();
     } else {
-        $led2[0].setON();
+        $("#led2")[0].setON();
     }
 });
 
-$btn3.on("click", async function () {
+$("#btn3").on("click", async function () {
     const dih = 100;
     const dah = dih * 3;
 
@@ -33,7 +26,7 @@ $btn3.on("click", async function () {
     await beep(700, dah);
 } );
 
-$btn4.on("click", async function () {
+$("#btn4").on("click", async function () {
     const dih = 100;
     const dah = dih * 3;
 
@@ -45,3 +38,7 @@ $btn4.on("click", async function () {
     await beep(500, dah);
     await beep(500, dah);
 } );
+
+$("matrix")[0].setColour("#F5DEB3");
+$("matrix btn").each( function () { this.setColour("#FAEBD7"); } )
+$("matrix btn").on("click", function () { alert(`button "${ $(this).text() }" is clicked`); } );

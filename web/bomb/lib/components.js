@@ -50,6 +50,24 @@ const segments = [
 ];
 
 $("seg7").each( function () {
+    this.setColour = function (colour) {
+        $(this).attr("colour", colour);
+        $(this).css("backgroundColor", $(this).attr("colour"));
+    }
+
+    this.setSegment = function (seg) {
+        $(this).html(`
+            <digit7a state="${seg[0]}"></digit7a>
+            <digit7b state="${seg[1]}"></digit7b>
+            <digit7c state="${seg[2]}"></digit7c>
+            <digit7d state="${seg[3]}"></digit7d>
+            <digit7e state="${seg[4]}"></digit7e>
+            <digit7f state="${seg[5]}"></digit7f>
+            <digit7g state="${seg[6]}"></digit7g>
+            <digit7p state="${seg[7]}"></digit7p>
+        `);
+    };
+
     let $seg = ($(this).text()).replace("_", "");
     let $num = $(this).attr("num");
     if ($num) {
@@ -57,20 +75,17 @@ $("seg7").each( function () {
     }
 
     $(this).text("");
-    $(this).html(`
-        <digit7a state="${$seg[0]}"></digit7a>
-        <digit7b state="${$seg[1]}"></digit7b>
-        <digit7c state="${$seg[2]}"></digit7c>
-        <digit7d state="${$seg[3]}"></digit7d>
-        <digit7e state="${$seg[4]}"></digit7e>
-        <digit7f state="${$seg[5]}"></digit7f>
-        <digit7g state="${$seg[6]}"></digit7g>
-        <digit7p state="${$seg[7]}"></digit7p>
-    `);
+    this.setColour($(this).attr("colour"));
+    this.setSegment($seg);
 } );
 
 // button
 $("btn").each( function () {
+    this.setColour = function (colour) {
+        $(this).attr("colour", colour);
+        $(this).css("backgroundColor", $(this).attr("colour"));
+    }
+
     const holdDuration = 500;
     let holdTimer;
     let holdFired = false;
@@ -96,6 +111,19 @@ $("btn").each( function () {
             $(this).trigger("pressed");
         }
     });
+
+    this.setColour($(this).attr("colour"));
+} );
+
+// matrix
+$("matrix").each( function () {
+    this.setColour = function (colour) {
+        $(this).attr("colour", colour);
+        $(this).css("backgroundColor", $(this).attr("colour"));
+    }
+
+    $(this).css("grid-template-columns", `repeat(${$(this).attr("col")}, max-content)`);
+    $(this).css("grid-template-rows", `repeat(${$(this).attr("row")}, max-content)`);
 } );
 
 // buzzer
