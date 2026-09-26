@@ -12,3 +12,17 @@ main {
     justify-content: center;
     gap: 10%;
 }
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+
+    #display {
+        transform: scale(70%);
+    }
+
+    matrix {
+        transform: scale(70%);
+    }
+}
