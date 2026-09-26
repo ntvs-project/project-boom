@@ -1,9 +1,10 @@
 
 @font-face {
   font-family: "jf";
-  src: url("/bomb/assets/jf-openhuninn-1.1.ttf") format("truetype");
+  src: url("/bomb/assets/jf-openhuninn-1.1.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 html, body {
@@ -21,7 +22,7 @@ body {
     min-height: 100dvh;
     overflow: hidden;
 
-    font-family: "jf";
+    font-family: "jf", sans-serif;
     background-color: #ddd;
     user-select: none;
 }
