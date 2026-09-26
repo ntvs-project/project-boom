@@ -4,16 +4,95 @@ html, body, * {
   -webkit-touch-callout: none !important;
   user-select: none !important;
   touch-action: manipulation;
+
+  box-sizing: border-box;
 }
 
 led {
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     width:  60px;
     height: 60px;
+}
+
+seg7 {
+    --padding: 10px;
+    --width:    5px;
+    --length:  20px;
+
+    height: calc(2 * var(--padding) + 4 * var(--width) + 2 * var(--length));
+    width:  calc(2 * var(--padding) + 3 * var(--width) + 1 * var(--length));
+    display: inline-flex;
+    position: relative;
+
+    border: 2px solid #000;
+    border-radius: 10px;
+    /* padding: var(--padding); */
+
+    & > * {
+        position: absolute;
+        display: block;
+        width:  var(--width);
+        height: var(--length);
+    }
+
+    & > *[state="1"] {
+        background-color: red;
+    }
+
+    & > *[state="0"] {
+        background-color: transparent;
+        /* border: 2px solid #000; */
+    }
+
+    digit7a, digit7d, digit7g {
+        width:  var(--length);
+        height: var(--width);
+    }
+
+    digit7a {
+        top:  calc(var(--padding));
+        left: calc(var(--padding) + 1 * var(--width));
+    }
+
+    digit7b {
+        top:  calc(var(--padding) + 1 * var(--width));
+        left: calc(var(--padding) + 1 * var(--length) + 1 * var(--width));
+    }
+
+    digit7c {
+        top:  calc(var(--padding) + 1 * var(--length) + 2 * var(--width));
+        left: calc(var(--padding) + 1 * var(--length) + 1 * var(--width));
+    }
+
+    digit7d {
+        top:  calc(var(--padding) + 2 * var(--width) + 2 * var(--length));
+        left: calc(var(--padding) + 1 * var(--width));
+    }
+
+    digit7e {
+        top:  calc(var(--padding) + 1 * var(--length) + 2 * var(--width));
+        left: calc(var(--padding));
+    }
+
+    digit7f {
+        top:  calc(var(--padding) + 1 * var(--width));
+        left: calc(var(--padding));
+    }
+
+    digit7g {
+        left: calc(var(--padding) + 1 * var(--width));
+        top:  calc(var(--padding) + 1 * var(--width) + 1 * var(--length));
+    }
+
+    digit7p {
+        left: calc(var(--padding) + 2 * var(--width) + 1 * var(--length));
+        top:  calc(var(--padding) + 2 * var(--width) + 2 * var(--length));
+        width:  var(--width);
+        height: var(--width);
+    }
 }
 
 btn {

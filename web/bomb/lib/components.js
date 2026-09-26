@@ -35,8 +35,42 @@ $("led").each( function () {
     if (state == 0) this.setOFF();
 } );
 
+// 7seg
+const segments = [
+    "1111110",
+    "0110000",
+    "1101101",
+    "1111001",
+    "0110011",
+    "1011011",
+    "1011111",
+    "1110000",
+    "1111111",
+    "1111011",
+];
+
+$("seg7").each( function () {
+    let $seg = ($(this).text()).replace("_", "");
+    let $num = $(this).attr("num");
+    if ($num) {
+        $seg = segments[+$num] + ($num[1] == "." ? "1" : "0");
+    }
+
+    $(this).text("");
+    $(this).html(`
+        <digit7a state="${$seg[0]}"></digit7a>
+        <digit7b state="${$seg[1]}"></digit7b>
+        <digit7c state="${$seg[2]}"></digit7c>
+        <digit7d state="${$seg[3]}"></digit7d>
+        <digit7e state="${$seg[4]}"></digit7e>
+        <digit7f state="${$seg[5]}"></digit7f>
+        <digit7g state="${$seg[6]}"></digit7g>
+        <digit7p state="${$seg[7]}"></digit7p>
+    `);
+} );
+
 // button
-$("btn").each(function () {
+$("btn").each( function () {
     const holdDuration = 500;
     let holdTimer;
     let holdFired = false;
@@ -62,7 +96,7 @@ $("btn").each(function () {
             $(this).trigger("pressed");
         }
     });
-});
+} );
 
 // buzzer
 var ctx = null;
