@@ -108,5 +108,5 @@ btn {
     border: 2px solid black;
 }
 
-btn:hover  { background-color: #eee; }
+@media (hover: hover) { btn:hover  { background-color: #eee; } }
 btn:active { background-color: #aaa; }
