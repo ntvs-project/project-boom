@@ -1,4 +1,6 @@
 
+document.addEventListener("contextmenu", e => e.preventDefault());
+
 // led
 $("led").each( function () {
     this.setON = function (inner=false) {

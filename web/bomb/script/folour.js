@@ -86,7 +86,7 @@ $("main btn").each(function (idx) {
 
         if (check()) {
             alert("you win!");
-            location.href = location.href;
+            location.href = "/";
         }
     });
 });

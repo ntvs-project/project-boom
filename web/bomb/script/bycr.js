@@ -53,7 +53,6 @@ let user      = ["-", "-", "-", "-"];
 let inputIdx  = 0;
 
 function check () {
-    console.log("inputIdx: " + inputIdx);
     if (isGrey) {
         return ( toBinary(answer) == user.join("") );
     } else {
@@ -85,7 +84,7 @@ function update() {
     if (inputIdx == (isGrey ? 4 : morseLength[answer])) {
         if (check()) {
             alert("you win!");
-            location.href = location.href;
+            location.href = "/";
         } else {
             inputIdx = 0;
             user = ["-", "-", "-", "-"];
@@ -96,14 +95,12 @@ function update() {
 }
 
 $("#btn").on("pressed", () => {
-    console.log("pressed: " + inputIdx);
     user[inputIdx] = 0;
     
     update();
 });
 
 $("#btn").on("hold", () => {
-    console.log("hold: " + inputIdx);
     user[inputIdx] = 1;
     
     update();
@@ -139,5 +136,6 @@ async function main () {
 setup();
 $("#start").on("click", function () {
     $(this).remove();
+    $("#btn").css("display", "initial");
     main();
 });
