@@ -1,5 +1,8 @@
 
 if (localStorage.start == undefined) {
-    $("a").addClass("disabled")
-    $("#mainboard a").removeClass("disabled");
+    $("#grid > div > a:not(#mainboard > a)").each( function () {
+        $(this).parent().html(
+            $(this).html()
+        );
+    } );
 }
