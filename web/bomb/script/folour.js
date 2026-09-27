@@ -38,7 +38,7 @@ const memFolourAnswers = [
     [_B, _G, _G, _R],
 ];
 
-let YB = Math.floor(Math.random() * 4);
+const YB = +localStorage.YB;
 $("#ledY")[0].setState(YB >> 1);
 $("#ledB")[0].setState(YB % 2);
 

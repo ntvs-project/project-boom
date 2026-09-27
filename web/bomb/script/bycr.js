@@ -37,7 +37,7 @@ function rightShift (original, shiftAmount) {
     return (original + shiftAmount < 26) ? (original + shiftAmount) : (original + shiftAmount - 26);
 }
 
-const YB = Math.floor(Math.random() * 4);
+const YB = +localStorage.YB;
 const Y  = YB >> 1;
 const B  = YB % 2;
 $("#ledY")[0].setState(Y);

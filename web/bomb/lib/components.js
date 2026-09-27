@@ -15,14 +15,14 @@ $("led").each( function () {
         $(this).css("height", `${size}px`);
     }
     
-    this.setON = function () {
-        $(this).attr("state", 1);
+    this.setON = function (inner=false) {
+        if (!inner) $(this).attr("state", 1);
         $(this).css("background-color", $(this).attr("colour"));
         $(this).css("border", "");
     }
     
-    this.setOFF = function () {
-        $(this).attr("state", 0);
+    this.setOFF = function (inner=false) {
+        if (!inner) $(this).attr("state", 0);
         $(this).css("background-color", "transparent");
         $(this).css("border", "2px solid black");
     }
@@ -137,7 +137,8 @@ function init7Segments () {
 
         let $seg = ($(this).attr("seg") || "").replace("_", "");
         let $num = $(this).attr("num");
-        if ($num) $seg = segmentsNumber[+$num] + ($num[1] == "." ? "1" : "0");
+        if ($num == "x") $seg = "00000000";
+        else if ($num)   $seg = segmentsNumber[+$num] + ($num[1] == "." ? "1" : "0");
         $(this).text("");
         this.setSegment($seg);
         this.setSize($(this).attr("size"));
@@ -164,7 +165,8 @@ $("seg7quad").each( function () {
     }
 
     this.setNumber = function (num) {
-        num = `${num}`;
+        if (num) num = `${num}`.padStart(4, "0");
+        else num = "xxxx";
         $(this).html(`
             <seg7 num="${num[0]}"></seg7>
 			<seg7 num="${num[1]}"></seg7>
