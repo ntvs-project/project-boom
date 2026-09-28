@@ -19,12 +19,14 @@ function update () {
     }, 1000);
 }
 
-$("#btn-reset").on("click", function () {
+$("#btn-reset").on("pressed", function () {
     localStorage.clear();
     location.href = location.href;
 } );
 
-$("#btn-start").on("click", function () {
+$("#btn-start").on("pressed", function () {
+    $("#btn-start")[0].disable();
+    $("#btn-reset")[0].enable();
     if (localStorage.start == undefined) {
         localStorage.start = moment().format();
         localStorage.YB = Math.floor(Math.random() * 4);
@@ -36,4 +38,7 @@ $("#btn-start").on("click", function () {
 
 if (localStorage.start != undefined) {
     update();
+    $("#btn-start")[0].disable();
+} else {
+    $("#btn-reset")[0].disable();
 }

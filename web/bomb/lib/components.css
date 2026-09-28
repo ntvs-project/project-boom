@@ -150,8 +150,13 @@ btn {
     transition: transform 100ms;
 }
 
-@media (hover: hover) { btn:hover  { transform: scale(1); } }
-btn:active { filter: brightness(0.95); }
+btn.disabled {
+    filter: grayscale(1) opacity(0.5);
+    cursor: not-allowed;
+}
+
+@media (hover: hover) { btn:not(.disabled):hover  { transform: scale(1); } }
+btn:not(.disabled):active { filter: brightness(0.95); }
 
 seg7 {
     background-color: #fff;

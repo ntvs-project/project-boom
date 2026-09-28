@@ -199,6 +199,16 @@ $("btn").each( function () {
         $(this).css("height", `${size}px`);
     }
 
+    this.disable = function () {
+        this.disabled = true;
+        $(this).addClass("disabled");
+    }
+
+    this.enable = function () {
+        this.disabled = false;
+        $(this).removeClass("disabled");
+    }
+
     const holdDuration = 500;
     let holdTimer;
     let holdFired = false;
@@ -211,7 +221,9 @@ $("btn").each( function () {
 
         holdTimer = setTimeout(() => {
             holdFired = true;
-            $(this).trigger("hold");
+            if (!this.disabled) {
+                $(this).trigger("hold");
+            }
         }, holdDuration);
     });
 
@@ -221,7 +233,9 @@ $("btn").each( function () {
         clearTimeout(holdTimer);
 
         if (!holdFired && e.type === "pointerup") {
-            $(this).trigger("pressed");
+            if (!this.disabled) {
+                $(this).trigger("pressed");
+            }
         }
     });
 
