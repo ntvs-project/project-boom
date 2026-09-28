@@ -65,10 +65,6 @@ main {
     width: 50px;
     height: 50px;
 
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,8 +74,12 @@ main {
     &:hover  { background-color: #eee; }
     &:active { background-color: #aaa; }
 
-    a {
+    a, button {
         all: unset;
+
+        background-color: #fff;
+        border: 2px solid #000;
+        border-radius: 10px;
 
         display: flex;
         justify-content: center;
@@ -99,5 +99,18 @@ main {
     right:  20px; 
     bottom: 20px;
 
+    z-index: 10;
+
     cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>↗</text></svg>"), auto;
+}
+
+#manual {
+    aspect-ratio: 4 / 5;
+    width: min(90dvw, 90dvh * 0.8);
+    height: auto;
+}
+
+#manual iframe {
+    width: 100%;
+    height: 100%;
 }

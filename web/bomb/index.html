@@ -11,8 +11,16 @@
     <script type="module" src="/bomb/lib/instant.page-5.2.0.js"></script>
 </head>
 <body>
+    <div id="manual" popover>
+        <iframe
+            src="/../manual.pdf#toolbar=0&navpanes=0&scrollbar=0&view=Fit&page=1"
+            title="Manual"
+            loading="lazy"
+            allowfullscreen
+        ></iframe>
+    </div>
     <div id="float">
-        <a href="https://projectboom.rf.gd/manual.pdf" target="_blank">📘</a>
+        <button popovertarget="manual" popovertargetaction="open">📘</button>
     </div>
 
     <h1>Project BOOM</h1>
