@@ -1,5 +1,5 @@
 // TEST, SINGLE, FULL
-#define FULL
+#define TEST
 // DEBUG, NODEBUG
 #define DEBUG
 
@@ -7,15 +7,15 @@
 #include <TM1637Display.h>
 
 #include "output.h"
-#include "input_bar.h"
+#include "input.h"
 
 #define BUZZER 5
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 4
-#define INPUT_AMOUNT  2
-#define BOARD_AMOUNT  2
+#define OUTPUT_AMOUNT 3
+#define INPUT_AMOUNT  1
+#define BOARD_AMOUNT  1
 
 uint8_t YB, Y, B, mis;
 uint8_t moduleFinished = 0;
