@@ -22,6 +22,7 @@
 
 - [Canva](https://canva.link/cj269q2w8vbrt4i)
 - [Canva - View](https://canva.link/uwmv3buu2oc3tob)
+- [Google Docs](https://docs.google.com/document/d/12VB6ftjOkwtuL6mbW5b98M41vK7fTd3oYpBO7-_2hzg/edit?usp=sharing)
 
 ---
 
