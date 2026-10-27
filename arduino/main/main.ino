@@ -1,5 +1,5 @@
-// TEST, SINGLE, FULL
-#define TEST
+// SINGLE, FULL
+#define SINGLE
 // DEBUG, NODEBUG
 #define DEBUG
 
@@ -7,15 +7,15 @@
 #include <TM1637Display.h>
 
 #include "output.h"
-#include "input.h"
+#include "input.h" // CHANGE
 
 #define BUZZER 5
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 3
-#define INPUT_AMOUNT  1
-#define BOARD_AMOUNT  1
+#define OUTPUT_AMOUNT 3 // CHANGE
+#define INPUT_AMOUNT  1 // CHANGE
+#define BOARD_AMOUNT  1 // CHANGE
 
 uint8_t YB, Y, B, mis;
 uint8_t moduleFinished = 0;
@@ -31,6 +31,7 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 #include "grey.h"
 #include "caesar.h"
 #include "tune.h"
+#include "trislator.h"
 #include "test.h"
 
 #ifdef FULL
@@ -40,13 +41,8 @@ Grey   grey(2, 1);
 Caesar caesar(2, 1);
 #endif
 
-#ifdef SINGLE;
-MB mb(2, 1);
-Tune tune(0, 0);
-#endif
-
-#ifdef TEST;
-Test test(0, 0);
+#ifdef SINGLE; // CHANGE
+Trislator trislator(0, 0);
 #endif
 
 void setup() {
@@ -67,13 +63,8 @@ void setup() {
   }
   #endif
 
-  #ifdef SINGLE;
-  mb.init();
-  tune.init();
-  #endif
-
-  #ifdef TEST;
-  test.init();
+  #ifdef SINGLE; // CHANGE
+  trislator.init();
   #endif
 }
 
@@ -107,10 +98,10 @@ void loop() {
   }
   #endif
 
-  #ifdef SINGLE;
-  switch (tune.check()) {
-    case  1: tune.fini(); break;
-    case  0: tune.miss(); break;
+  #ifdef SINGLE; // CHANGE
+  switch (trislator.check()) {
+    case  1: trislator.fini(); break;
+    case  0: trislator.miss(); break;
     case -1: break;
   }
   #endif
@@ -130,12 +121,7 @@ void loop() {
   }
   #endif
 
-  #ifdef SINGLE;
-  mb.loop();
-  tune.loop();
-  #endif
-
-  #ifdef TEST
-  test.loop();
+  #ifdef SINGLE; // CHANGE
+  trislator.loop();
   #endif
 }
