@@ -1,5 +1,5 @@
 
-enum segmentEnum { D, D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, DA, DC, DI, DN, DO, DS, DT, DDEG, DEQ };
+enum segmentEnum { D, D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, DA, DC, DI, DN, DO, DS, DT, DDEG, DEQ, D_ };
 enum buttonEnum  { BTN1, BTN2, BTN3, BTNA, BTN4, BTN5, BTN6, BTNB, BTN7, BTN8, BTN9, BTNC, BTNK, BTN0, BTNH, BTND };
 enum stateEnum { ON, OFF };
 const char segment[][7] = {
@@ -23,32 +23,24 @@ const char segment[][7] = {
   "0001111", // DT
   "1100011", // DDEG
   "0001001", // DEQ
+  "0001000", // D_
 };
 
-const int memTrislatorPatterns[][10] PROGMEM = {
-  { DS, DI, DN, D0, D3 },
-  { DS, DI, DN, D1, D1 },
-  { DS, DI, DN, D1, D8 },
-  { DS, DI, DN, D2, D7 },
-  { DS, DI, DN, D3, D5 },
-  { DS, DI, DN, D4, D2 },
-  { DS, DI, DN, D5, D1 },
-  { DS, DI, DN, D5, D9 },
-  { DS, DI, DN, D6, D6 },
-  { DS, DI, DN, D7, D3 },
+const int memTrislatorMathPatterns[][2][5] PROGMEM = {
+  { { DS, DI, DN, D0, D3 }, { D0, D0, D5, D2 } },
+  { { DS, DI, DN, D1, D1 }, { D0, D1, D9, D1 } },
+  { { DS, DI, DN, D1, D8 }, { D0, D3, D0, D9 } },
+  { { DS, DI, DN, D2, D7 }, { D0, D4, D5, D4 } },
+  { { DS, DI, DN, D3, D5 }, { D0, D5, D7, D4 } },
+  { { DS, DI, DN, D4, D2 }, { D0, D6, D6, D9 } },
+  { { DS, DI, DN, D5, D1 }, { D0, D7, D7, D7 } },
+  { { DS, DI, DN, D5, D9 }, { D0, D8, D5, D7 } },
+  { { DS, DI, DN, D6, D6 }, { D0, D9, D1, D4 } },
+  { { DS, DI, DN, D7, D3 }, { D0, D9, D5, D6 } },
 };
 
-const int memTrislatorAnswers[][10] PROGMEM = {
-  { D0, D0, D5, D2 },
-  { D0, D1, D9, D1 },
-  { D0, D3, D0, D9 },
-  { D0, D4, D5, D4 },
-  { D0, D5, D7, D4 },
-  { D0, D6, D6, D9 },
-  { D0, D7, D7, D7 },
-  { D0, D8, D5, D7 },
-  { D0, D9, D1, D4 },
-  { D0, D9, D5, D6 },
+const int memTrislatorVocabPatterns[][2][5] PROGMEM = {
+  { { DS, DO, DN, DI, D_ }, { DC } },
 };
 
 class Trislator {
@@ -203,8 +195,8 @@ class Trislator {
       // output.write(OUTOFF, 2, 7, true);
 
       rdNumber = random(0, 10);
-      memcpy_P(pattern,   memTrislatorPatterns[rdNumber], sizeof(pattern));
-      memcpy_P(answer,    memTrislatorAnswers[rdNumber] , sizeof(answer));
+      memcpy_P(pattern, memTrislatorMathPatterns[rdNumber][0], sizeof(pattern));
+      memcpy_P(answer,  memTrislatorMathPatterns[rdNumber][1], sizeof(answer));
     }
 
     int8_t check() {
