@@ -122,6 +122,6 @@ void loop() {
   #endif
 
   #ifdef SINGLE; // CHANGE
-  trislator.loop();
+  if (!trislator.finished) trislator.loop();
   #endif
 }

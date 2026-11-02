@@ -73,6 +73,8 @@ class Trislator {
     const int CHAR_BTN_LIST[4] = { BTNA, BTNB, BTNC, BTND };
     const int CHAR_LIST[4] = { DA, DB, DC, DD };
 
+    const int MAX_ITERATION = 3;
+    int iteration = 0;
     int phase = 1;
     int patternTrig[5];
     int patternVocab[5];
@@ -81,7 +83,7 @@ class Trislator {
     int inputIdx = 0;
     int prevButtonState[16];
     int buttonState[16];
-    int trigIdx, vocabIdx;
+    int trigIdx[3], vocabIdx[3];
 
     void updateInput() {
       for (int i=0; i < 4; i++) {
@@ -110,20 +112,27 @@ class Trislator {
 
     void processInput() {
       if (checkButton(BTNH)) {
-        if (user[0] == answer[0] &&
+        if (phase == 1 &&
+            user[0] == answer[0] &&
             user[1] == answer[1] &&
             user[2] == answer[2] &&
             user[3] == answer[3]) {
-          // output.write(OUTOFF, 2, 7, true);
           phase = 2;
+        }
+        if (phase == 2 && user[4] == answer[4]) {
+          phase = 1;
+          iteration++;
+          initPhase();
         }
       }
 
       if (checkButton(BTNK)) {
-        if (inputIdx <= 0) return;
+        if (inputIdx <= (phase == 1 ? 0 : 4)) return;
         inputIdx--;
         user[inputIdx] = D_;
       }
+
+      if (inputIdx >= (phase == 1 ? 4 : 5)) return;
 
       for (int i=0; i<4; i++) {
         if (checkButton(CHAR_BTN_LIST[i])) {
@@ -132,7 +141,6 @@ class Trislator {
         }
       }
 
-      if (inputIdx >= 4) return;
       for (int i=0; i<10; i++) {
         if (checkButton(DIGIT_BTN_LIST[i])) {
           user[inputIdx] = DIGIT_LIST[i];
@@ -150,22 +158,44 @@ class Trislator {
       output.write(OUTOFF, -1, digit + 8, state);
     }
 
-    void show(int S1, int S2, int S3, int Q1, int Q2, int DEG, int A1, int A2, int A3, int A4) {
+    void show(int S1, int S2, int S3, int Q1, int Q2, int DEG, int A1, int A2, int A3, int A4, bool showSymbol=true) {
       setSegment(S1); setDigit(0, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(0, DIGIT_OFF);
       setSegment(S2); setDigit(1, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(1, DIGIT_OFF);
       setSegment(S3); setDigit(2, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(2, DIGIT_OFF);
       setSegment(Q1); setDigit(3, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(3, DIGIT_OFF);
       setSegment(Q2); setDigit(4, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(4, DIGIT_OFF);
-      setSegment(DEG); setDigit(5, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(5, DIGIT_OFF);
 
-      setSegment(DEQ); setDigit(6, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(6, DIGIT_OFF);
-      setSegment(A1, true); setDigit(7, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(7, DIGIT_OFF);
+      if (showSymbol) {
+        setSegment(DEG); setDigit(5, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(5, DIGIT_OFF);
+        setSegment(DEQ); setDigit(6, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(6, DIGIT_OFF);
+      }
+
+      setSegment(A1, showSymbol); setDigit(7, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(7, DIGIT_OFF);
       setSegment(A2); setDigit(8, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(8, DIGIT_OFF);
       setSegment(A3); setDigit(9, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(9, DIGIT_OFF);
       setSegment(A4); setDigit(10, DIGIT_ON); output.simpleUpdate(); delayMicroseconds(200); setDigit(10, DIGIT_OFF);
     }
 
+    void initPhase() {
+      for (int i=0; i < 5; i++) user[i] = D_;
+      inputIdx = 0;
+
+      memcpy_P(patternTrig,  memTrislatorTrigPatterns[trigIdx[iteration]][0],   5 * sizeof(int));
+      memcpy_P(answer,       memTrislatorTrigPatterns[trigIdx[iteration]][1],   4 * sizeof(int));
+      memcpy_P(patternVocab, memTrislatorVocabPatterns[vocabIdx[iteration]][0], 5 * sizeof(int));
+      memcpy_P(answer + 4,   memTrislatorVocabPatterns[vocabIdx[iteration]][1], 1 * sizeof(int));
+
+      for (int i=0; i < 4; i++) {
+        Serial.print(answer[i] - 1);
+        Serial.print(" ");
+      }
+      Serial.write(answer[4] - 1 + 55);
+      Serial.println();
+    }
+
   public:
+    bool finished = false;
+
     Trislator(uint8_t outputOffset, uint8_t inputOffset) {
       OUTOFF = outputOffset;
       INOFF  = inputOffset;
@@ -176,26 +206,55 @@ class Trislator {
       output.writeRange(OUTOFF, 2, 3, 2, 6, "1111");
       output.write(OUTOFF, 2, 3 + 0, false);
 
-      // output.write(OUTOFF, 2, 7, true);
+      for (int i=0; i<3; i++) {
+        bool duplicate;
 
-      trigIdx  = random(0, memTrislatorTrigPatternsLength);
-      vocabIdx = random(0, memTrislatorVocabPatternsLength);
-      memcpy_P(patternTrig,  memTrislatorTrigPatterns[trigIdx][0],   5 * sizeof(int));
-      memcpy_P(answer,       memTrislatorTrigPatterns[trigIdx][1],   4 * sizeof(int));
-      memcpy_P(patternVocab, memTrislatorVocabPatterns[vocabIdx][0], 5 * sizeof(int));
-      memcpy_P(answer + 4,   memTrislatorVocabPatterns[vocabIdx][1], 1 * sizeof(int));
+        do {
+          trigIdx[i] = random(0, memTrislatorTrigPatternsLength);
 
-      for (int a : answer) {
-        Serial.print(a-1);
-        Serial.print(" ");
+          duplicate = false;
+          for (int j=0; j<i; j++) {
+            if (trigIdx[i] == trigIdx[j]) {
+              duplicate = true;
+              break;
+            }
+          }
+        } while (duplicate);
       }
-      Serial.println();
+
+      for (int i=0; i<3; i++) {
+        bool duplicate;
+
+        do {
+          vocabIdx[i] = random(0, memTrislatorVocabPatternsLength);
+
+          duplicate = false;
+          for (int j=0; j<i; j++) {
+            if (vocabIdx[i] == vocabIdx[j]) {
+              duplicate = true;
+              break;
+            }
+          }
+        } while (duplicate);
+      }
+
+      initPhase();
     }
 
     int8_t check() {
+      if (iteration == MAX_ITERATION) {
+        return 1;
+      }
+      return -1;
     }
 
     void fini() {
+      show(
+        D, D, D, D, D, D,
+        D, D, D, D, false
+      );
+      output.write(OUTOFF, 2, 7, true);
+      finished = true;
     }
 
     void miss() {
