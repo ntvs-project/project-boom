@@ -24,7 +24,7 @@ const char segment[][8] = {
   "1111011", // DG
   "0110111", // DH
   "0110000", // DI
-  "1111000", // DJ
+  "0111000", // DJ
   "0001110", // DL
   "0010101", // DN
   "0011101", // DO
@@ -41,7 +41,7 @@ const char segment[][8] = {
   "0001000", // D_
 };
 
-const int memTrislatorTrigPatternsLength = 10;
+const int memTrislatorTrigPatternsLength = 30;
 const int memTrislatorTrigPatterns[][2][5] PROGMEM = {
   { { DS, DI, DN, D0, D3 }, { D0, D0, D5, D2 } },
   { { DS, DI, DN, D1, D1 }, { D0, D1, D9, D1 } },
@@ -53,14 +53,44 @@ const int memTrislatorTrigPatterns[][2][5] PROGMEM = {
   { { DS, DI, DN, D5, D9 }, { D0, D8, D5, D7 } },
   { { DS, DI, DN, D6, D6 }, { D0, D9, D1, D4 } },
   { { DS, DI, DN, D7, D3 }, { D0, D9, D5, D6 } },
+
+  { { DT, DA, DN, D0, D8 }, { D0, D1, D4, D1 } },
+  { { DT, DA, DN, D1, D5 }, { D0, D2, D6, D8 } },
+  { { DT, DA, DN, D2, D3 }, { D0, D4, D2, D4 } },
+  { { DT, DA, DN, D3, D1 }, { D0, D6, D0, D1 } },
+  { { DT, DA, DN, D3, D9 }, { D0, D8, D1, D0 } },
+  { { DT, DA, DN, D4, D6 }, { D1, D0, D3, D6 } },
+  { { DT, DA, DN, D5, D4 }, { D1, D3, D7, D6 } },
+  { { DT, DA, DN, D6, D1 }, { D1, D8, D0, D4 } },
+  { { DT, DA, DN, D6, D9 }, { D2, D6, D0, D5 } },
+  { { DT, DA, DN, D7, D6 }, { D4, D0, D1, D1 } },
+
+  { { DS, DE, DC, D2, D9 }, { D1, D1, D4, D3 } },
+  { { DS, DE, DC, D3, D0 }, { D1, D1, D5, D5 } },
+  { { DS, DE, DC, D3, D4 }, { D1, D2, D0, D6 } },
+  { { DS, DE, DC, D4, D0 }, { D1, D3, D0, D5 } },
+  { { DS, DE, DC, D4, D3 }, { D1, D3, D6, D7 } },
+  { { DS, DE, DC, D5, D5 }, { D1, D7, D4, D3 } },
+  { { DS, DE, DC, D6, D5 }, { D2, D3, D6, D6 } },
+  { { DS, DE, DC, D6, D7 }, { D2, D5, D5, D9 } },
+  { { DS, DE, DC, D7, D0 }, { D2, D9, D2, D4 } },
+  { { DS, DE, DC, D7, D7 }, { D4, D4, D4, D5 } },
 };
 
-const int memTrislatorVocabPatternsLength = 4;
-const int memTrislatorVocabPatterns[][2][5] PROGMEM = {
-  { { DP, DL, D_, DN, DT }, { DA } },
-  { { D_, DL, DI, DN, DD }, { DB } },
-  { { DS, DO, DN, DI, D_ }, { DC } },
-  { { DF, DO, DU, DN, D_ }, { DD } },
+const int memTrislatorVocabPatternsLength = 8;
+const int memTrislatorVocabPatterns[][2][6] PROGMEM = {
+  // { { DP, DL, D_, DN, DT }, { DA } },
+  // { { D_, DL, DI, DN, DD }, { DB } },
+  // { { DS, DO, DN, DI, D_ }, { DC } },
+  // { { DF, DO, DU, DN, D_ }, { DD } },
+  { { DP, DI, DZ, DZ, D_, D  }, { DA } },
+  { { D_, DP, DP, DL, DE, D  }, { DA } },
+  { { DP, D_, DU, DS, DE, D  }, { DA } },
+  { { D_, DA, DS, DI, DC, D  }, { DB } },
+  { { DT, DA, D_, DL, DE, D  }, { DB } },
+  { { DJ, DU, DI, D_, DE, D  }, { DC } },
+  { { DE, DF, DF, DE, D_, DT }, { DC } },
+  { { D_, DO, DU, DP, DL, DE }, { DC } },
 };
 
 class Trislator {
@@ -73,17 +103,17 @@ class Trislator {
     const int CHAR_BTN_LIST[4] = { BTNA, BTNB, BTNC, BTND };
     const int CHAR_LIST[4] = { DA, DB, DC, DD };
 
-    const int MAX_ITERATION = 3;
+    const int MAX_ITERATION = 5;
     int iteration = 0;
     int phase = 1;
     int patternTrig[5];
-    int patternVocab[5];
+    int patternVocab[6];
     int answer[5] = { D0, D1, D4, D1, DA };
     int user[5] = { D_, D_, D_, D_, D_ };
     int inputIdx = 0;
     int prevButtonState[16];
     int buttonState[16];
-    int trigIdx[3], vocabIdx[3];
+    int trigIdx[5], vocabIdx[5]; // MAX_ITERATION
 
     void updateInput() {
       for (int i=0; i < 4; i++) {
@@ -182,7 +212,7 @@ class Trislator {
 
       memcpy_P(patternTrig,  memTrislatorTrigPatterns[trigIdx[iteration]][0],   5 * sizeof(int));
       memcpy_P(answer,       memTrislatorTrigPatterns[trigIdx[iteration]][1],   4 * sizeof(int));
-      memcpy_P(patternVocab, memTrislatorVocabPatterns[vocabIdx[iteration]][0], 5 * sizeof(int));
+      memcpy_P(patternVocab, memTrislatorVocabPatterns[vocabIdx[iteration]][0], 6 * sizeof(int));
       memcpy_P(answer + 4,   memTrislatorVocabPatterns[vocabIdx[iteration]][1], 1 * sizeof(int));
 
       for (int i=0; i < 4; i++) {
@@ -206,7 +236,7 @@ class Trislator {
       output.writeRange(OUTOFF, 2, 3, 2, 6, "1111");
       output.write(OUTOFF, 2, 3 + 0, false);
 
-      for (int i=0; i<3; i++) {
+      for (int i=0; i<MAX_ITERATION; i++) {
         bool duplicate;
 
         do {
@@ -222,7 +252,7 @@ class Trislator {
         } while (duplicate);
       }
 
-      for (int i=0; i<3; i++) {
+      for (int i=0; i<MAX_ITERATION; i++) {
         bool duplicate;
 
         do {
@@ -283,7 +313,7 @@ class Trislator {
           (patternVocab[2] == D_) ? user[4] : patternVocab[2],
           (patternVocab[3] == D_) ? user[4] : patternVocab[3],
           (patternVocab[4] == D_) ? user[4] : patternVocab[4],
-          D,
+          (patternVocab[5] == D_) ? user[4] : patternVocab[5],
           user[0],
           user[1],
           user[2],

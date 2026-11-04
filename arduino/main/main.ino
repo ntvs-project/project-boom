@@ -47,6 +47,7 @@ Trislator trislator(0, 0);
 
 void setup() {
   Serial.begin(9600);
+  Serial.println();
 
   randomSeed(analogRead(A0) + micros());
 
