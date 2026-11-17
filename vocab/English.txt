@@ -1,0 +1,849 @@
+#separator:tab
+#html:true
+#tags column:7
+處在相同困境<br><sub><u>2 2 3 4 4</u></sub>	be in the same boat					Phrase
+帶來不同；造成影響<br><sub><u>4 1/3 10</u></sub>	make a/the difference					Phrase
+努力爭取某事物<br><sub><u>2 3 sth.</u></sub>	go for <i>sth.</i>					Phrase
+放棄<br><sub><u>4 2</u></sub>	give up					Phrase
+支持某人<br><br><sub><u>4 3'1 4</u></sub>	have <i>one's</i> back					Phrase
+一直；總是<br><sub><u>3 3 4</u></sub>	all the time					Phrase
+邀請某人到家裡<br><sub><u>6 sb. 4</u></sub>	invite <i>sb.</i> over					Phrase
+想出；想到<br><sub><u>4 2 4</u></sub>	come up with					Phrase
+事實上；實際上<br><sub><u>2 4</u></sub>	in fact					Phrase
+意指<br><br><sub><u>5 2</u></sub>	refer to					Phrase
+追溯到<br><sub><u>4 4 (2)</u></sub>	date back (to)					Phrase
+出現<br><br><sub><u>4 2</u></sub>	show up					Phrase
+Tony watched an {{c1::exciting::e___t<i>ing</i>}} live basketball game last night.						Vocab
+All the students are {{c1::excited::e___t<i>ed</i>}} about the field trip.						Vocab
+Mr. and Mr.s Clinton are {{c1::proud::p___d}} of their daughter because she is honest.						Vocab
+Henry always faces {{c1::challenges::c_______e<i>s</i>}} in a brave way.						Vocab
+Tom is {{c1::nervous::n_____s}} about the final exam.						Vocab
+Asian elephants are {{c1::different::d_______t}} from African elephants.						Vocab
+There is little {{c1::difference::d________e}} in look between the two sisters.						Vocab
+The magic show was {{c1::awesome::a_____e}}. I enjoyed it a lot.						Vocab
+The fans were {{c1::surprised::s_______d}} at the famous singer's sudden marriage.						Vocab
+To our {{c1::surprise::s______e}}, Andy won first place in the race.						Vocab
+Steve is {{c1::interested::i________d}} in playing the guitar.						Vocab
+Ms. White told the kids an {{c1::interesting::i_________g}} story.						Vocab
+Before Judy makes a {{c1::decision::d______n}}, she talks about it with her parents.						Vocab
+Stacy {{c1::decided::d___d<i>ed</i>}} not to buy the dress because it was too expensive.						Vocab
+Hanna's cat died a few days ago, so she was quite {{c1::upset::u___t}}.		<b>upset</b>:&nbsp;feeling bad				Vocab
+We can't {{c1::trust::t___t}} Ben because he likes to tell lies.						Vocab
+I can't {{c1::believe::b_____e}} it! I just took a picture with my favorite actor.						Vocab
+Thee weather today is {{c1::perfect::p_____t}}. Let's go to the beach!						Vocab
+Joe studies very hard, so he will {{c1::certainly::c________y}} pass the exam.						Vocab
+My one-month trip to Italy on my own was {{c1::unforgettable::un__________e}}.						Vocab
+Every time Anna looks at those photos, she thinks of the sweet {{c1::memories::m___ri<i>es</i>}} of her high school life.						Vocab
+Dad is good at cooking, and he likes to {{c1::prepare::p_____e}} dinner for us.						Vocab
+Lucy always takes price into {{c1::consideration::c___________n}} when she buys new dresses.						Vocab
+We should always {{c1::consider::c______r}} the feelings&nbsp;of others when we speak.						Vocab
+All the {{c1::guests::g___t<i>s</i>}} at Jessica and Brian's wedding were happy and excited.						Vocab
+After dinner, the {{c1::host::h__t}} asked one of his guests to play the piano.						Vocab
+Everybody here hopes our city will {{c1::host::h__t}} the Summer Olympics someday.						Vocab
+Our trip to Canada was {{c1::pleasant::p______t}}, I'll remember it for the rest of my life.						Vocab
+The superstar didn't want to answer the reporter's {{c1::awkward::a_____d}} questions about her personal life.						Vocab
+Sue has a good voice and enjoys singing; {{c1::therefore::t_______e}}, she plans to be a singer.						Vocab
+Dad usually {{c1::assigns::a____n<i>s</i>}} us to clean the living room and bedrooms on Sundays.						Vocab
+Linda is {{c1::originally::o________y}} from America, but now she lives in South Korea with her husband.						Vocab
+the kids were suprised by their grandparents' {{c1::unexpected::u________d}} visit.						Vocab
+Our school {{c1::expected::e____t<i>ed</i>}} all of us to join the sports activity.						Vocab
+We went to a book {{c1::fair::f__r}} yesterday and bought some comic books.						Vocab
+My mom is quite {{c1::fair::f__r}} when she assigns us to do tasks around the house.						Vocab
+The delicious foods in the night markets of Taiwan {{c1::impress::i_____s}} many people from other countries.						Vocab
+Tim has a {{c1::secret::s____t}} hiding place for his favorite toys, so his baby brother can't take them.						Vocab
+Bob and Joe are close friends. There are no {{c1::secrets::s____t<i>s</i>}} between them.						Vocab
+My family went to Kenting and had an {{c1::enjoyable::e_______e}} holiday.						Vocab
+Jenny have many interesting {{c1::experiences::e________e<i>s</i>}} during her summer camp in New York City.						Vocab
+After he {{c1::experiences::e________e<i>s</i>}} failure, Andrew thought up a better plan for his future.						Vocab
+By taking a few days off, Sally was able to {{c1::recover::r_____r}} quickly <b>from</b> the flu.						Vocab
+Lisa's quick {{c1::recovery::r______y}} from the break-up suprised everyone.						Vocab
+Mike is getting {{c1::surgery::s_____y}} right now because of a serious accident.						Vocab
+Ray {{c1::suffered::s____r<i>ed</i>}} from back pain before, but the pain went away after he started doing gentle exercise.		<b>suffer</b>: to be affected by a sickness or pain				Vocab
+COVID-19 was a terrible {{c1::disease::d_____e}} when it first appeared in 2019.						Vocab
+Lily {{c1::realized::r_____ed}} that her son was great writer after she read his story.	US: reali<b>z</b>e<br>UK: reali<b>s</b>e					Vocab
+The boy couldn't find the words to {{c1::describe::d______e}} his dream car, so he drew a picture of it.						Vocab
+The newly married {{c1::couple::c____e}} planned to go on a trip to Iceland for their honeymoon.						Vocab
+Mike's parents always {{c1::encourage::e_______e}} him to work hard and follow his dreams.		<b>encourage</b>: to give someone support to do something				Vocab
+Hotel rooms with a good {{c1::view::v__w}} of the sea are usually more expensive.						Vocab
+Most people in Taiwan {{c1::view::v__w}} the LINE smartphone app as a must have						Vocab
+Our music teacher asked us to close our eyes and {{c1::imagine::i_____e}} that we were at a beach.						Vocab
+Leo's poem shows that he is a kid with a great {{c1::imagination::i_________n}}.						Vocab
+Do you know any good ways to {{c1::remove::r____e}} the price sticker from this box.						Vocab
+Henry {{c1::replied::r___i<i>ed</i>}} right after he got my message.						Vocab
+Max sent an email to Helen, but he didn't get a {{c1::reply::r___y}}.						Vocab
+After a one-year trip, Tom finally {{c1::returned::r____n<i>ed</i>}} to his hometown.<br><br><br>Jenny {{c1::returned::r____n<i>ed</i>}} Ken's book to him after she finished reading it.						Vocab
+Flora was {{c1::shocked::s_____d}} and upset when she heard the news.						Vocab
+The sudden earthquake in the middle of the class {{c1::shocked::s___k<i>ed</i>}} us all.						Vocab
+The dog led the {{c1::blind::b___d}} woman safely across the street.						Vocab
+Jenny's brother laughed out loud when she {{c1::whispered::w_____r<i>ed</i>}} a joke into his ear.						Vocab
+轉頭不看<br><br><sub><u>4 4</u></sub>	turn away					Phrase
+盡己所能<br><sub><u>3 3'1 4</u></sub>	try one's best					Phrase
+日復一日<br><sub><u>3 5 3</u></sub>	day after day					Phrase
+詳細地<br><sub><u>2 6</u></sub>	in detail					Phrase
+轉身<br><sub><u>4 6</u></sub>	turn around					Phrase
+過世<br><sub><u>4 4</u></sub>	pass away					Phrase
+只有；僅僅<br><sub><u>7 3</u></sub>	nothing but					Phrase
+I set two {{c1::alarms::a___ms}} to wake me up in the morning.						Vocab
+Let's go {{c1::straight::s______t}} back home after the potluck party tonight.						Vocab
+A group of birds is flying in a {{c1::straight::s______t}} line across the sky.						Vocab
+you'll need to do some serious {{c1::research::r______h}} before you start writing your report.						Vocab
+Joanna stayed up late studying for the exam. Therefore, she {{c1::overslept::o_______t}} the next morning.						Vocab
+This restaurant doesn't look fancy at all, but its food is {{c1::amazing::a_____g}}.						Vocab
+A Taiwanese-American, Peter Tsai, {{c1::invented::i____t<i>ed</i>}} N95 masks.						Vocab
+Karl Benz was the {{c1::inventor::i______r}} of the world's first modern car.						Vocab
+Can you believe that I spent the whole day trying to {{c1::solve::s___e}} a computer problem?						Vocab
+Our local government must come up with a {{c1::solution::s______n}} to the serious parking problem.						Vocab
+Jessica likes to drink soy milk more than {{c1::regular::r_____r}} cow's milk.						Vocab
+The dog stopped {{c1::chasing::c__s<i>ing</i>}} after the mailman when its master showed up and shouted at it.						Vocab
+The police finally caught the drunk driver after a high-speed {{c1::chase::c___e}}.						Vocab
+John {{c1::promised::p_____<i>ed</i>}} that he would finish the job by Friday.						Vocab
+Arvin kept his {{c1::promise::p_____e}} to his wife and did not drink and drive again.						Vocab
+The teacher asked the students to {{c1::design::d____n}} their own business cards.						Vocab
+Because of its poor {{c1::design::d____n}}, the fan is hard to use.						Vocab
+My mother likes this {{c1::particular::p________r}} shampoo. We can't buy just any brand.						Vocab
+Beethoven continued to {{c1::create::c____e}} music even after his hearing problem became more serious.						Vocab
+Many studies show that children can become better at {{c1::creative::c______e}} thinking by playing with LEGO bricks.						Vocab
+醒來<br><sub><u>4 2</u></sub>	wake up					Phrase
+採取行動<br><sub><u>4 6</u></sub>	take action					Phrase
+離開；走出<br><sub><u>3 3 2</u></sub>	get out of					Phrase
+準時<br><br><sub><u>2 4</u></sub>	on time					Phrase
+（鬧鐘、警報器）發出聲響<br><sub><u>2 3</u></sub>	go off					Phrase
+為了……<br><sub><u>2 5 2</u></sub>	in order to					Phrase
+事先<br><sub><u>2 7</u></sub>	in advance					Phrase
+"<h1><span style=""background-color: rgb(85, 85, 85);""><code>`</code></span></h1>"	backtick					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><code>!</code></span></h1>"	exclamation mark					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><code>@</code></span></h1>"	at sign					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">#</font></span></h1>"	hash					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">$</font></span></h1>"	dollar sign					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">%</font></span></h1>"	percent sign					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">^</font></span></h1>"	caret					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">&amp;</font></span></h1>"	ampersand					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">*</font></span></h1>"	asterisk					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">()</font></span></h1>"	parentheses					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">[]</font></span></h1>"	square brackets					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">{}</font></span></h1>"	curly brackets					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">~</font></span></h1>"	tilde					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">|</font></span></h1>"	pipe					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">/</font></span></h1>"	(forward) slash					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">\</font></span></h1>"	backslash					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">:</font></span></h1>"	colon					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">;</font></span></h1>"	semicolon					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">'</font></span></h1>"	apostrophe					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">""</font></span></h1>"	quotation mark					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">&lt;&gt;</font></span></h1>"	angle brackets					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">?</font></span></h1>"	question mark					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">,</font></span></h1>"	comma					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><font face=""monospace"">.</font></span></h1>"	period					
+"<h1><span style=""background-color: rgb(85, 85, 85);"">--</span></h1>"	hyphen					
+"<h1><span style=""background-color: rgb(85, 85, 85);"">__</span></h1>"	underscore					
+"<h1><span style=""background-color: rgb(85, 85, 85);"">+</span></h1>"	plus sign					
+"<h1><span style=""background-color: rgb(85, 85, 85);"">=</span></h1>"	equal sign					
+My grandmother is 75 years old, but she can use her smartphone without {{c1::difficulty::d________y}}						Vocab
+It was {{c1::difficult::d________t}} for the blind man to take care of himself after his wife passed away.						Vocab
+You'd better get up now {{c1::otherwise::o_______e}}, you won't be able to catch the flight.						Vocab
+Jenny's boss was standing behind her while she was working, but she wasn't {{c1::aware::a___e}} of it.						Vocab
+Oliver drank too much and never cared about his health. He {{c1::eventually::e________y}} got sick.						Vocab
+We are trying to guess the {{c1::eventual::e______l}} result of the World Cup.						Vocab
+I called the hotel to {{c1::confirm::c_____m}} our stay for next weekend.						Vocab
+My little brother is {{c1::scared::s____d}} <i>of</i> bugs. He is even afraid of ants.						Vocab
+The movie {{c1::scared::s___e<i>d</i>}} my brother, and he couldn't sleep.						Vocab
+Because the final exams are {{c1::approaching::a______h<i>ing</i>}}, most of my classmates are studying in the library.		<b>approaching</b>: to come near in time or space				Vocab
+It is better to get a pet from an animal {{c1::shelter::s_____r}}; you may save its life.		<b>shelter</b>: a place that protects people or animals from danger or poor weather				Vocab
+The department store becomes very {{c1::crowded::c_____d}} when there is a big sale.						Vocab
+I enjoy my job as a waiter, but I don't think I will work in the restaurant {{c1::forever::f_____r}}.						Vocab
+The {{c1::terrified::t_______d}} kitten hid under a car when a boy tried to catch her.		"<b>terrified</b>: frightened and scared<br><a href=""https://dictionary.cambridge.org/dictionary/english/frightened""><b>frightened</b></a>: feeling fear or worry"				Vocab
+The monster on TV {{c1::terrified::t_____<i>ed</i>}} the little girl.		"<b>terrify</b>: scare, frighten<br><a href=""https://dictionary.cambridge.org/dictionary/english/frighten""><b>frighten</b></a>: to make someone feel fear"				Vocab
+The kids played around for hours in the yard, and they all felt {{c1::exhausted::e_______d}}.		<b>exhausted</b>: very tired				Vocab
+The long walk {{c1::exhausted::e______<i>ed</i>}} the old man, so he lay down and took a nap.		<b>exhaust</b>: to make someone very tired				Vocab
+Janet {{c1::awoke::a___e}} when the alarm went off.						Vocab
+When Dad needs to work late, he usually drinks a cup of black coffee to stay {{c1::awake::a___e}}.						Vocab
+Lily wanted to have a dog, so her mom took her to a shelter to {{c1::adopt::a___t}} one.						Vocab
+<b>It was a&nbsp;{{c1::blessing::b______g}}&nbsp;that</b> Ruby didn't really get hurt when she fell of the second-floor balcony.	US: <b>second</b>-floor<br>UK: <b>first</b>-floor					Vocab
+God {{c1::bless::b___s}} you for your kind and generous help.						Vocab
+過去經常……<br><sub><u>4 2</u></sub>	used to					Phrase
+照顧<br><sub><u>4 4 2</u></sub>	take care of					Phrase
+起初<br><sub><u>2 5</u></sub>	at first					Phrase
+不再<br><br><sub><u>3...7</u></sub>	not...anymore					Phrase
+突然<br><br><sub><u>3 2 1 6</u></sub>	all of a sudden					Phrase
+最後<br><sub><u>2 4</u></sub>	at last					Phrase
+打瞌睡<br><sub><u>3 3</u></sub>	nod off					Phrase
+The kids <i>were {{c1::bored::b___d}} with</i> doing homework all day and wanted to go outside.						Vocab
+James fell asleep on the sofa because the show on TV was very {{c1::boring::b____g}}.						Vocab
+Mr. Smith made a phone call last night to <b>{{c1::complain::c______n}} to</b> the police <b>about</b> the noise from his neighbor.						Vocab
+I was surprised that my mom wasn't angry about my mistake. {{c1::Instead::I_____d}}, she gave me a hug.						Vocab
+Amber's musical {{c1::talent::t____t}} impressed everyone when she played the piano at the school concert.						Vocab
+Chinese <b>is {{c1::recognized::r_______e<i>d</i>}} as</b> one of the hardest languages in the world for English speakers to learn.	<b>US</b>: recognize<br><b>UK</b>: recognise					Vocab
+Justin had trouble <i>{{c1::focusing::f___s<i>ing</i>}} on</i> his studies after a bad night's sleep.						Vocab
+In today's class, our <b>{{c1::focus::f___s}}</b> will be <b>on</b> the history of Taiwan.						Vocab
+Luckily, with Benson's help, my computer problems were solved in <b>a</b> very short <b>{{c1::period::p____d}} of time</b>.						Vocab
+The director felt <b>{{c1::confident::c_______t}} about</b> her new movie and believed that it would be a big hit.						Vocab
+we have <b>{{c1::confidence::c________e}} in</b> George's ability to do the project well.						Vocab
+Ms. Lin <b>is</b> very <b>{{c1::patient::p_____t}} with</b> her students. he always gives them enough time to answer questions.						Vocab
+After hours of waiting, Justin <b>ran out of&nbsp;{{c1::patience::p______e}}</b>&nbsp;and decided to leave.						Vocab
+Max&nbsp;<b>was&nbsp;{{c1::determined::d________d}}&nbsp;to </b>quit smoking after his daughter was born.						Vocab
+You should {{c1::determine::d_______e}} your own future.						Vocab
+During the news report, an {{c1::image::i___e}} of the bank robber was shown on the screen.						Vocab
+We should respect our differences because everyone is {{c1::unique::u____e}}.						Vocab
+Regular {{c1::customers::c______r<i>s</i>}} of this airline can enjoy lower ticket prices.						Vocab
+Ryan is great at public speaking. With his {{c1::support::s_____t}}, I prepared a really good speech.						Vocab
+Some people stronly {{c1::supported::s_____t<i>ed</i>}} my idea in the meeting, but others were against it.						Vocab
+The concert was a big {{c1::success::s_____s}} since more than six thousand people came to watch it.						Vocab
+Although Robert is young, he is already a very {{c1::successful::s________l}} businessman.						Vocab
+The film about saving animals {{c1::inspried::i_____e<i>d</i>}} lots of people to care more about nature.						Vocab
+結果是……；原來是……<br><sub><u>4 3</u></sub>	turn out					
+不再<br><sub><u>2 6</u></sub>	no longer					
+"充滿<br><span style=""font-size: 16.6667px;""><u>2 6 4</u></span>"	be filled with					
+"因此<br><span style=""font-size: 16.6667px;""><u>2 1 6</u></span>"	as a result					
+"最後<br><br><span style=""font-size: 16.6667px;""><u>2 3 3</u></span>"	in the end					
+"充分利用<br><span style=""font-size: 16.6667px;""><u>4 3 4 2 sth.</u></span>"	make the most of sth.					
+The {{c1::relationship::r__________p}} between the dog and its owner is full of love and care.						Vocab
+The study {{c1::related::<i>r____ed</i>}} stress <i>to</i> a higher risk of many diseases.						Vocab
+I {{c1::connect::<i>c_____t</i>}} <i>with</i> my family by talking about our day and spending time together.						Vocab
+Amelia {{c1::connected::<i>c_____ted</i>}} her smartphone <i>to</i> her computer to put some music files onto her phone.						Vocab
+Everybody knows that there is a clear {{c1::connection::<i>c________n</i>}} <i>between </i>smoking and lung cancer.						Vocab
+Many teenagers think that it is hard to {{c1::communicate::<i>c_________e</i>}} <i>with</i> their parents.						Vocab
+To improve your {{c1::communication::c___________n}} skills, you must learn the art of listening.						Vocab
+Scott didn't show up for the meeting this morning. He {{c1::probably::p______y}} overslept again.						Vocab
+The TV show {{c1::introduces::<i>i_______es</i>}} viewers <i>to&nbsp;</i>delicious food from around the world.						Vocab
+The teacher gave an {{c1::introduction::<i>i__________n</i>}} <i>to</i> our new science project.						Vocab
+Reading helps us <i>gain</i> more {{c1::knowledge::<i>k_______e</i>}} of the world.						Vocab
+Amber wasn't {{c1::completely::c________y}} sure about this store's opening time, so she checked online.						Vocab
+The manager talked {{c1::throughout::t________t}} the whole meeting, so Ken almost fell asleep.						Vocab
+Jamie sent a {{c1::message::m_____e}} to her boss to tell her&nbsp; that she would be ten minutes late for the meeting.						Vocab
+Matt is planning to have a {{c1::romantic::r______c}} dinner with his wife on Valentine's Day.						Vocab
+When you study, try to {{c1::ignore::i____e}} any noise and focus on your work.						Vocab
+Please <i>pay</i> {{c1::attention::<i>a_______n</i>}} when you cross the street. Look up from your phone!						Vocab
+Richard didn't {{c1::respond::<i>r_____d</i>}} <i>to</i> my email. He must be very busy.						Vocab
+The mailman knocked on the door, but there was no {{c1::response::r______e}}.						Vocab
+The field trip was canceled because of the coming typhoon. All the students <i>were&nbsp;</i>{{c1::disappointed::<i>d__________d</i>}}<i>&nbsp;about</i> this.	US: canceled<br>UK: cancel<b>l</b>ed					Vocab
+I thought my bad grades would {{c1::disappoint::d________t}} my father, but he just smiled and encouraged me.						Vocab
+仔細閱讀<br><br><sub><u>2 7</u></sub>	go through					Phrase
+以防……<br><br><sub><u>2 4</u></sub>	in case					Phrase
+此外<br><sub><u>2 8</u></sub>	in addition					Phrase
+一起消磨時間<br><sub><u>4 3</u></sub>	hang out					Phrase
+轉向……求助<br><sub><u>4 2</u></sub>	turn to					Phrase
+認為……是針對個人的<br><br><sub><u>4...10</u></sub>	take...personally					Phrase
+One of Mark's {{c1::flaws::f__ws}} is that he is always late for meetings and work.						Vocab
+Since the vase is {{c1::flawed::f____d}}, it is not very expensive.						Vocab
+The sidewalks in my neighborhood are all {{c1::cracked::c_____d}} because they were built many years ago.	US: sidewalk<br>UK: pavement					Vocab
+Dallas kicked the soccer ball, and it hit the window. Now there is large {{c1::crack::c___k}} in the glass.						Vocab
+Turn right, and you will find a {{c1::path::p__h}} to the top of the hill.						Vocab
+The water pipe under your sink needs to be fixed because it is {{c1::leaking::l__king}}.						Vocab
+If you see the faucet {{c1::dripping::d__pping}}, please turn it off.	<b>faucet</b>: 水龍頭 <i>[full·set]</i>					Vocab
+Watch out! Your brush is {{c1::dripping::d__pping}} blue paint all over the floor!						Vocab
+Mark felt {{c1::<i>ashamed::a_____d</i>}}<i>&nbsp;of himslef</i> for lying to his mother, so soon he told her the truth.						Vocab
+There's an {{c1::awful::a____l}} smell in the refrigerator. It's time to clean it!						Vocab
+The teacher asked the students to line up {{c1::properly::p______y}} and not to crowd around the door.						Vocab
+To cut your steak, you need to use a {{c1::proper::p____r}} steak knife, not a butter knife.						Vocab
+Billy threw the ball across the field, and his dog ran to {{c1::fetch::f___h}} it.						Vocab
+The rude teenager did not {{c1::<i>apologize::a_______e</i>}}<i>&nbsp;to</i> Mary <i>for</i> stepping on her toes.	US: apologi<b>z</b>e<br>UK: apologi<b>s</b>e					Vocab
+Kyle made an {{c1::<i>apology::a_____y</i>}}<i>&nbsp;to</i> Janet <i>for</i> saying mean things about her.						Vocab
+Sally did not show any sign of {{c1::emotion::e_____n}} when she told us the story.						Vocab
+My {{c1::honest::h____t}} opinion is that this movie is too long and boring.						Vocab
+Mark is short, but he {{c1::actually::a______y}} shows a great talent for playing basketball.						Vocab
+The {{c1::actual::a____l}} number of people who have died from COVID-19 will probably never be known.						Vocab
+The baker {{c1::scattered::s_____red}} chocolate chips <i>over</i> the large cake.	<b>scatter</b>: to throw small things over a certain area					Vocab
+Having another employee to help out will {{c1::indeed::i____d}} take some pressure off us.						Vocab
+Rachel {{c1::<i>decorated::d______ed</i>}} her bedroom <i>with</i> a painting of the sea.						Vocab
+The colorful {{c1::decoration::d________n}} lit up the room for the birthday party.						Vocab
+從前從前<br><br><sub><u>4 4 1 4</u></sub>	once upon a time					Phrase
+照常<br><br><sub><u>2 5</u></sub>	as usual					Phrase
+一直<br><br><sub><u>3 5</u></sub>	all along					Phrase
+偶爾<br><br><sub><u>4 4 2 4</u></sub>	from time to time					Phrase
+擅長<br><br><sub><u>2 4 2</u></sub>	be good at					Phrase
+My brother and I plan to <i>travel&nbsp;</i>{{c1::<i>abroad::a____d</i>}}&nbsp;this summer, so we are saving money or our trip.						Vocab
+Many Western kids have a {{c1::<i>custom::c____m</i>}}<i>&nbsp;of leaving</i> cookies and milk for Santa on Christmas Eve.						Vocab
+Emma hopes to make some {{c1::local::l___l}} friends when she studies abroad in Germany.						Vocab
+Diana was {{c1::<i>praised::p___ed</i>}}<i>&nbsp;for</i> helping stray dogs find a new home.						Vocab
+Although people in this village keep their {{c1::traditional::t________l}} beliefs, they are still open to modern ideas.						Vocab
+A good {{c1::society::s_____y}} cares for the happiness and health of all people.						Vocab
+The village {{c1::elders::e___rs}} are trying to get more young people to move back home.						Vocab
+When people travel to another country, it is important to {{c1::respect::r_____t}} the local customs.						Vocab
+Mr. Wang is a true gentleman. He always <i>shows</i> great {{c1::<i>respect::r_____t</i>}}&nbsp;<i>for</i> others.						Vocab
+The firefighters <i>were&nbsp;</i>{{c1::<i>honored::h___red</i>}}<i>&nbsp;for</i> saving a baby from the burning building.	<b>US</b>: honor<br><b>UK</b>: hono<b>u</b>r					Vocab
+Audrey said that helping the sick in the hospital has made her life more {{c1::meaningful::m________l}}.						Vocab
+The main character in this book is trying to find the {{c1::meaning::m_____g}} of life.						Vocab
+<i>It is&nbsp;</i>{{c1::<i>satisfying::s________g</i>}}<i>&nbsp;to enjoy</i> a fine dinner at this restaurant.						Vocab
+The company aims to {{c1::satisfy::s_____y}} its customers by offering great service.						Vocab
+I think it is {{c1::shameful::s______l}} that some of our neighbors always leave their garbage in the park.	<b>US</b>: garbage<br><b>UK</b>: rubbish					Vocab
+Curtis was filled with {{c1::shame::s___e}} when the teacher caught him cheating on the exam.						Vocab
+<i>What a </i>{{c1::<i>shame::s___e</i>}} that you did not come to my birthday party!						Vocab
+We {{c1::<i>regard::r____d</i>}}&nbsp;Betty <i>as</i> the best student in our class because she is always willing to help others.						Vocab
+These cookies are {{c1::<i>reserved::r_____ed</i>}}<i>&nbsp;for</i> our tea party tomorrow, so we can't eat them now.						Vocab
+We have made a dinner {{c1::reservation::r_________n}} for two people at 7 p.m. tonight in the new Japanese restaurant.						Vocab
+I {{c1::<i>avoid::a___d</i>}}&nbsp;<i>going</i> to popular tourist spots on holidays because of the traffic and crowds.						Vocab
+Ted got into an awkward {{c1::situation::s_______n}} when he told his best friend that he loved her.						Vocab
+Kelly <i>lost her&nbsp;</i>{{c1::<i>appetite::a______e</i>}}&nbsp;after she saw a cockroach on the floor in the restaurant.	<b>appetite</b>: <i>[a·puh·tite]</i>					Vocab
+談到<br><br><sub><u>4 2 5 2</u></sub>	when it comes to					Phrase
+例如<br><br><sub><u>3 8</u></sub>	for instance					Phrase
+另一方面<br><br><sub><u>2 3 5 4</u></sub>	on the other hand					Phrase
+可能<br><br><sub><u>2 6 2</u></sub>	be likely to					Phrase
+說到<br><br><sub><u>8 2</u></sub>	speaking of					Phrase
+既然；由於<br><br><sub><u>3 4</u></sub>	now that					Phrase
+留意<br><br><sub><u>4 2 3 3 3</u></sub>	keep an eye out for					Phrase
+George's {{c1::journey::j_____y}} from a poor child to a succcessful businessman insprired many people.						Vocab
+K-pop music <i>is&nbsp;</i>{{c1::<i>popular::p_____r</i>}}<i>&nbsp;with </i>teenagers. Everyone is talking about their favorite songs.						Vocab
+Because of John's {{c1::<i>popularity::p________y</i>}}<i>&nbsp;among</i> his classmates, he was chosen to be the class leader.						Vocab
+Bill took an online course to {{c1::develop::d_____p}} his computer skills.						Vocab
+The teacher was glad to see the {{c1::development::d_________t}} of her students' writing skills.						Vocab
+The fans cheered as the sound of the band's final song {{c1::<i>faded::f__ed</i>}}&nbsp;<i>away</i>.						Vocab
+When Mark smelled the {{c1::delicious::d_______s}} food, he suddenly became very hungry.						Vocab
+AI {{c1::<i>allows::a___ws</i>}}&nbsp;students <i>to</i> learn new things in fun ways.						Vocab
+The car accident {{c1::occurred::o___rred}} because the driver fell asleep while he was driving.						Vocab
+Many students {{c1::struggle::s______e}} with math, but practice can help them improve						Vocab
+Although Sandra's journey to become a doctor was a long {{c1::struggle::s______e}}, she never gave up.						Vocab
+David doesn't {{c1::earn::e__n}} enough money at his current job, so he must find a new one.						Vocab
+We planned the picnic for weeks. {{c1::Unfortunately::U___________y}}, it was canceled because of the heavy rain.						Vocab
+Sarah was disappointed when the school's art club {{c1::rejected::r____ted}} her.						Vocab
+The dangerous storm {{c1::<i>forced::f___ed</i>}} everyone <i>to</i> stay indoors for safety.						Vocab
+Harry is afraid to go to the dentist; {{c1::nevertheless::n__________s}}, he has to go.	<b>nevertheless</b>: in spite of what has just been said or done<br>儘管如此					Vocab
+The news of the surprise field trip {{c1::spread::s____d}} quickly among the students.						Vocab
+The {{c1::spread::s____d}} of the disease made everyone in that city more careful.						Vocab
+Emma worked hard to {{c1::achieve::a_____e}} her dream of becoming a doctor.						Vocab
+The small town <i>gained&nbsp;</i>{{c1::<i>fame::f__e</i>}}&nbsp;for its beautiful mountain view and hot springs.						Vocab
+Today, houses in many cities <i>cost a</i> {{c1::<i>fortune::f_____e</i>}}, so many young people can only rent an apartment.						Vocab
+熟悉<br><br><sub><u>2 8 4</u></sub>	be familiar with					Phrase
+逐漸地<br><br><sub><u>4 4</u></sub>	over time					Phrase
+經過一段時間之後；終於<br><br><sub><u>2 4</u></sub>	in time					Phrase
+經過<br><br><sub><u>4 2</u></sub>	pass by					Phrase
+幸虧；由於<br><br><sub><u>6 2</u></sub>	thanks to					Phrase
+This restaurant has a pleasant {{c1::environment::e_________t}} that allows customers to feel relaxed.						
+Many people are trying to solve our {{c1::environmental::e___________l}} problems, such as plastic waste.						
+Mike exercises on <i>a {{c1::daily::d___y}} basis</i> to stay fit and healthy.						
+Several airlines fly nonstop {{c1::daily::d___y}} from Taiwan to New York.						
+Responding to emails is part of Gabby's daily {{c1::routine::r_____e}} at work.						
+It is {{c1::extremely::e_______y}} hard to be around Roger because he gets angry easily.						
+The {{c1::extreme::e_____e}} heat in the summer makes people not want to go outside.						
+The dishes in southern Taiwan <i>{{c1::tend::t__d}} to</i> be a little sweeter than those in northern Taiwan.						
+Maria <i>{{c1::prefers::p____rs}}</i> hot drinks <i>to</i> cold ones even in summer.						
+Samuel <i>has a {{c1::preference::p________e}} for</i> the color white. Most of his shirts, shoes, and coats are white.						
+We sell four different {{c1::flavors::f____rs}} of ice cream —&nbsp;milk, banana, strawberry, and chocolate.	<b>US:</b> flavor<br><b>UK:</b> flavo<i>u</i>r					
+Wendy let go of the string, and the balloon {{c1::floated::f___ted}} up into the sky.						
+Jason has really big {{c1::muscles::m____es}} because he works out every day.						
+The loud noise <i>{{c1::caused::c___ed}}</i> the baby <i>to</i> cry.						
+If you practice speaking English every day, you communication ability will {{c1::gradually::g_______y}} get better.						
+This sweater will {{c1::shrink::s____k}} if you wash it in hot water.						
+The US is trying to {{c1::maintain::m______n}} its position as the world's leading power.						
+After Janice hiked all day, she had no {{c1::strength::s______h}} left.						
+Eric is trying to <i>lose {{c1::weight::w____t}}</i> by eating healthy food and exercising regularly.						
+There is <i>a</i> serious <i>{{c1::lack::l__k}}</i>&nbsp;<i>of</i> food in some African countries.						
+Robert {{c1::lacks::l__ks}} the confidence to speak in public.						
+After I saw the rock band's {{c1::terrific::t______c}} show, I became a fan.						
+接近<br><br><sub><u>2 5 2</u></sub>	be close to					
+由於<br><br><sub><u>3 2</u></sub>	due to					
+有……（表附加）<br><br><sub><u>4 4</u></sub>	come with					
+而不是……<br><br><sub><u>5 4</u></sub>	rather than					
+撞到；巧遇<br><br><sub><u>4 4</u></sub>	bump into					
+Grandpa spent the first half of the {{c1::century::c_____y}} in Japan, and then lived in America for the next fifty years.						
+These days, smartphones are used as the <i>main {{c1::means::m___s}} of</i> communication.	<b>means:</b> A way to do something					
+After the earthquake, {{c1::transportation::t____________n}} to the mountain area became difficult.	<b>US:</b> transport<i>ation</i><br><b>UK:</b> transport					
+Fried food is bad for our health because it {{c1::contains::c_____ns}} too much fat.						
+This house&nbsp;<i>is {{c1::ideal::i___l}} </i>for Bruce. It is close to his office.						
+Our factory {{c1::produces::p_____es}} model cars that are popular with children.						
+This company has to make its {{c1::products::p_____ts}} better if it wants to increase sales.						
+Cathy made cookies in the shape of animals, {{c1::including::i_______g}} dogs and rabbits.						
+Helen's regular breakfast {{c1::includes::i_____es}} a sandwich, an apple, and a glass of milk.						
+After Susan paused to think for a moment, she <i>accepted&nbsp;</i>John's <i>{{c1::invitation::i________n}} to</i> the dance.						
+Ms. Smith inspires her students to study math with her unique teaching {{c1::methods::m____ds}}.						
+The {{c1::bitter::b____r}} taste of some vegetables can be removed by cooking them.						
+Nick's business never became {{c1::profitable::p________e}}, so he gave up on it.						
+Surprisingly, the company didn't <i>make</i> any <i>{{c1::profits::p____ts}}</i>&nbsp;in the first five years.						
+Don't throw those old books away. You can <i>{{c1::donate::d____e}}&nbsp;</i>them&nbsp;<i>to</i>&nbsp;the library.						
+In some countries, people are paid to&nbsp;<i>make</i>&nbsp;blood <i>{{c1::donations::d______ns}}</i>.						
+The baby tiger is weak, so it needs its mother's care and {{c1::protection::p________n}}.						
+Wearing sunglasses can <i>{{c1::protect::p_____t}}</i> your eyes <i>from</i> the bright sunlight.						
+The church <i>{{c1::provides::p_____es}}</i> thoses in need <i>with</i> free meals every Christmas Eve.						
+Amy plans to study at a {{c1::medical::m_____l}} school and become a doctor.						
+As the campers went to sleep, they could hear the sounds of many {{c1::creatures::c______es}} outside their tent.						
+The firefighters ran into the burning building to {{c1::rescue::r____e}} the people inside.						
+A black dog was hit by a speeding car. Judy quickly&nbsp;<i>came to its {{c1::rescue::r____e}}</i>.						
+根據<br><br><sub><u>9 2</u></sub>	according to					
+用……製成的<br><br><sub><u>2 4 4</u></sub>	be made from					
+一點也不……<br><br><sub><u>3... 2 3</u></sub>	not... at all					
+把……變成……<br><br><sub><u>4... 4...</u></sub>	turn... into...					
+同時<br><br><sub><u>2 3 4 4</u></sub>	at the same time					
+"<h1><span style=""background-color: rgb(85, 85, 85);""><code>…</code></span></h1>"	ellipsis					
+Grace has lived in Japan for ten years, so she understands Japanese {{c1::culture::c_____e}} very well.						Vocab
+Simon likes to meet people from different {{c1::cultural::c______l}} background to learn about their countries.						Vocab
+My grandparents provided {{c1::valuable::v______e}} support for my family when I was little.						Vocab
+These photos are of great {{c1::value::v___e}}&nbsp;because they show what the church looked like before.						Vocab
+Many animals try to {{c1::survive::s_____e}} the extreme heat of the desert.						Vocab
+Chris has {{c1::fond::f__d}} memories of living on the farm as a child.						Vocab
+My son is very {{c1::fond::f__d}} of dinosaurs. He plays with his dinosaur models all the time.						Vocab
+Ms. Philip started the meeting by giving everyone a formal {{c1::greeting::g______g}}.						Vocab
+A kid in the park {{c1::grabbed::g__bbed}} little Jummy's toy car and ran away.						Vocab
+Running up the hill in the cold made Lisa's {{c1::cheeks::c___ks}} turn red						Vocab
+Sandy had an {{c1::embarrassing::e__________g}} situation at school today when she spilled milk on the teacher's shirt.						Vocab
+Be careful not to {{c1::embarrass::e_______s}} your friends by mentioning the things they do not want to discuss.						Vocab
+It can be fun for children to {{c1::bounce::b____e}} on their beds.						Vocab
+The police officer {{c1::gestured::g_____ed}} to stop the traffic and let the ambulance go through.						Vocab
+Andy waved his hand in a friendly {{c1::gesture::g_____e}} to greete us.						Vocab
+Kate always {{c1::pats::p_ts}} her dog gently to show her love.						Vocab
+Chole answer the phone {{c1::immediately::i_________y}} after it started ringing.						Vocab
+All the audience cheered when the magician made the truck {{c1::vanish::v____h}}.						Vocab
+Many people visit the {{c1::holy::h__y}} temple to pray for their family.						Vocab
+The manager had a really tight {{c1::schedule::s______e}} this week, so she cancled several of ther meetings.	<b>US:</b>&nbsp;cance<i>l</i>ed<br><b>UK:</b>&nbsp;cance<i>ll</i>ed					Vocab
+Mr. Su is talking with Peter to understand why he {{c1::skipped::s__pped}} class again.						Vocab
+I will {{c1::panic::p___c}} if my business faces unexpected losses.						Vocab
+Poeple ran out of the building in {{c1::panic::p___c}} when the fire alarm rang.						Vocab
+It is important for us to learn to {{c1::embrace::e_____e}} challenges, though it is not always easy to do so.						Vocab
+The family members {{c1::embraced::e_____ed}} each other at the airport.						Vocab
+除……之外（不包括）<br><br><sub><u>6 3</u></sub>	except for					Phrase
+把……撿起來; 接送<br><br><sub><u>4... 2</u></sub>	pick... up					Phrase
+環顧四周<br><br><sub><u>4 6</u></sub>	look around					Phrase
+把……交給……<br><br><sub><u>4... 4</u></sub>	hand... over					Phrase
+習慣<br><br><sub><u>3 4 2</u></sub>	get used to					Phrase
+首先<br><br><sub><u>5 2 3</u></sub>	first of all					Phrase
+相反地<br><br><sub><u>2 3 8</u></sub>	on the contrary					Phrase
+The clown {{c1::entertained::e_______ned}} the children with his magic tricks.						Vocab
+Watching movies is my favorite form of {{c1::entertainment::e___________t}} on weekends.						Vocab
+This painting {{c1::conveys::c____ys}} the artist's sadness at the loss of his mother.	convey: to share or show a thought, feeling, or idea					Vocab
+Shelly made a {{c1::request::r_____t}} to her teacher for more time to finish her art project.						Vocab
+The drink machine in the hall was broken, so the students {{c1::requested::r_____ted}} a new one.						Vocab
+Harland Sanders showed a {{c1::passion::p_____n}} for cooking and really enjoyed it.						Vocab
+When the first McDonald's was {{c1::established::e_______hed}}, it was just a small place that sold hamburgers.	establish: to set up an organization, system, etc.					Vocab
+David's {{c1::failure::f_____e}} to pass the exam only made him study harder for the next one.						Vocab
+With her teacher's help, Martha {{c1::overcame::o______e}} her fear of speaking in public.	overcome: to successfully work through a difficulty or problem					Vocab
+At the end of the movie, the main {{c1::character::c_______r}} finally meets her father for the first time.						Vocab
+During his long and successful {{c1::career::c____r}} in basketball, LeBron James has achieved many things.						Vocab
+The blind runner's {{c1::inspriational::i___________l}} story showed the world that anyone could achieve success.	inspriational&nbsp;<i>[in·spuh·ray·shuh·nuhl]</i>					Vocab
+Yang Lee and Chi-Lin Wang became {{c1::inspirations::i_________ns}} for young Taiwanese badminton players when they won the gold medal.						Vocab
+Kate's {{c1::intelligence::i__________e}} helped her solve the complex puzzle.						Vocab
+It is believed that dolphines are among the most {{c1::intelligent::i_________t}} animals.						Vocab
+Sarah's {{c1::identity::i______y}} as a famous artist became known after he painting won the prize.						Vocab
+Charlie is afraid to {{c1::expose::e____e}} his true thoughts and feelings to anyone except his family.						Vocab
+Brett was sent to the principal's office for his bad {{c1::attitude::a______e}} in class.						Vocab
+Twins that have the same {{c1::apperance::a_______e}} may have completely different personalities.						Vocab
+You don't have to {{c1::prove::p___e}} yourself to anyone. Just try and do your best.						Vocab
+Thanks to the {{c1::efforts::e____ts}} of the firefighters, everyone got out of the building safely.						Vocab
+After years of hard work, Andy finally {{c1::fulfilled::f_____led}} his dream of becoming a doctor.						Vocab
+除……之外<sub>多了</sub><br><br><sub><u>2 8 2</u></sub>	in addition to					Phrase
+換句話說<br><br><sub><u>2 5 5</u></sub>	in other words					Phrase
+有所回報<br><br><sub><u>3 3</u></sub>	pay off					Phrase
+認真看待……<br><br><sub><u>4...9</u></sub>	take... seriously					Phrase
+相應地<br><br><sub><u>2 4</u></sub>	in turn					Phrase
+投入（時間、心思等）<br><br><sub><u>3... 4...</u></sub>	put... into...					Phrase
+For dinner on {{c1::normal::n____l}} weekdays we have chicken and rice.						Vocab
+Tina works in the customer service {{c1::department::d________t}} of the company.						Vocab
+The story {{c1::reflected::r_____ted}} the real-life situation in this town.						Vocab
+Unfortunately, people's {{c1::genders::g____rs}} often affect how they are treated in society.						Vocab
+The workers are {{c1::separating::s_____ting}} the items that can be recycled from the rest of the garbage.						Vocab
+The store {{c1::displayed::d_____yed}} the new phone models in the front window so that customers could easily see them.						Vocab
+Several famous paintings from the 19<sup>th&nbsp;</sup>century are on {{c1::display::d_____y}} in the art gallery.						Vocab
+We need to find {{c1::potential::p_______l}} buyers for out product.						Vocab
+Andy has the {{c1::potential::p_______l}} to become a great tennis player.						Vocab
+{{c1::Physical::P______l}} exercise like running or jumpping helps develop balance.						Vocab
+To stay healthy, Clara {{c1::limits::l___ts}} how many sweets she eats every day.						Vocab
+{{c1::Negative::N______e}} messages from viewers made the YouTubers rethink his plan.						Vocab
+The teacher's advice had a positive {{c1::effect::e____t}} on Stella's study habits.						Vocab
+The UN is an international {{c1::organization::o__________n}} that works to support human rights and freedoms.						Vocab
+They plan to {{c1::organize::o______e}} an event to raise money for the local animal shelter.						Vocab
+We need to {{c1::promote::p_____e}} heathy eating by sharing good food ideas.						Vocab
+The team {{c1::aimed::a_med}} to finish the project several days before the deadline.						Vocab
+Edward's {{c1::aim::a_m}} was to be a singer, but he became a teacher instead.						Vocab
+It is necessary for you to {{c1::label::l___l}} those boxes so that we don't mix them up.						Vocab
+The {{c1::label::l___l}} on the jacket shows that it is made of wool.						Vocab
+Mandy {{c1::admitted::a___tted}} that she forgot her homework and apologized to the teacher.						Vocab
+To save water, we should {{c1::reduce::r____e}} the time we spend in the shower.						Vocab
+（以某事）為基礎<br><br><sub><u>5 2</u></sub>	based on					Phrase
+贊同<br><br><sub><u>go 5 4</u></sub>	go along with					Phrase
+畢竟<br><br><sub><u>5 3</u></sub>	after all					Phrase
+在乎; 關心<br><br><sub><u>4 5</u></sub>	care about					Phrase
+重新開始<br><br><sub><u>4 1 5 5</u></sub>	make a fresh start					Phrase
+終止<br><br><sub><u>3 2 3 2</u></sub>	put an end to					Phrase
+很長的路要走<br><br><sub><u>2/4 1 4 3 2 2</u></sub>	be/have a long way to go					Phrase
+An Indian friend gave me this {{c1::authentic::a_______c}} curry recipe and I like it very much.	authentic: made in a true and accurate way					Vocab
+The movie company offered free tickets in {{c1::exchange::e______e}} for advice about their new movie.						Vocab
+At the end of the game, the soccer players {{c1::exchanged::e______ed}} their T-shirts for those of the other team.						Vocab
+Stanley joined a summer {{c1::program::p_____m}} which offered free English lessons to children in the countryside.	US: program<br>UK: program<i>me</i>					Vocab
+The real {{c1::highlight::h_______t}} of the concert was when the secret guest showed up and sang with the singer.						Vocab
+The teacher asked the students to {{c1::hightlight::h________t}} the verb phrase in each sentence with a color pen.						Vocab
+Sherry passed the exam and was in a {{c1::cheerful::c______l}} mood all day long.						Vocab
+Lisa's books {{c1::occupy::o____y}} too much space in the living room, so she is giving away some of them.						Vocab
+Without proper education and training, one's chances for a future {{c1::occupation::o________n}} are limited.	occupation: a person's regular work or profession					Vocab
+The street is closed to {{c1::vehicles::v_____es}}, so we'll have to park nearby and walk.						Vocab
+Whenyou go biking along the river, be careful not to hit any {{c1::pedestrians::p________ns}}.	pedestrian <i>[puh-des-tree-uhnz]</i>: a person who is walking on the street					Vocab
+&nbsp;Dr. Chen hired three new {{c1::assistants::a_______ts}} to help him in his clinic.						Vocab
+The teacher will {{c1::assist::a____t}} the students in preparing for the school play.						Vocab
+Betty was {{c1::curious::c_____s}} about why her brother broke up with his girlfriend.						Vocab
+The teacher {{c1::explained::e_____ned}} the meaning of the diffcult word to the students.						Vocab
+This recipe acutally {{c1::originated::o_______ed}} in my grandmother's kitchen, and I added some ideas to make it more interesting.	originate: to start at or from a certain place or time					Vocab
+The annual beer festival is a big {{c1::event::e___t}} in this town.						Vocab
+David and Frank live in the same {{c1::neighborhood::n__________d}}. They have known each other since they were kids.	neighborhood: an area or a community within a town<br><br>US: neighborhood<br>UK: neighbo<i>u</i>rhood					Vocab
+Joyce {{c1::arranged::a_____ed}} a party for the daughter's birthday.						Vocab
+Price is an important {{c1::aspect::a____t}} that poeple consider when they buy a house.						Vocab
+The team still kept its fighting {{c1::spirit::s____t}}, even though it had a slim chance of winning.	spirit: a particular way of thinking, feeling, or behaving of one person or a group					Vocab
+The fans {{c1::gathered::g____red}} at the airport to welcome the K-pop singers from Seoul.						Vocab
+Although Mike and Aaron now live far apart, their friendship {{c1::remains::r____ns}}.						Vocab
+參加<br><br><sub><u>4 4 2</u></sub>	take part in					Phrase
+令某人大開眼界<br><br><sub><u>4 3's 4</u></sub>	open one's eyes					Phrase
+舉行；發生<br><br><sub><u>4 5</u></sub>	take place					Phrase
+搭建<br><br><sub><u>3 2</u></sub>	put up					Phrase
+產生<br><br><sub><u>4 5</u></sub>	come about					Phrase
+分發<br><br><sub><u>4 3</u></sub>	hand out					Phrase
+While the man was trying to ride through a tight {{c1::gap::g_p}} between the cars, he fell off and was seriously injured.						Vocab
+Our school principal made an {{c1::announcement::a__________t}} that students would no longer have to wear uniforms.						Vocab
+The coach {{c1::announced::a_______ed}} that the soccer game was canceled because of the rain.	US: cance<i>l</i>ed<br>UK: cance<i>ll</i>ed					Vocab
+The ringing of the church bell on Christmas Day {{c1::echoed::e____oed}} throughout the village.						Vocab
+It was fun for the children to&nbsp;hear the loud {{c1::echoes::e____oes}} of their voices after they spoke into the microphone.						Vocab
+&nbsp;The pilot asked the {{c1::passengers::p________rs}} to fasten their seat belts because the plane was ready to land.						Vocab
+Everyone {{c1::rushed::r____hed}} to the playground when the school bell rang.						Vocab
+Jasmine woke up late, so she went to school in a {{c1::rush::r__h}} without eating breakfast.						Vocab
+Several models {{c1::elegantly::e_______y}} displayed the latest winter styles during the fashion show.						Vocab
+The queen's {{c1::elegant::e_____t}} manner has made her popular on social media.	manner: a way in which a thing is done or happens.					Vocab
+The kids quietly drew pictures so that they would not {{c1::bother::b____r}} other passengers on the train.						Vocab
+You may think the twins look exactly the same, but in fact, the younger sister is {{c1::slightly::s______y}} shorter.						Vocab
+Ms. Lin became extremely {{c1::emotional::e_______l}} when she heard the bad news.						Vocab
+David's {{c1::previous::p______s}} job was as a computer engineer, but now he is a lawyer.						Vocab
+Our guide {{c1::warned::w____ned}} us about the dangers of hiking in the mountains after dark.						Vocab
+Mom likes {{c1::replacing::r_______cing}} sugar with honey to make desserts healthier.						Vocab
+Japan's railway {{c1::systems::s_____ms}} are well-organized, so tourists can travel easily.						Vocab
+The magician made the rabbit {{c1::disappear::d_______r}} right in front of the audience.						Vocab
+James used to be my childhood playmate, so it's no {{c1::wonder::w____r}} that he looked so familiar.						Vocab
+I {{c1::wonder::w____r}} if electric cars will completely replace gas-powered cars someday.						Vocab
+Using a {{c1::digital::d_____l}} whiteboard in the classroom makes teaching and learning more fun.						Vocab
+Jason Wu expressed his {{c1::gratitude::g_______e}} to his parents for helping him achieve his dream.	gratitude: the feeling of being thankful					Vocab
+Stop complaining about your life. You should be {{c1::grateful::g______l}} for all you have.						Vocab
+Living with my grandparents in the countryside is my most wonderful and {{c1::precious::p______s}} childhood memory.	precious <i>[preh·shuhs]</i>: of great value or very important					Vocab
+抬頭看<br><br><sub><u>4 2</u></sub>	look up					Phrase
+下（公車、火車、飛機等）<br><br><sub><u>3 3</u></sub>	get off					Phrase
+前往<br><br><sub><u>4 3's 3 2...</u></sub>	make one's way to...					Phrase
+繼續；持續<br><br><sub><u>2 2</u></sub>	go on					Phrase
+克服<br><br><sub><u>3 4</u></sub>	get over					Phrase
+上（公車、火車、飛機等）<br><br><sub><u>3 2</u></sub>	get on					Phrase
+Mr. Johnson studied the different {{c1::behaviors::b_______rs}} of children in the classroom.	US: behavior<br>UK: behavio<i>u</i>r					Vocab
+My dogs were trained to {{c1::behave::b____e}} well at home.						Vocab
+The coach held up five fingers as a {{c1::signal::s____l}} that there were only five minutes left in the game.						Vocab
+Drunk driving often leads to car {{c1::accidents::a_______ts}}, so it is illegal.	US: dr<i>u</i>nk driving<br>UK: dr<i>i</i>nk-driving / drunk<i>en</i> driving					Vocab
+To {{c1::improve::i_____e}} the flavor of this potato dish, all you have to do is add this special sauce to it.						Vocab
+There has been a great {{c1::improvement::i_________t}} in Tom's writing since he started practicing every day.						Vocab
+For your {{c1::safety::s____y}}, always wear a helmet and bright clothing when riding a bike at night.						Vocab
+Everyone in the class will {{c1::perform::p_____m}} a play at the end of the school year.						Vocab
+The crowd gathered in the square to watch a live {{c1::performance::p_________e}}.						Vocab
+The scientists are doing many {{c1::experiments::e_________ts}} to see whether the new medicine works.						Vocab
+Taking the {{c1::subway::s____y}} to work not only saves time but also saves money.						Vocab
+We are going to {{c1::conduct::c_____t}} a survey to collect everyone's opinions about the school lunches.						Vocab
+Amy's {{c1::goal::g__l}} this year is to improve her English speaking skills.						Vocab
+When you are taking the {{c1::escalator::e_______r}}, make sure that your shoelaces don't get stuck in it.						Vocab
+Scientists recently found more than 200 {{c1::giant::g___t}} dinosaur footprints in the UK.						Vocab
+The new shopping mall is so {{c1::enormous::e______s}} that it takes hours to walk around it.	enormous: very large in size, number, or extent					Vocab
+In general, small and cute cards are more {{c1::appealing::a_______g}} to female consumers.	appealing: attractive or very interesting					Vocab
+Although the idea of going on a working holiday really {{c1::appeals::a_____ls}} to me, I've heard that most of the jobs are quite tiring.	appeal: to attract					Vocab
+Her fear of failing the exam {{c1::motivated::m_______ed}} Jackie to study even harder.						Vocab
+Polly is intelligent but lacks {{c1::motivation::m________n}} when it comes to studying and learning.						Vocab
+The famous movie star wishes to have more {{c1::ordinary::o______y}} life.	ordinary: usual or common					Vocab
+The festival will feature a {{c1::variety::v_____y}} of sporting activities.	"variety <i>[vuh·<span style=""font-weight: 700;"">rai</span>·uh·tee]</i>"			{{c1::.}}		Vocab
+As soon as the couple met for the first time, there was a real {{c1::spark::s___k}} between them.						Vocab
+This book shows readers how {{c1::positive::p______e}} thinking can make a difference.						Vocab
+改善<br><br><sub><u>3 3 6</u></sub>	for the better					Phrase
+導致<br><br><sub><u>4 2</u></sub>	lead to					Phrase
+前往<br><br><sub><u>4 3</u></sub>	head for					Phrase
+（價格、數量等）上升<br><br><sub><u>2 2</u></sub>	go up					Phrase
+最終……<br><br><sub><u>3 2</u></sub>	end up					Phrase
+I always {{c1::find}} interesting things every time I take a trip to a different place.	A	find	finds	found	am finding	
+Peter often {{c1::spends}} hours talking on the phone with Debby. I think they are a couple.	C	spend	spending	spends	spent	
+Finally, my brother {{c1::has}} a dog he likes very much now. He's so excited.	B	is having	has	have	hasing	
+"One never heard of the name of ""television"" in the past. For them, it {{c1::was}} a new invention at that time."	C	be	is	was	were	
+Nina {{c1::was}} always friendly to her friends. Every liked to {{c1::be}} with her.	A	was; be	was; ✕	✕; be	✕; ✕	
+I didn't {{c1::mean}} to hurt you. I am sorry for what I've done to you.	B	meant	mean	meaning	means	
+Molly: {{c1::Did}} Eddie break the window?<br>Scott: No, it was Bob.	C	Was	Is	Did	Are	
+While everyone is happily singing a brithday song to Doris, she {{c1::looks}} unhapy.	C	is looking	look	looks	looks like	
+{{c1::Did}} you and Mary go to the book fair? I heard there were so many books there.	D	Are	Were	Was	Did	
+During the past week, Larry {{c1::did}} well on all the subjects.	D	were doing	does	was do	did	
+It began to rain when I {{c1::heard}} the thunder.	B	hear	beard	was hearing	is hearing	
+Tina: When {{c1::did you last see}} May.<br>Scott: About one week ago.	D	have you last seen	do you last seen	are you last seeing	did you last see	
+Janet {{c1::hasn't worn}} her favourite shoes for the past week.	C	didn't wear	wasn't wear	hasn't worn	won't wear	
+Ms. Chen {{c1::started}} trying to teach the little blind boy to swim for a long time after he showed a great interest in it. However, he didn't learn well.	C	starts	was starting	started	has started	
+Susan's father {{c1::has been dead}} for twenty years. Since she was born, she's never seen him.	D	has died	was dying	is dying	has been dead	
+From Tuesday to Saturday, Nancy {{c1::wrote}} and corrected her composition again and again	B	was writing	wrote	writes	has written	
+Mrs. Smith: Have you eaten dinner {{c1::yet}}? If not, come join us.<br>Billy: Thanks! I'm not hungry at all.	D	already	just	just now	yet	
+I have learned to cook from Mom {{c1::already}}. Next time you've have a chance to try it.	A	already	just	just now	yet	
+Until now, I {{c1::have known}} that the only man Susan likes is my brother, not me.	C	knew	know	have known	had know	
+After my wife left me. I {{c1::have felt}} lonely these days.	C	feel	am feel	have felt	felt	
+The bakery {{c1::has had}} a special discount for the last two weeks. Bread made there is cheaper after 5:00 p.m.	D	have	has	is having	has had	
+It {{c1::has been}} one month since Joe left home without telling his parents.	B	have been	has been	was&nbsp;	will be	
+Kelly is a photographer. She {{c1::has been in}} China for two years. She knows there well.	B	has gone	has been in	has been to	has left for	
+Lilly stood and watched in {{c1::horror::h____r}} as a large truck hit the bus.						
+All the dishes Mary cooked look all right, but they taste {{c1::horrible::h______e}}.						
+A {{c1::private::p_____e}} hospital may cost more than a public hospital.						
+The hotel promises to protect the {{c1::privacy::p_____y}} of all its guests.						
+It is rude to {{c1::stare::s___e}} at strangers when they are eating.						
+Colin's hair is standing up at the back this morning, so his friends are {{c1::teasing::t_____sing}} him about it.						
+Our class dressed in different {{c1::costumes::c______es}} at the Halloween party.						
+Winning the basketball game put Jerry in an excellent {{c1::mood::m__d}}.						
+I {{c1::overheard::o________d}} Nick saying that he was going to Canada next week.						
+Mr. Johnson has served as {{c1::principal::p_______l}} of the high school for eight years now.	<b>US</b>: principal<br><b>UK</b>: headmaster<br><br>served as：擔任					
+When it comes to buying smartphones, many people's {{c1::principal::p_______l}} concern is the price.	 <b>principal</b>: major			{{c1::.}}		
+Frank's parents heard about the fight at school and asked him about the {{c1::incident::i______t}}.	<b>incident</b>: an event that is usually unpleasant.					
+Meg tried to {{c1::pretend::p_____d}} that nothing had happened, but her face told everything.						
+It is not easy for a shy person to develop {{c1::friendships::f_________ps}}.						
+Some responses to the YouTuber's new video were {{c1::hurtful::h_____l}}, while others were encouraging.						
+Students need to be taught how to {{c1::defend::d____d}} themselves against strangers' attacks.						
+Soldiers often have to do brave things in {{c1::defense::d_____e}} of their country.	<b>US</b>: defen<i>s</i>e<br><b>UK</b>: defen<i>c</i>e					
+The {{c1::bully::b___y}} pushed Sam over and warned him not to tell the teacher.						
+When you are {{c1::bullied::b_____ied}} at school, report it to your teacher.						
+Judy was elegantly dressed at the wedding {{c1::ceremony::c______y}}. She looked great!						
+The top of this hill is a good place to {{c1::observe::o_____e}} the stars at night.						
+Tony studies butterflies closely and writes down all his {{c1::observations::o__________ns}} in a journal.						
+故意地<br><br><sub><u>2 7</u></sub>	on purpose					
+在公開場合<br><br><sub><u>2 6</u></sub>	in public					
+和解<br><br><sub><u>4 5</u></sub>	make peace					
+取笑<br><br><sub><u>4 3 2</u></sub>	make fun of					
+辱罵某人<br><br><sub><u>4 sb. 5</u></sub>	call sb. names					
+至少<br><br><sub><u>2 5</u></sub>	at least					
+逃離<br><br><sub><u>3 4</u></sub>	get away					
+My family spent a {{c1::delightful::d________l}} weekend in the country, enjoying the fresh air and wonderful food there.	<b>delightful</b>: pleasant					
+Patty screamed with {{c1::delight::d_____t}} when she saw her favorite actor at the airport.						
+The girl {{c1::sipped::s_pped}} a cup of hot tea and warmed herself by the fire.						
+It {{c1::typically::t_______y}} takes Emily about one week to recover from a cold.						
+It is {{c1::typical::t_____l}} of a careful person to think twice before doing anything.						
+Though Princess Diana was from the {{c1::upper::u___r}} class, she never looked down on the poor.						
+The restaurant {{c1::served::s___ed}} dinner at six o'clock sharp.						
+When on holiday, William always likes to stay in very {{c1::luxurious::l_______s}} hotels.	<b>luxurious</b> /lʌɡˈʒʊə.ri.əs/: very elegant and expensive.					
+The Olympic rings {{c1::represent::r_______t}} the unity of five continents.						
+The sofa {{c1::functions::f______ns}} not only as a sea but also a bed.						
+The main {{c1::function::f______n}} of a helmet is to protect your head.						
+This piece of land is used for {{c1::agriculture::a_________e}}. People grow several different crops on it.	<b>agriculture</b> /ˈæɡ.rɪ.kʌl.tʃər/: the practice of farming.					
+There are many factories in the town, which has caused serious {{c1::industrial::i________l}} pollution.	<b>pollution</b>: damage caused to water, air, etc. by harmful substances or waste.					
+Tourism is a growing {{c1::industry::i______y}} in this developing country.	<b>tourism</b> /ˈtʊə.rɪ.zəm/: the business of providing services such as transport, places to stay, or entertainment for people who are on holiday					
+The Scientific {{c1::Revolution::R________n}}, which took place during the 16<sup>th</sup> and 17<sup>th</sup> centuries, greatly changed the world.						
+Nick works as a farm {{c1::laborer::l_____r}} and spends lots of time in the fields.	<b>US</b>: laborer<br><b>UK</b>: labo<i>u</i>rer					
+It is {{c1::convenient::c________t}} for Lisa to shop online after work.						
+Please call me back at your {{c1::convenience::c_________e}}.						
+Because of the war, many people in this country are at a risk of {{c1::starving::s___ving}} to death.						
+A red line under the word {{c1::indicates::i______es}} that it has been spelled incorrectly.						
+Trust is one of the {{c1::fundamental::f_________l}} elements of a happy relationship.						
+This private club is {{c1::restricted::r______ted}} to club members only.						
+Mr. Johnson {{c1::restricts::r______ts}} himself to no more than one cup of coffee per day.						
+聽說<br><br><sub><u>4 2</u></sub>	hear of					
+要求<br><br><sub><u>3 3</u></sub>	ask for					
+相較之下<br><br><sub><u>2 10</u></sub>	by comparison					
+盡可能地……<br><br><sub><u>2...2 8</u></sub>	as...as possible					
+平均<br><br><sub><u>2 7</u></sub>	on average					
+Before I opened the door, Kelly {{c1::had studied}} for two hours.	D	has studied	have studied	studies	had studied	
+I {{c1::saw}} the bad guy once after the TV news was reported.	C	have seen	had seen	saw	see	
+Before I got up this morning, I {{c1::had lain}} on the bed for an hour and kept thinking my plan.	A	had lain	lied	had lied	lie	
+Janet: Mom, Jerry asked my to watch the ball game after school. Can I go with him?<br>Mrs. Lopez: You {{c1::may}}, but be sure to get home before eleven o'clock.	D	should	would	will	may	
+Robin, stop doing that! You&nbsp;{{c1::mustn't}} keep taking vitamin C as candy. You'll get poisoned.	A	mustn't	won't	ought to	are able to	
+You {{c1::don't have to}} introduce me to Dr. Hiller. We've met once before.	D	don't need	needn't to	haven't to	don't have to	
+It's raining outside. You {{c1::should}} put on a raincoat, or you'll get wet.	B	have better	should	will	are able to	
+Chinese people will take a nap in the afternoon while British people like to relax&nbsp;{{c1::at}} free time.	C	in	by	at	on	
+The first class usually begins&nbsp;{{c1::at}} ten after eight. Before that, we have to finish all the cleaning.	C	in	on	at	from	
+People in a big city usually drive their family to the mountain or the beach to enjoy the wonderful time {{c1::on}} the weekend after a tiring week.	C	in	at	on	through	
+{{c1::On}} the morning of Wednesday, Tina finally saw her lost parents for the first time after fifteen years' waiting.	B	In	On	At	During	
+Now more and more young men like to go out and enjoy their happy time&nbsp;{{c1::at}} midnight.	C	in	on	at	during	
+When you arrive&nbsp;{{c1::at}} the airport, don't forget to give me a call.	C	in	on	at	of	
+Uncle Benson raises a lot of animals&nbsp;{{c1::on}} his farm near Kenting.	A	on	in	at	over	
+Look at the tall handsome boy. He's my boyfriend. He plays&nbsp;{{c1::on}} our school basketball team.	D	in	at	by	on	
+Don: Do you know where the factory is?<br>Ben: Sure. It's&nbsp;{{c1::to}} the west of the city.	A	to	with	at	from	
+Don't talk with your mouth full&nbsp;{{c1::at}} table. It's not a good manner.	C	in	with	at	on	
+Wendy: Sandy never tells a lie, and she's always friendly to people.<br>Scott: No wonder she's so popular&nbsp;{{c1::with}} her classmates.	D	in	about	between	with	
+When hearing the good news that they don't have a test, all the class {{c1::are}} so happy about it.	C	does	is	are	was	
+Strong wind and heavy rain usually {{c1::do}} a lot of damage to either people or buildings.	B	did	do	does	doing	
+Either pizza or cake {{c1::is}} the best food for a welcome party among young people.	D	are	is a	are a	is	
+The Browns {{c1::are}} all well after the big accident that happend last night.	D	is	have	has	are	
+The crowd on the street {{c1::is}} the largest one that I've ever seen.	B	are	were	do	is	
+Though the team {{c1::is}} small, they are all energetic.	C	are	was	is	were	
+I am doing a report about turtles. I have no idea about them at all. Any information of them {{c1::is}} useful.	C	are	is the	is	are the	
+Please open the window to let some {{c1::light}} come inside.	A	light	lights	lightes	a light	
+Cows, horses, {{c1::sheep and deer}} are common animals you can see on a farm.	C	sheep and deers	sheeps and deer	sheep and deer	sheeps and deers	
+Joe just bought six bottles of juice for the party. However, he thought {{c1::they were}} not enough.	A	they were	it was	you are	we are	
+The tail of the dog is long but the ears of {{c1::it}} are short.	C	it's	its'	it	its	
+Vincent: Do you have any money with you?<br>Ray: Yes, but only {{c1::a little}}.	D	few	a few	none	a little	
+Some girls like to spend much time dressing themselves up while going out, but {{c1::others}} have no time to do so.	D	other	the others	all	others	
+Everyone should help to fight copying others' ideas because the laws {{c1::themselves}} are not enough.	A	themselves	herself	ourselves	itself	
+Mark: Should I stay or leave her? I feel a geat deal of stress.<br>Tina: Since I am not you, you {{c1::yourself}} have to make a choice between both.	C	myself	itself	yourself	by yourself	
+{{c1::Educating::E____ting}} young children about learning from their mistakes is important.						
+After high school, Lisa decided to go for further {{c1::education::e_______n}} in an art school in Paris.						
+I'm actively {{c1::seeking::s__king}} a job in the design field.						
+Due to many developments in medical {{c1::technology::t________y}}. people can live longer now.						
+The film is well {{c1::worth::w___h}} seeing. You shouldn't miss it!						
+Mr. White was invited to attend the international {{c1::conference::c________e}} on climate change.						
+We were asked to {{c1::present::p_____t}} our research projects to the whole class.						
+During the meeting, the manager gave a short {{c1::presentation::p__________n}} about the new product.						
+Nowadays, it is {{c1::increasingly::i__________y}} common for people to shop online.						
+If you eat a lot and seldom exercise, you risk of suffering from heart disease will {{c1::increase::i______e}}.						
+This guide book to Paris covers a {{c1::broad::b___d}} range to topics.						
+Tracy prepared {{c1::numerours::n_______s}} dishes for the Thanksgiving dinner.						
+Fans are waiting outside the building in the hope of seeing the {{c1::celebrities::c_______ies}} in person.						
+After the speech, the speaker patiently answered the questions from the {{c1::audience::a______e}}.						
+The audience watched the amazing magic show in {{c1::fascination::f_________n}}.						
+The dancers' amazing performance {{c1::fascinated::f________d}} everyone.						
+The author's science {{c1::fiction::f_____n}} novels are always popular with readers, so her latest book should be a hit too.						
+You look tired. I {{c1::suggest::s_____t}} taking a hot bath and going to bed early.						
+Abbie had a few {{c1::suggestions::s________ns}} about the trip, but not everyone agreed with her ideas.						
+The {{c1::government::g________t}} asked people to save water during the hot, dry summer.						
+Nurses come around several times a day to {{c1::monitor::m_____r}} how well the patients are recovering.						
+We should {{c1::control::c_____l}} how much sugar we eat each day to stay healthy.						
+The driver lost {{c1::control::c_____l}} of the car; it went off the road and hit a tree.						
+和；以及<br><br><sub><u>2 4 2</u></sub>	as well as					
+一連串的<br><br><sub><u>1 6 2</u></sub>	a series of					
+代表<br><br><sub><u>5 3</u></sub>	stand for					
+目前；現在<br><br><sub><u>2 7</u></sub>	at present					
+試試看<br><br><sub><u>4 2 1 3</u></sub>	give it a try					
+拓展某人的視野<br><br><sub><u>7 3'1 8</u></sub>	broaden one's horizons					
+Spending time with family or pets brings emotional {{c1::balance::b_____e}} and helps people feel more relaxed.						
+Some birds can {{c1::balance::b_____e}} well on branches with onlyh one foot.						
+Google provides users with a {{c1::powerful::p______l}} online search engine. It is so useful!						
+The police said that the shocking murder was {{c1::linked::l__ked}} to large debts.						
+The study shows there is a {{c1::link::l__k}} between sleep habits and school performance.						
+As a doctor, Mr. Chen considers saving patients' lives to be the most {{c1::rewarding::r_______g}} part of this job.						
+The rescure dog received a treat as a {{c1::reward::r____d}} for doing a good job on the mission.						
+Some chemical factories were found {{c1::releasing::r____sing}} dangerous liquids into the river.						
+The students observed the {{c1::release::r_____e}} of heat during the experiment.						
+Dr. Lee is an expert in biology, {{c1::Moreover::M______r}}, he is a famous YouTuber.						
+Many celebrities {{c1::participated::p_________ed}} in this activity to help to poor. I really repect their good deeds.						
+This group of students is {{c1::engaged::e_____d}} in preparing their presentation on the local history of Tainan.						
+Elisa has improved her English though {{c1::constant::c______t}} practice sincce last year.						
+The busy international airport sees {{c1::frequent::f______t}} takesoffs and landings every day.						
+Our team carried out a marketing {{c1::task::t__k}} in the hope of increasing sales of the new product.						
+Emma suffered from {{c1::depression::d________n}} after losing her only daughterin a car accident.						
+Our principal made efforts to {{c1::ensure::e____e}} that bullying would not happen on campus again.						
+Many {{c1::experts::e____ts}} warned that some small island countries might disappear soon due to global warming.						
+Some lawmakers {{c1::recommended::r_______ded}} that drunk driving be heavily fined.	<b>US: </b>dr<i>u</i>nk driving<br><b>UK: </b>dr<i>i</i>nk-driving / drunk<i>en</i>&nbsp;driving					
+Ben has a strong {{c1::desire::d____e}} to get into a top university, so he is studying hard to reach his goal.						
+If you truly {{c1::desire::d____e}} success, work hard. I believe you can achieve it!						
+Kevin {{c1::paused::p___ed}} for breath after rushing up the stairs with his heavy bag.						
+Alex confidently answered this teacher's question without a {{c1::pause::p___e}}.						
+The mobile game became an {{c1::instant::i_____t}} hit with young people on its release day.						
+簡而言之<br><br><sub><u>2 5</u></sub>	in short					
+導致；引起<br><br><sub><u>5 5</u></sub>	bring about					
+控制……<br><br><sub><u>4 sth. 2 5</u></sub>	keep sth. in check					
+從長遠來看<br><br><sub><u>2 3 4 3</u></sub>	in the long run					
+依賴<br><br><sub><u>4 2</u></sub>	rely on					
+總而言之<br><br><sub><u>2 7</u></sub>	in summary					
+Ladies and gentlemen, please switch your phone to silent {{c1::mode::m__e}}. The show is about to start.						
+{{c1::Captain::C_____n}} Smith gave the children a tour of the airplane.						
+{{c1::Shortly::S_____y}} after we had arrived at the park, it started to rain.						
+Jenny's dress was too long, so her mother had to {{c1::shorten::s_____n}} it for her.						
+It was my {{c1::fault::f___t}} that I missed the bus. I spent too much time getting dressed.						
+Cool weather led to a {{c1::decrease::d______e}} in ice cream sales.						
+More warning signs should help to {{c1::decrease::d______e}} the number of accidents on this road.						
+Clothes dry very slowly here because of the high {{c1::humidity::h______y}}.						
+It is {{c1::humid::h___d}} at this time of year because it is the rainy season.						
+It tends to rain when the air {{c1::pressure::p______e}} is low.						
+Some people are more {{c1::sensitive::s_______e}} to noise than others.						
+Speaking English {{c1::enables::e____es}} one to talk with people from many different countries.						
+It's easy to {{c1::distinguish::d_________h}} king penguins from little blue penguins.						
+When you do an experiment, it is important to record the data {{c1::accurately::a________y}}.						
+The shopkeeper has provided an {{c1::accurate::a______e}} description of the thief.						
+The manager {{c1::blamed::b___ed}} Simon for the failure of the project.						
+Smartphones have {{c1::affected::a____ted}} the way people communicate.						
+Danny easily gets {{c1::distracted::d______ted}} from his studies by his friends.						
+The earthquake damaged the whole village, and the {{c1::conditions::c_______ns}} there now are awful.						
+Sandra {{c1::proposed::p_____ed}} that we cancel the trip since a typhoon is coming.	<b>propose:&nbsp;</b>to suggest or offer a possible plan or solution for others to consider					
+The manager accepted Dan's {{c1::proposal::p______l}} to hold a big promotion for their new product.						
+Farmers use chemical {{c1::sprays::s___ys}} on their crops to kill bugs.						
+Molly likes to {{c1::spray::s___y}} herself with perfume whenever she goes out.						
+記住<br><br><sub><u>4 2 4</u></sub>	keep in mind					
+當然；不用說<br><br><sub><u>8 2 3</u></sub>	needless to say					
+首先<br><br><sub><u>3 1 5</u></sub>	for a start					
+信不信由你<br><br><sub><u>7 2 2 3</u></sub>	believe it or not					
+儘管；不論<br><br><sub><u>10 2</u></sub>	regardless of					
+期待<br><br><sub><u>4 7 2</u></sub>	look forward to					
+Mr. Wang will come back to Taiwan to celebrate his son, Peter's {{c1::twelfth}} birthday.	C	eightth	nineth	twelfth	twentyth	
+Dad: How {{c1::much}} homework do you have today?<br>Terry: Just some math exercises.	D	many	most	little	much	
+I feel {{c1::a great deal of}} stress when the test is coming.	D	many	a number of	a few	a great deal of	
+While lots of tigers are sleeping under the tree, {{c1::lots of}} deer are playing on the grass.	D	a little	a	a great deal of	lots of	
+Those {{c1::excited}} people are watching the movie happily.	B	exciting	excited	excites	excite	
+Sam: Did {{c1::something interesting}} happen?<br>Linda: No, what?<br>Sam: Then why are you laughing so loudly?	A	something interesting	interesting something	anything interested	interesting anything	
+Amy: Why do you always keep old things?<br>Peter: {{c1::Everything old}} has the special meanings. They bring me lots of memories during my life.	C	Old thing	Old things	Everything old	Old everything	
+{{c1::Susan is surprised}} to find that her money in her bag was gone.	A	Susan is surprised	It's sad for Susan	Susan is strange	It's happy for Susan	
+The park is {{c1::full}} of people who come from everywhere to see Coco.	D	free	fond	filled	full	
+Because of the {{c1::low}} price, people bought a lot of things from the store whether they were useful or not.	D	short	cheap	little	low	
+The tree is {{c1::tall}} enough that we can climb up to see the whole view of our town.	D	straight	hard	high	tall	
+Tim is strange. He puts on four rings on each of his fingers except his {{c1::little}} finger.	C	low	short	little	small	
+Tim is not {{c1::popular}} with girls. He is too shy to speak a word in front of them. In fact, he tries to escape when seeing girls.	D	interested	like	known	popular	
+I am {{c1::sick}} of movies now. I've seen ten movies for the whole week.	B	tiring	sick	free	short	
+The lake with a beautiful scene and fresh air has been {{c1::known to}} everyone.	D	welcome for	famous for	popular of	known to	
+After hitting a giant rock, the fishing boat started to sink {{c1::beneath::b_____h}} the waves.						
+It is {{c1::remarkable::r________e}} that Malala won the Nobel Peace Prize at the age of 17.						
+Blair can't {{c1::afford::a____d}} to buy a scooter, not to mention a new car.						
+{{c1::Fate::F__e}} brought Fred and Andrea together when they bumped into each other on a bus.						
+Gloria decided to {{c1::pursue::p____e}} a career in acting.	<b>pursue</b>: to do an activity or try to achieve something over a long period of time.					
+Dr. Bell {{c1::devoted::d____ed}} himself to protecting the environment.	<b>devote</b>: to give all or most of your time and effort to do something or help someone.					
+Mrs. Sung was presented an award for her {{c1::devotion::d______n}} to education.						
+Our dinner will be ready soon. {{c1::Meanwhile::M_______e}}, would you set the table?	<b>meanwhile</b>: during the same time as another event.					
+It's {{c1::cruel::c___l}} of the boss to make us work outside on such a cold day.	<b>cruel</b>: causing someone suffering.					
+Stan takes care of many stray animals and does so at great personal {{c1::sacrifice::s_______e}}.						
+Many soldiers {{c1::sacrifice::s_______e}} their precious lives for their country in the battle.						
+Sandy was determined to become a good doctor after {{c1::graduating::g_____ting}} from medical school.						
+Lynn planned to go on a working holiday in Australia after her {{c1::graduation::g________n}}.						
+I suggest that you seek {{c1::professional::p__________l}} advice before trying to become a YouTuber.						
+Ronnie left the teaching {{c1::profession::p________n}} and started to sell fried chicken.						
+After they won the World Cup, the soccer team returned home in {{c1::triumph::t_____h}}.	<b>triumph</b> /trai·uhmf/: the strong feeling of satisfaction or achievement after a great victory or success.					
+Our New Year's {{c1::celebrations::c_________ns}} included great food, wonderful music, and beautiful fireworks.						
+Building the tunnel will {{c1::weaken::w____n}} the structure of the mountain.						
+Fiona has great {{c1::artistic::a______c}} skills, She can draw just about anything.						
+I could {{c1::barely::b____y}} recognize Stephen after he had lost 20 kilograms.						
+Anne threw away her {{c1::ruined::r____d}} shoes after walking in the rain.						
+The fire {{c1::ruined::r__ned}} a large number of trees in the forest.						
+A red heart with an arrow through it is often a {{c1::symbol::s____l}} of love.						
+The captain had an {{c1::ambition::a______n}} to find great treasures at the bottom of the sea.	<b>ambition</b>: a strong wish or desire to achieve something.					
+Mr. King is an {{c1::ambitious::a_______s}} businessman and won't quit till he succeeds.	<b>ambitious</b> /am·bi·shuhs/					
+收支平衡；勉強餬口<br><br><sub><u>4 4 4</u></sub>	make ends meet					
+夢想……<br><br><sub><u>5 2</u></sub>	dream of					
+休息一下<br><br><sub><u>4 1 5</u></sub>	take a break					
+白費；徒然<br><br><sub><u>2 4</u></sub>	in vain					
+成名<br><br><sub><u>4 1 4 3 7</u></sub>	make a name for oneself					
+放下<br><br><sub><u>3 4</u></sub>	lay down					
+忍住……；制住<br><br><sub><u>4 4</u></sub>	hold back					
+Passengers heading for Tokyo are now standing in line to get {{c1::aboard::a____d}}.						
+There were more than 1,000 people {{c1::aboard::a____d}} the ship when it had an accident and sank.						
+Jade Mountain is famous for its {{c1::magnificent::m_________t}} views that change with each season.						
+The {{c1::monument::m______t}} was built to honour the brave soldiers who had died in the war.						
+Singapore gained {{c1::independence::i__________e}} from Malaysia in 1965.						
+Jill plans to become {{c1::independent::i_________t}} of her parents when she gets her first job.						
+Rebecca only told her secret to a couple of {{c1::intimate::i______e}} friends.						
+Some local fishermen disagreed with the plan to {{c1::construct::c______t}} a bridge across the river.						
+The new library is still under {{c1::construction::c_________n}} and won't be completed until the end of October.						
+Try to reduce {{c1::exposure::e______e}} to blue light from your smartphone before going to bed.						
+Tina {{c1::glanced::g____ed}} around the restaurant to see if her friends had arrived.						
+Just before making his speech, Mark took a quick {{c1::glance::g____e}} at his notes.						
+The colour white {{c1::symbolizes::s_______es}} peace in many cultures.						
+A good speech can {{c1::enlighten::e_______n}} people or even change their lives.	<b>enlighten:&nbsp;</b>to offer someone information that can help him or her to understand something better.					
+A large number of European {{c1::immigrants::i_______ts}} moved to America in the 19<sup>th</sup>&nbsp;century.						
+After Ryan completed his high school education in Canada, his family {{c1::immigrated::i_______ed}} to Taiwan.						
+Vast oceans make up a major {{c1::portion::p_____n}} of the earth's surface.						
+In countries like Taiwan and the US, people enjoy {{c1::freedom::f_____m}} of speech.						
+Mozart is considered to be one of the most talented {{c1::classical::c_______l}} musicians of the time.						
+Take my {{c1::advice::a____e}}. Don't spread this information online, or you may get into trouble.						
+Joe's teacher {{c1::advised::a____ed}} him to apologise to Mandy for his rude behaviour.	<b>US:</b> apologi<i>z</i>e<br><b>UK:</b> apologise					
+Every year, numerous visitors go to Iceland to {{c1::admire::a____e}} the magnificent northern lights.						
+Ted got up early to hike to the top of the mountain and admire the {{c1::glorious::g______s}} sunrise above a sea of clouds.	<b>glorious:</b> very impressive and beautiful					
+以……製成<br><br><sub><u>2 4 2</u></sub>	be made of					
+注意到<br><br><sub><u>4 4 2</u></sub>	take note of					
+除了……之外<br><br><sub><u>5 4</u></sub>	apart from					
+想出；理解<br><br><sub><u>6 3</u></sub>	figure out					
+留心腳步；走路小心<br><br><sub><u>5 3's 4</u></sub>	watch one's step					
+optimistic	樂觀的					
+enthusiastic	熱情的					
+The wealthy man {{c1::employed::e____yed}} Jamie and Gary as private chefs.						
+As a full-time {{c1::employee::e______e}} of the toy company, Bob works from nine to five every day.						
+There is a big supermarket at the center of the local {{c1::community::c_______y}}.						
+Joe whistled all the way home, feeling {{c1::joyful::j____l}} that he had won the race.						
+I only listen to classical music {{c1::occasionally::o__________y}}. Most of the time, I listen to jazz.						
+While Lily was cooking, she took an {{c1::occasional::o________l}} glance at her baby playing on the floor.						
+The law {{c1::requires::r_____es}} everyone to wear a seatbelt in a car.						
+The hotel may fill up, so it is {{c1::essential::e_______l}} that you book your room in advance.						
+Research indicates that coins, buttons, and taps are often home to all kinds of {{c1::germs::g__ms}}.						
+People in that city demanded stricter {{c1::regulations::r________ns}} on how factories handled their waste.						
+To maintain social order, people who {{c1::violate::v_____e}} the law should be punished.						
+Drunk driving is a serious {{c1::violation::v_______n}} of traffic laws.						
+Reading on {{c1::electronic::e________c}} readers is less harmful to our eyes than reading on smartphones.						
+A rice cooker is one piece of {{c1::equipment::e_______t}} that every home needs.						
+This phone model is {{c1::equipped::e___pped}} with four cameras and a special low-light mode to take the best pictures.						
+The hospital was crowded with {{c1::victims::v____ms}} of the disease. Many of them were seriously ill.						
+Since they were in a European restaurant, Donna {{c1::reminded::r____ded}} her husband to tip the waiter.						
+We were amazed that the little girl {{c1::completed::c______ed}} the puzzle in just one hour.						
+with two new scientists, the research team was {{c1::hopeful::h_____l}} that it would find a solution.						
+Tom {{c1::regretted::r____tted}} pulling Ben's chair away just for fun. He didn't realize that i would leave Ben badly injured.						
+I have no {{c1::regrets::r____ts}} about taking a year off from school to go on a working holiday abroad.						
+One of the main {{c1::concerns::c_____ns}} about the concert is that the weather might turn bad.						
+It {{c1::concerned::c_____ned}} Anne that her son behaved so badly at school, so she called his teacher.						
+Ms. Li {{c1::received::r_____ed}} an email from her former student this morning.						
+值勤中<br><br><sub><u>2 4</u></sub>	on duty					
+即將要……<br><br><sub><u>2 5 2</u></sub>	be about to					
+被連接到……（電子設備等）<br><br><sub><u>2 6 2 2 3</u></sub>	be hooked up to sth.					
+使（某人）開心起來；<br>使（某人）振作<br><br><sub><u>5 (2) 2</u></sub>	cheer (sb.) up					
+拒絕<br><br><sub><u>4 4</u></sub>	turn down					
