@@ -4101,18 +4101,6 @@
 		(uuid "3d57d7fb-e741-41b6-8fcc-f4c12cc9832f")
 	)
 	(junction
-		(at 86.36 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5c7fd62d-5311-4d1e-8f99-f384ee6b9a05")
-	)
-	(junction
-		(at 81.28 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "71aa7c84-ba13-4cec-9220-203ab57d5b56")
-	)
-	(junction
 		(at 184.15 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4254,16 +4242,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 90.17) (xy 92.71 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20354807-8998-4408-be72-acf2b540d301")
-	)
-	(wire
-		(pts
 			(xy 184.15 31.75) (xy 184.15 36.83)
 		)
 		(stroke
@@ -4291,16 +4269,6 @@
 			(type default)
 		)
 		(uuid "2d511483-4b8a-4232-b26c-da04b399dbaf")
-	)
-	(wire
-		(pts
-			(xy 81.28 83.82) (xy 81.28 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35d6a252-5643-4bf9-819a-d0a298c09be0")
 	)
 	(wire
 		(pts
@@ -4384,16 +4352,6 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 87.63) (xy 92.71 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b7dc94b-d8b8-4eaf-8324-edd3703ac2ea")
-	)
-	(wire
-		(pts
 			(xy 110.49 124.46) (xy 110.49 128.27)
 		)
 		(stroke
@@ -4414,16 +4372,6 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 85.09) (xy 92.71 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71673d1c-748f-48de-b4d1-9c2387f5d568")
-	)
-	(wire
-		(pts
 			(xy 43.18 69.85) (xy 45.72 69.85)
 		)
 		(stroke
@@ -4441,6 +4389,16 @@
 			(type default)
 		)
 		(uuid "93d5cef1-f82f-4b6e-ab9b-8fa11a570d4c")
+	)
+	(wire
+		(pts
+			(xy 81.28 83.82) (xy 81.28 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9478837b-4424-4a50-9e1f-3747dd16236c")
 	)
 	(wire
 		(pts
@@ -4494,6 +4452,16 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 83.82) (xy 86.36 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2e10911-22a9-4e4b-a069-44646f402e71")
+	)
+	(wire
+		(pts
 			(xy 43.18 58.42) (xy 43.18 67.31)
 		)
 		(stroke
@@ -4531,16 +4499,6 @@
 			(type default)
 		)
 		(uuid "da9f2037-1882-4850-bd41-7833e047913b")
-	)
-	(wire
-		(pts
-			(xy 86.36 83.82) (xy 86.36 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3e4af5f-b2c4-42d6-a8e4-59e3aee092ba")
 	)
 	(wire
 		(pts
@@ -4602,6 +4560,16 @@
 		)
 		(uuid "098c1791-fadc-42ac-9f2c-d68ab1941c4e")
 	)
+	(label "CLK"
+		(at 86.36 83.82 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "148b1f4d-c4ba-4d35-abcd-089bffc450f4")
+	)
 	(label "QH'1"
 		(at 97.79 127 180)
 		(effects
@@ -4643,12 +4611,12 @@
 		(uuid "2698c5ed-ac0b-4728-b10e-22e1132ded5d")
 	)
 	(label "LATCH_MOLEX"
-		(at 140.97 129.54 180)
+		(at 140.97 133.35 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "289cb751-f97c-495f-b483-c9cecf79b59f")
 	)
@@ -4713,12 +4681,12 @@
 		(uuid "38739db1-568d-43bb-882b-652e7a67a93b")
 	)
 	(label "CLOCK_MOLEX"
-		(at 140.97 132.08 180)
+		(at 140.97 135.89 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "3d7a0095-273d-4793-9145-9ee9c1913d58")
 	)
@@ -4741,6 +4709,16 @@
 			(justify left bottom)
 		)
 		(uuid "45ff8284-f830-49ae-a5ff-1b4d5d96a2e2")
+	)
+	(label "DATA"
+		(at 100.33 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4670a0a0-b754-4ede-8d6b-aaae961b82b4")
 	)
 	(label "data"
 		(at 62.23 124.46 270)
@@ -4922,6 +4900,16 @@
 		)
 		(uuid "906114cb-d038-4eb6-954d-e77ec4bc7485")
 	)
+	(label "LETCH"
+		(at 100.33 85.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "92871544-cbdd-4477-a923-56a2df6070f8")
+	)
 	(label "GREEN_A"
 		(at 194.31 93.98 90)
 		(effects
@@ -4972,6 +4960,16 @@
 		)
 		(uuid "a89cccb1-7b39-47ce-9382-d9d06f4ab3eb")
 	)
+	(label "LETCH"
+		(at 81.28 83.82 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ac66a44e-f997-48aa-8cd9-ef0623246b76")
+	)
 	(label "LED_BAR2A"
 		(at 69.85 104.14 90)
 		(effects
@@ -5002,6 +5000,16 @@
 		)
 		(uuid "ad69cdd4-89a4-4e83-b1a5-40242a42ff30")
 	)
+	(label "DATA"
+		(at 55.88 85.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b7e387ef-af74-4643-8ff2-ce7f5a816f9e")
+	)
 	(label "LED_BAR4A"
 		(at 74.93 104.14 90)
 		(effects
@@ -5011,6 +5019,16 @@
 			(justify left bottom)
 		)
 		(uuid "b97e3eb1-f63f-441c-a758-4404b7a15018")
+	)
+	(label "CLK"
+		(at 100.33 82.55 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bc64cf3d-8837-4608-863f-e986b915390b")
 	)
 	(label "TFT_SCL"
 		(at 166.37 101.6 90)
@@ -5073,12 +5091,12 @@
 		(uuid "d3fd281c-ccde-4f60-8fee-4dcd51a0d772")
 	)
 	(label "DATA_MOLEX"
-		(at 140.97 127 180)
+		(at 140.97 130.81 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "d4219e33-22d5-47de-9b16-334a35d2f568")
 	)
@@ -5361,7 +5379,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 146.05 129.54 0)
+		(at 135.89 133.35 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5370,25 +5388,23 @@
 		(fields_autoplaced yes)
 		(uuid "238adb52-b973-4ac6-9176-97fba6725f1d")
 		(property "Reference" "J4"
-			(at 148.59 128.2699 0)
+			(at 135.89 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Value" "Conn_01x03"
-			(at 148.59 130.8099 0)
+			(at 135.89 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Horizontal"
-			(at 146.05 129.54 0)
+			(at 135.89 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5397,7 +5413,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 146.05 129.54 0)
+			(at 135.89 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5406,7 +5422,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 146.05 129.54 0)
+			(at 135.89 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5442,7 +5458,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "23e532af-62f4-4359-ad34-c1d31bb309f3")
-		(property "Reference" "#PWR38"
+		(property "Reference" "#PWR038"
 			(at 123.19 26.67 0)
 			(effects
 				(font
@@ -5493,7 +5509,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR38")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -5687,7 +5703,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "322f7ebe-394e-4a51-af7a-84aef9ec3794")
-		(property "Reference" "#PWR31"
+		(property "Reference" "#PWR031"
 			(at 133.35 26.67 0)
 			(effects
 				(font
@@ -5738,7 +5754,7 @@
 		(instances
 			(project ""
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR31")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -5754,7 +5770,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "48f3c570-4ddb-4f9a-819f-9143ac42f2e1")
-		(property "Reference" "#PWR5"
+		(property "Reference" "#PWR05"
 			(at 125.73 64.77 0)
 			(effects
 				(font
@@ -5805,7 +5821,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR5")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -5956,7 +5972,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "585d3154-de17-4dac-97a0-a54a1fd5df8d")
-		(property "Reference" "#PWR10"
+		(property "Reference" "#PWR010"
 			(at 184.15 95.25 0)
 			(effects
 				(font
@@ -6006,7 +6022,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR10")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -6022,7 +6038,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6059c6fc-8fab-44f5-a784-99d116805df9")
-		(property "Reference" "#PWR4"
+		(property "Reference" "#PWR04"
 			(at 135.89 62.23 0)
 			(effects
 				(font
@@ -6073,7 +6089,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR4")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -6308,7 +6324,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c4f859d-facc-49b3-a1d1-c5ca3d87ad35")
-		(property "Reference" "#PWR37"
+		(property "Reference" "#PWR037"
 			(at 123.19 43.18 0)
 			(effects
 				(font
@@ -6359,7 +6375,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR37")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -6461,7 +6477,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6e6808e8-8b17-4387-a955-9fcbd8f829ea")
-		(property "Reference" "#PWR6"
+		(property "Reference" "#PWR06"
 			(at 125.73 80.01 0)
 			(effects
 				(font
@@ -6512,7 +6528,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR6")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -6835,7 +6851,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7ec535d6-5a82-41c1-91e9-79a4b6df3ec9")
-		(property "Reference" "#PWR40"
+		(property "Reference" "#PWR040"
 			(at 172.72 64.77 0)
 			(effects
 				(font
@@ -6885,7 +6901,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR40")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -6893,7 +6909,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x03")
-		(at 97.79 87.63 0)
+		(at 105.41 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6901,7 +6917,7 @@
 		(dnp no)
 		(uuid "80d91fb3-633c-497a-814b-da1b20c7e8e0")
 		(property "Reference" "J5"
-			(at 100.33 86.3599 0)
+			(at 107.95 83.8199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6910,7 +6926,7 @@
 			)
 		)
 		(property "Value" "Conn_01x03"
-			(at 99.568 88.9 0)
+			(at 107.188 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6919,7 +6935,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Horizontal"
-			(at 97.79 87.63 0)
+			(at 105.41 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6928,7 +6944,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 97.79 87.63 0)
+			(at 105.41 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6937,7 +6953,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 97.79 87.63 0)
+			(at 105.41 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6972,7 +6988,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81c87f69-efc6-4e07-b28b-33e441a7b9a9")
-		(property "Reference" "#PWR42"
+		(property "Reference" "#PWR042"
 			(at 77.47 46.99 0)
 			(effects
 				(font
@@ -7022,7 +7038,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR42")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -7038,7 +7054,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "829b9afe-926c-4a1a-bfe8-043d33c6e6c0")
-		(property "Reference" "#PWR9"
+		(property "Reference" "#PWR09"
 			(at 158.75 127 0)
 			(effects
 				(font
@@ -7088,7 +7104,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR9")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -7510,7 +7526,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c4adac9-e7d9-4743-9625-8dca9a529069")
-		(property "Reference" "#PWR41"
+		(property "Reference" "#PWR041"
 			(at 162.56 64.77 0)
 			(effects
 				(font
@@ -7560,7 +7576,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR41")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -7697,7 +7713,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9c615e26-5db8-4cce-bbc6-0e26e4c27c29")
-		(property "Reference" "#PWR32"
+		(property "Reference" "#PWR032"
 			(at 133.35 43.18 0)
 			(effects
 				(font
@@ -7748,7 +7764,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR32")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -7830,7 +7846,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a6c4dd3d-0693-4929-811c-09d48838235d")
-		(property "Reference" "#PWR34"
+		(property "Reference" "#PWR034"
 			(at 114.3 26.67 0)
 			(effects
 				(font
@@ -7881,7 +7897,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR34")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -7968,7 +7984,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ad6c365a-77e5-4f08-86b7-44ca066bcea3")
-		(property "Reference" "#PWR8"
+		(property "Reference" "#PWR08"
 			(at 205.74 119.38 0)
 			(effects
 				(font
@@ -8019,7 +8035,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR8")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -8172,7 +8188,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b8067272-290a-4d91-828a-a143fa1dc174")
-		(property "Reference" "#PWR33"
+		(property "Reference" "#PWR033"
 			(at 114.3 43.18 0)
 			(effects
 				(font
@@ -8223,7 +8239,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR33")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -8765,7 +8781,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "efbbe3e3-daab-4b2d-bb76-014ab70e4fbb")
-		(property "Reference" "#PWR35"
+		(property "Reference" "#PWR035"
 			(at 104.14 26.67 0)
 			(effects
 				(font
@@ -8816,7 +8832,7 @@
 		(instances
 			(project ""
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR35")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -8968,7 +8984,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6aa7b91-891d-4a18-9e31-c7f4d20f3a5e")
-		(property "Reference" "#PWR36"
+		(property "Reference" "#PWR036"
 			(at 104.14 43.18 0)
 			(effects
 				(font
@@ -9019,7 +9035,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR36")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -9101,7 +9117,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fedade1a-6def-4178-8d78-7c4112d2832c")
-		(property "Reference" "#PWR3"
+		(property "Reference" "#PWR03"
 			(at 125.73 120.65 0)
 			(effects
 				(font
@@ -9151,7 +9167,7 @@
 		(instances
 			(project "tros"
 				(path "/e53a56d3-4f03-40fb-9528-7617dde539c9"
-					(reference "#PWR3")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
