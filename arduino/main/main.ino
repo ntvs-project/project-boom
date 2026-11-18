@@ -1,7 +1,7 @@
 // SINGLE, FULL
 #define SINGLE
 // DEBUG, NODEBUG
-#define DEBUG
+#define NODEBUG
 
 #include <ezBuzzer.h>
 #include <TM1637Display.h>
@@ -9,12 +9,14 @@
 #include "output.h"
 #include "input.h" // CHANGE
 
+#define CLK 3
+#define DIO 4
 #define BUZZER 5
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 3 // CHANGE
-#define INPUT_AMOUNT  1 // CHANGE
+#define OUTPUT_AMOUNT 1 // CHANGE
+#define INPUT_AMOUNT  0 // CHANGE
 #define BOARD_AMOUNT  1 // CHANGE
 
 uint8_t YB, Y, B, mis;
@@ -23,7 +25,7 @@ uint8_t moduleFinished = 0;
 Output output(8, 9, 10, OUTPUT_AMOUNT);
 Input input(11, 12, 13, INPUT_AMOUNT);
 
-TM1637Display timer(3, 4, 10); // CLK DIO
+TM1637Display timer(CLK, DIO, 10); // CLK DIO
 ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 
 #include "MB.h"
@@ -41,8 +43,9 @@ Grey   grey(2, 1);
 Caesar caesar(2, 1);
 #endif
 
-#ifdef SINGLE; // CHANGE
-Trislator trislator(0, 0);
+#ifdef SINGLE // CHANGE
+MB mb(0, 0);
+// Trislator trislator(0, 0);
 #endif
 
 void setup() {
@@ -64,8 +67,9 @@ void setup() {
   }
   #endif
 
-  #ifdef SINGLE; // CHANGE
-  trislator.init();
+  #ifdef SINGLE // CHANGE
+  // trislator.init();
+  mb.init();
   #endif
 }
 
@@ -99,12 +103,12 @@ void loop() {
   }
   #endif
 
-  #ifdef SINGLE; // CHANGE
-  switch (trislator.check()) {
-    case  1: trislator.fini(); break;
-    case  0: trislator.miss(); break;
-    case -1: break;
-  }
+  #ifdef SINGLE // CHANGE
+  // switch (trislator.check()) {
+  //   case  1: trislator.fini(); break;
+  //   case  0: trislator.miss(); break;
+  //   case -1: break;
+  // }
   #endif
 
   #ifdef FULL
@@ -122,7 +126,9 @@ void loop() {
   }
   #endif
 
-  #ifdef SINGLE; // CHANGE
-  if (!trislator.finished) trislator.loop();
+  #ifdef SINGLE // CHANGE
+  // if (!trislator.finished) trislator.loop();
+  buzzer.loop();
+  mb.loop();
   #endif
 }
