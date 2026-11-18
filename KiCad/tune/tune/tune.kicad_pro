@@ -449,7 +449,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "tros.kicad_pro",
+    "filename": "tune.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -603,7 +603,7 @@
   "sheets": [
     [
       "e53a56d3-4f03-40fb-9528-7617dde539c9",
-      "Root"
+      "根目錄"
     ]
   ],
   "text_variables": {}
