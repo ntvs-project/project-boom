@@ -3362,10 +3362,6 @@
 		(uuid "80183a3d-b282-47d9-81b5-46c27b2e1f13")
 	)
 	(no_connect
-		(at 72.39 134.62)
-		(uuid "9f302352-a958-4f7c-bacd-f4fd37a9af86")
-	)
-	(no_connect
 		(at 190.5 152.4)
 		(uuid "acf64fc7-3ee1-4f73-98ad-b427ed946e3e")
 	)
@@ -3400,16 +3396,6 @@
 			(type default)
 		)
 		(uuid "0491fa97-3a4a-4ccc-879e-23fe684db3b6")
-	)
-	(wire
-		(pts
-			(xy 99.06 36.83) (xy 99.06 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "053c142f-a730-4330-91fa-640bf9c9cd6f")
 	)
 	(wire
 		(pts
@@ -4163,6 +4149,16 @@
 	)
 	(wire
 		(pts
+			(xy 99.06 35.56) (xy 99.06 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f052f2d8-8bd2-44ba-9c0a-307bd79b1810")
+	)
+	(wire
+		(pts
 			(xy 104.14 173.99) (xy 104.14 167.64)
 		)
 		(stroke
@@ -4240,6 +4236,16 @@
 			(justify left bottom)
 		)
 		(uuid "0666f3b0-59be-49cf-9d07-054af34cecef")
+	)
+	(label "output_clk"
+		(at 99.06 35.56 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0a7c9cfb-fec8-40e4-ac3f-e27f5eeebdce")
 	)
 	(label "p"
 		(at 43.18 134.62 180)
@@ -4361,16 +4367,6 @@
 		)
 		(uuid "1a99a122-fe40-4732-a055-247e35de2b23")
 	)
-	(label "output_latch"
-		(at 99.06 36.83 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1b6f63b3-d712-4161-8848-c92b1644a67f")
-	)
 	(label "e"
 		(at 162.56 92.71 180)
 		(effects
@@ -4411,6 +4407,16 @@
 		)
 		(uuid "2134ec95-eb71-4dba-be2f-3b790fce4b9d")
 	)
+	(label "p"
+		(at 72.39 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "21fc9ed9-56a0-402c-a7ba-e05c16168103")
+	)
 	(label "d22"
 		(at 162.56 63.5 270)
 		(effects
@@ -4421,15 +4427,15 @@
 		)
 		(uuid "247d52f7-0ed4-44cc-9f69-1bf7a7b6e328")
 	)
-	(label "output_clk"
-		(at 157.48 36.83 0)
+	(label "output_latch"
+		(at 260.35 35.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "2c1e510e-8201-424e-a93f-51dcb1b3b60f")
+		(uuid "2d128580-43d6-4722-9a7a-0ced82467baf")
 	)
 	(label "d15"
 		(at 149.86 97.79 0)
@@ -4480,16 +4486,6 @@
 			(justify right bottom)
 		)
 		(uuid "442afd58-58b7-4158-b4b4-af7ec6f5835b")
-	)
-	(label "output_clk"
-		(at 106.68 36.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "460ddf19-fc81-47e8-adf8-cf71c1f778d1")
 	)
 	(label "g"
 		(at 134.62 97.79 180)
@@ -4561,6 +4557,16 @@
 		)
 		(uuid "59ec63af-cbd3-4f34-86d6-a81c52617cef")
 	)
+	(label "output_latch"
+		(at 208.28 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5e02cec7-345c-4340-88f7-20f4aa43682e")
+	)
 	(label "g"
 		(at 162.56 97.79 180)
 		(effects
@@ -4580,6 +4586,16 @@
 			(justify right bottom)
 		)
 		(uuid "600652b3-9bfd-473d-96d9-45814b03cb1f")
+	)
+	(label "output_latch"
+		(at 157.48 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "63041155-9e44-42a5-85eb-8a57758c6900")
 	)
 	(label "b"
 		(at 57.15 86.36 180)
@@ -4630,16 +4646,6 @@
 			(justify right bottom)
 		)
 		(uuid "701cbabc-e9be-4e18-92dc-0f5acb3a727c")
-	)
-	(label "output_latch"
-		(at 200.66 36.83 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "75580b44-e29e-4142-bfee-5ee5d38c45bc")
 	)
 	(label "e"
 		(at 104.14 60.96 180)
@@ -4701,16 +4707,6 @@
 		)
 		(uuid "7c7c9075-f3a1-422e-b06f-976f00fa13b3")
 	)
-	(label "output_clk"
-		(at 260.35 33.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "815be4d2-2956-404f-9118-bdd3c46204a8")
-	)
 	(label "e"
 		(at 134.62 92.71 180)
 		(effects
@@ -4761,16 +4757,6 @@
 		)
 		(uuid "85b606ea-842e-4d04-8eeb-71df9b0aa53f")
 	)
-	(label "LED"
-		(at 38.1 49.53 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "86370c90-5366-4772-bf53-88d958882f11")
-	)
 	(label "e"
 		(at 72.39 127 180)
 		(effects
@@ -4800,16 +4786,6 @@
 			(justify left bottom)
 		)
 		(uuid "89411b50-792e-4950-9f09-8cffcd4484ed")
-	)
-	(label "output_clk"
-		(at 59.69 33.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8b4489e8-dc9b-420a-9b03-651b7838ccd8")
 	)
 	(label "b"
 		(at 134.62 85.09 180)
@@ -4981,6 +4957,16 @@
 		)
 		(uuid "adf1aec1-87bf-470e-8dd9-4ac0664a10c3")
 	)
+	(label "output_clk"
+		(at 149.86 36.83 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aeba1309-fd10-4a54-a08d-e462921203cc")
+	)
 	(label "a"
 		(at 72.39 116.84 180)
 		(effects
@@ -4990,16 +4976,6 @@
 			(justify right bottom)
 		)
 		(uuid "af36c012-ee5b-4e3d-a498-d8fee9e3d2ca")
-	)
-	(label "output_clk"
-		(at 208.28 36.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b058b55c-575b-431c-b164-dd838dc30718")
 	)
 	(label "b"
 		(at 43.18 119.38 180)
@@ -5031,16 +5007,6 @@
 		)
 		(uuid "bb0b0db3-5089-4e2f-b7b5-0e93f257782c")
 	)
-	(label "output_latch"
-		(at 260.35 35.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c2f1a0f1-a9a9-4057-b6d8-2602c24dee01")
-	)
 	(label "f"
 		(at 57.15 96.52 180)
 		(effects
@@ -5052,14 +5018,14 @@
 		(uuid "c3c87c9d-ee0c-4b13-bf42-fe1273488b92")
 	)
 	(label "output_latch"
-		(at 59.69 35.56 0)
+		(at 106.68 36.83 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "c7085c73-c3c8-4f86-bacf-a508d47603e3")
+		(uuid "c4fd1462-7f9e-434c-886b-58896ace138d")
 	)
 	(label "c"
 		(at 162.56 87.63 180)
@@ -5081,15 +5047,15 @@
 		)
 		(uuid "cbb657c8-395c-429c-a2a3-43de53ffc848")
 	)
-	(label "output_latch"
-		(at 149.86 36.83 180)
+	(label "output_clk"
+		(at 260.35 33.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
-		(uuid "cf25527f-6614-427b-a8f0-9455c5c8ec73")
+		(uuid "d191d127-d735-4ce7-994e-cb4cf122a93e")
 	)
 	(label "d24"
 		(at 198.12 62.23 270)
@@ -5111,6 +5077,26 @@
 		)
 		(uuid "d2fc9e15-73c6-426a-a594-9b107fa49e66")
 	)
+	(label "LED"
+		(at 38.1 29.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d72ff78f-b404-48a6-9fdd-944e940e5ae2")
+	)
+	(label "output_clk"
+		(at 200.66 36.83 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d92b9799-fe01-40fb-be29-c5867f10313a")
+	)
 	(label "f"
 		(at 72.39 129.54 180)
 		(effects
@@ -5131,6 +5117,16 @@
 		)
 		(uuid "dc0030a8-1d9f-457b-966d-5bb20be9f88f")
 	)
+	(label "output_clk"
+		(at 59.69 33.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd470ea7-98c2-4561-9450-30cfbe79898d")
+	)
 	(label "d"
 		(at 57.15 91.44 180)
 		(effects
@@ -5140,6 +5136,16 @@
 			(justify right bottom)
 		)
 		(uuid "e2508baa-3187-4a4b-8f05-2a326bf3bef4")
+	)
+	(label "output_latch"
+		(at 59.69 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eb9c85fe-188f-4fc8-948b-c706383e14a8")
 	)
 	(label "d21"
 		(at 58.42 134.62 0)
@@ -5757,6 +5763,72 @@
 			(project "tristalor_2"
 				(path "/935e82ff-b295-4d17-b66a-682e1fdc2159"
 					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDREF")
+		(at 38.1 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e9d8751-09e4-4af0-8521-df9ef4c8b8eb")
+		(property "Reference" "#PWR01"
+			(at 38.1 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GNDREF"
+			(at 38.1 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDREF\" , reference supply ground"
+			(at 38.1 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "63104a78-77e9-4e20-b864-34242ed226f2")
+		)
+		(instances
+			(project "tristalor_2"
+				(path "/935e82ff-b295-4d17-b66a-682e1fdc2159"
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -8427,72 +8499,6 @@
 			(project "tristalor_2"
 				(path "/935e82ff-b295-4d17-b66a-682e1fdc2159"
 					(reference "#PWR010")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 38.1 29.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f54c178e-3732-41f1-988b-92e3315f249a")
-		(property "Reference" "#PWR01"
-			(at 38.1 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "VCC"
-			(at 38.1 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 38.1 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 38.1 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "46d519ee-3f75-491c-bddf-099d3c15f624")
-		)
-		(instances
-			(project "tristalor_2"
-				(path "/935e82ff-b295-4d17-b66a-682e1fdc2159"
-					(reference "#PWR01")
 					(unit 1)
 				)
 			)
