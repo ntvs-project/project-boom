@@ -450,87 +450,104 @@ body.ktane-theme {
   transform: translateY(0);
 }
 
-/* 每個模組左上角的綠色狀態指示燈 */
+/* 每個模組左上角的綠色狀態指示燈 (精準重合 bomb.png 各模組左上綠燈) */
 .bay-status-led {
   position: absolute;
-  top: 6.5%;
-  left: 8.5%;
-  width: 12.5%;
+  top: 14.3%;
+  left: 14.4%;
+  width: 10%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   pointer-events: none;
-  background: transparent;
+  background: #0d2818;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7);
   transition: all 0.3s ease;
+  z-index: 5;
 }
 
 .bay-status-led.solved {
-  background: var(--led-green);
-  box-shadow: 0 0 16px var(--led-green), 0 0 32px var(--led-green);
+  background: #00e676;
+  border-color: #b9f6ca;
+  box-shadow: 0 0 16px #00e676, 0 0 32px #00e676, inset 0 0 6px #ffffff;
 }
 
-/* 主板核心疊加層 (Timer / Strikes / YB) */
+/* 主板核心疊加層 (Timer / Strikes / YB) - 1:1 精準對齊 bomb.png 原始主圖 */
 .main-timer-overlay {
   position: absolute;
-  top: 17%;
-  left: 6.5%;
-  width: 76%;
-  height: 48%;
+  top: 25.5%;
+  left: 14%;
+  width: 66%;
+  height: 33%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-size: 3.6vw;
-  font-weight: 900;
-  color: var(--led-red);
-  letter-spacing: 2px;
-  text-shadow: 0 0 14px rgba(255, 42, 42, 0.8);
+  font-family: 'Share Tech Mono', 'Orbitron', monospace;
+  font-size: clamp(24px, 4.2vw, 48px);
+  font-weight: 700;
+  color: #ff2222;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(255, 34, 34, 0.95), 0 0 22px rgba(255, 0, 0, 0.7);
   pointer-events: none;
-}
-@media (min-width: 1000px) {
-  .main-timer-overlay { font-size: 36px; }
+  user-select: none;
+  z-index: 6;
 }
 
-.main-strikes-overlay {
-  position: absolute;
-  top: 72%;
-  left: 28%;
-  width: 35%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-}
+/* 3 個紅色失誤指示燈 (Strikes) - 完美對齊圖片上的三個紅燈 */
 .mb-strike-dot {
-  width: 18px;
-  height: 18px;
+  position: absolute;
+  top: 72.8%;
+  width: 7.2%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: #2a1111;
-  transition: all 0.2s ease;
+  pointer-events: none;
+  background: #331111;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+  transition: all 0.25s ease;
+  z-index: 6;
 }
+.mb-strike-dot.strike-1 { left: 30.5%; }
+.mb-strike-dot.strike-2 { left: 44.0%; }
+.mb-strike-dot.strike-3 { left: 57.8%; }
+
 .mb-strike-dot.lit {
-  background: var(--led-red);
-  box-shadow: 0 0 14px var(--led-red), 0 0 25px var(--led-red);
+  background: #ff1744;
+  border-color: #ff8a80;
+  box-shadow: 0 0 14px #ff1744, 0 0 28px #ff1744, inset 0 0 6px #ffffff;
 }
 
-.main-yb-overlay {
-  position: absolute;
-  top: 31%;
-  right: 5%;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  pointer-events: none;
-}
+/* 黃藍指示燈 (YB) - 完美對齊圖片上右側的黃藍燈 */
 .mb-yb-dot {
-  width: 18px;
-  height: 18px;
+  position: absolute;
+  left: 88.5%;
+  width: 6.8%;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
   transition: all 0.25s ease;
+  z-index: 6;
 }
-.mb-yb-dot.yellow { background: #3b3512; }
-.mb-yb-dot.yellow.lit { background: var(--led-yellow); box-shadow: 0 0 16px var(--led-yellow); }
-.mb-yb-dot.blue { background: #0f273d; }
-.mb-yb-dot.blue.lit { background: var(--led-blue); box-shadow: 0 0 16px var(--led-blue); }
+.mb-yb-dot.yb-yellow {
+  top: 35.5%;
+  background: #383414;
+}
+.mb-yb-dot.yb-yellow.lit {
+  background: #ffea00;
+  border-color: #ffff8d;
+  box-shadow: 0 0 15px #ffea00, 0 0 30px #ffea00, inset 0 0 5px #ffffff;
+}
+.mb-yb-dot.yb-blue {
+  top: 48.5%;
+  background: #102436;
+}
+.mb-yb-dot.yb-blue.lit {
+  background: #00b0ff;
+  border-color: #80d8ff;
+  box-shadow: 0 0 15px #00b0ff, 0 0 30px #00b0ff, inset 0 0 5px #ffffff;
+}
 
 /* ================= 模組放大居中檢視 (FOCUS OVERLAY) ================= */
 .focus-overlay {

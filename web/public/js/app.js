@@ -957,86 +957,50 @@ function triggerGameOver(won, msg) {
 // ================= 綁定事件監聽器 =================
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. 主選單按鈕
-  $('#goSetupBtn').addEventListener('click', () => {
-    if (state.soundFx) state.soundFx.click();
-    switchScreen('setupScreen');
-  });
+  // ================= 任務啟動函式 (5分鐘開局) =================
+  async function launchMission(selMods = ['fourColor', 'greyCaesar', 'trislator', 'tune', 'sort'], timeLimit = 300, maxStrikes = 3) {
+    // 預先在前端初始化，讓倒數計時器 05:00 立即開始跳動
+    state.running = true;
+    state.timeLimit = timeLimit;
+    state.remaining = timeLimit;
+    state.maxStrikes = maxStrikes;
+    state.strikes = 0;
+    state.yb = state.yb || '00';
+    state.selectedModules = selMods;
+    state.solved = Object.fromEntries(selMods.map(m => [m, false]));
+    state.trislatorState = { round: 0, phase: 'numeric' };
 
-  $('#setupBackBtn').addEventListener('click', () => {
-    if (state.soundFx) state.soundFx.click();
-    switchScreen('mainMenuScreen');
-  });
+    // 關閉任何開啟中的彈窗
+    const focusOverlay = $('#moduleFocusOverlay');
+    if (focusOverlay) focusOverlay.classList.add('hidden');
+    const resultModal = $('#resultModal');
+    if (resultModal) resultModal.classList.add('hidden');
 
-  // ================= 任務啟動函式 =================
-  async function launchMission(selMods, timeLimit, maxStrikes, errEl = null) {
-    if (errEl) errEl.textContent = '';
-    if (!selMods || selMods.length === 0) {
-      if (errEl) errEl.textContent = '至少必須選取一個模組！';
-      return;
-    }
+    // 同步 UI 與計時器
+    updateTimerUI();
+    updateStrikesUI();
+    updateYbUI();
+    updateModuleStatusLeds();
+    startTimer();
 
+    // 請求後端 PHP 初始化局狀態與題目
     const res = await apiPost('game/start.php', {
       modules: selMods,
       timeLimit,
       maxStrikes
     });
 
-    if (!res.ok) {
-      if (errEl) errEl.textContent = res.error || '啟動失敗';
-      else alert(res.error || '啟動失敗');
-      return;
+    if (res && res.ok) {
+      state.yb = res.yb || '00';
+      state.selectedModules = res.selectedModules;
+      state.publicModules = res.modules;
+      state.trislatorState = res.trislatorState || { round: 0, phase: 'numeric' };
+      updateYbUI();
+      updateModuleStatusLeds();
     }
-
-    // 初始化狀態
-    state.running = true;
-    state.timeLimit = res.timeLimit;
-    state.remaining = res.timeLimit;
-    state.maxStrikes = res.maxStrikes;
-    state.strikes = 0;
-    state.yb = res.yb || '00';
-    state.selectedModules = res.selectedModules;
-    state.solved = Object.fromEntries(res.selectedModules.map(m => [m, false]));
-    state.publicModules = res.modules;
-    state.trislatorState = res.trislatorState || { round: 0, phase: 'numeric' };
-
-    // 同步 UI
-    updateTimerUI();
-    updateStrikesUI();
-    updateYbUI();
-    updateModuleStatusLeds();
-
-    // 未選取的模組遮蔽
-    const allMods = ['fourColor', 'greyCaesar', 'trislator', 'tune', 'sort'];
-    allMods.forEach(m => {
-      const hotspot = $(`#hotspot-${m}`);
-      if (hotspot) {
-        hotspot.style.display = selMods.includes(m) ? 'block' : 'none';
-      }
-    });
-
-    switchScreen('gameScreen');
-    startTimer();
-    if (state.soundFx) state.soundFx.click();
   }
 
-  // 1.5 快速開始按鈕（主選單直接開局）
-  const quickStartBtn = $('#quickStartBtn');
-  if (quickStartBtn) {
-    quickStartBtn.addEventListener('click', () => {
-      launchMission(['fourColor', 'greyCaesar', 'trislator', 'tune', 'sort'], 300, 3);
-    });
-  }
-
-  // 2. 啟動遊戲
-  $('#setupStartBtn').addEventListener('click', () => {
-    const selMods = $$('.mod-check:checked').map(c => c.value);
-    const timeLimit = parseInt($('#timeLimitSelect').value, 10) || 300;
-    const maxStrikes = parseInt($('#maxStrikesSelect').value, 10) || 3;
-    launchMission(selMods, timeLimit, maxStrikes, $('#setupErr'));
-  });
-
-  // 3. 底圖熱區點擊放大
+  // 1. 底圖熱區點擊放大
   $$('.module-bay-hotspot').forEach(hotspot => {
     hotspot.addEventListener('click', () => {
       const mod = hotspot.dataset.module;
@@ -1046,57 +1010,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. 返回炸彈全貌
-  $('#zoomOutBtn').addEventListener('click', () => {
-    zoomOut();
-  });
+  // 2. 返回炸彈全貌
+  const zoomOutBtn = $('#zoomOutBtn');
+  if (zoomOutBtn) {
+    zoomOutBtn.addEventListener('click', () => {
+      zoomOut();
+    });
+  }
 
   // 鍵盤 ESC 快捷鍵縮小
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (!$('#moduleFocusOverlay').classList.contains('hidden')) {
+      const focusOverlay = $('#moduleFocusOverlay');
+      if (focusOverlay && !focusOverlay.classList.contains('hidden')) {
         zoomOut();
       }
-      if (!$('#manualModal').classList.contains('hidden')) {
-        $('#manualModal').classList.add('hidden');
+      const manualModal = $('#manualModal');
+      if (manualModal && !manualModal.classList.contains('hidden')) {
+        manualModal.classList.add('hidden');
       }
     }
   });
 
-  // 5. 拆彈手冊
+  // 3. 拆彈手冊
   function openManual() {
     if (window.renderManualContent) {
       window.renderManualContent($('#manualBody'));
     }
-    $('#manualModal').classList.remove('hidden');
+    const manualModal = $('#manualModal');
+    if (manualModal) manualModal.classList.remove('hidden');
     if (state.soundFx) state.soundFx.click();
   }
 
-  $('#openManualBtn').addEventListener('click', openManual);
-  $('#menuOpenManualBtn').addEventListener('click', openManual);
-  $('#manualCloseBtn').addEventListener('click', () => {
-    $('#manualModal').classList.add('hidden');
-  });
-  $('#manualBackdrop').addEventListener('click', () => {
-    $('#manualModal').classList.add('hidden');
-  });
+  const openManualBtn = $('#openManualBtn');
+  if (openManualBtn) openManualBtn.addEventListener('click', openManual);
+  const manualCloseBtn = $('#manualCloseBtn');
+  if (manualCloseBtn) {
+    manualCloseBtn.addEventListener('click', () => {
+      $('#manualModal').classList.add('hidden');
+    });
+  }
+  const manualBackdrop = $('#manualBackdrop');
+  if (manualBackdrop) {
+    manualBackdrop.addEventListener('click', () => {
+      $('#manualModal').classList.add('hidden');
+    });
+  }
 
-  // 6. 結算按鈕
-  $('#restartGameBtn').addEventListener('click', () => {
-    $('#resultModal').classList.add('hidden');
-    $('#setupStartBtn').click();
-  });
+  // 4. 重置 / 再玩一次按鈕
+  const resetRoundBtn = $('#resetRoundBtn');
+  if (resetRoundBtn) {
+    resetRoundBtn.addEventListener('click', () => {
+      if (confirm('確定要重新開始一局 5 分鐘拆彈任務嗎？')) {
+        launchMission();
+      }
+    });
+  }
 
-  $('#resultMenuBtn').addEventListener('click', () => {
-    $('#resultModal').classList.add('hidden');
-    switchScreen('mainMenuScreen');
-  });
+  const restartGameBtn = $('#restartGameBtn');
+  if (restartGameBtn) {
+    restartGameBtn.addEventListener('click', () => {
+      launchMission();
+    });
+  }
 
-  $('#backToMenuBtn').addEventListener('click', () => {
-    if (confirm('確定要放棄本次拆彈任務並返回主選單嗎？')) {
-      state.running = false;
-      if (state.timerHandle) clearInterval(state.timerHandle);
-      switchScreen('mainMenuScreen');
-    }
-  });
+  // 5. 點開網頁立即武裝並開始 5 分鐘倒數！
+  launchMission();
 });
