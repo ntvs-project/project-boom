@@ -104,10 +104,13 @@ void printDebug() {
 }
 
 void setup() {
-  Serial.begin(9600);
-  randomSeed(analogRead(PIN_RANDOM));
+  delay(1);
 
-  pinMode(PIN_MODE, INPU);
+  Serial.begin(9600);
+  Serial.println();
+  randomSeed(analogRead(PIN_RANDOM) + micros());
+
+  pinMode(PIN_MODE, INPUT);
   pinMode(PIN_DONE, OUTPUT);
   pinMode(PIN_SIG_Y, INPUT_PULLUP);
   pinMode(PIN_SIG_B, INPUT_PULLUP);
@@ -123,14 +126,14 @@ void setup() {
   // initDebugScreen();
   initCircuitScreen();
   resonance.init();
-  Serial.println("init");
+  Serial.println("nano | init");
 }
 
 void loop() {
   output.simpleUpdate();
 
   if (digitalRead(PIN_MODE) == 0) {
-    // printDebug();
+    printDebug();
     // drawDebugScreen();
     drawCircuitScreen();
 
@@ -143,10 +146,10 @@ void loop() {
     resonance.loop();
   } else if (digitalRead(PIN_MODE) == 1) {
     drawQRCode();
-    Serial.println("QR");
+    Serial.println("nano | screen: QR");
     while (digitalRead(PIN_MODE) == 1);
     initScreen();
     initCircuitScreen();
-    Serial.println("resonance");
+    Serial.println("nano | screen: resonance");
   }
 }

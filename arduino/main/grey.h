@@ -39,15 +39,17 @@ class Grey {
     }
 
     void init() {
+      Serial.println("grey | init");
+
       prev = millis();
 
       original = random(1, 15);
-      Serial.print("orig: ");
+      Serial.print("grey | orig: ");
       Serial.println(original, BIN);
 
       if (YB == 2) answer = binaryToGrey(original);
       if (YB == 1) answer = greyToBinary(original);
-      Serial.print("ans : ");
+      Serial.print("grey | ans : ");
       Serial.println(answer, BIN);
 
       output.write(OUTOFF, 1, 0, 0);
@@ -72,9 +74,12 @@ class Grey {
     }
 
     void fini() {
+      Serial.println("grey | fini");
+
       output.write(OUTOFF, 1, 0, 1);
       output.writeRange(OUTOFF, 0, 0, 0, 7, "00000000");
-      finished++;
+      finished = true;
+      moduleFinished++;
       while (true) {
         output.simpleUpdate();
         buzzer.turnOFF();
@@ -83,6 +88,8 @@ class Grey {
     }
 
     void miss() {
+      mis++;
+
       strcpy(led, "11111111");
       output.writeRange(OUTOFF, 0, 0, 0, 7, led);
     }
@@ -97,11 +104,11 @@ class Grey {
       bool hold    = input.readHold(INOFF, 0, 2);
 
       if (pressed) {
-        Serial.println("pressed");
+        Serial.println("grey | pressed");
         bitWrite(user, 3 - idx, 0);
       }
       if (hold) {
-        Serial.println("hold");
+        Serial.println("grey | hold");
         bitWrite(user, 3 - idx, 1);
       }
       if (pressed || hold) {

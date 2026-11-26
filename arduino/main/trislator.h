@@ -232,6 +232,8 @@ class Trislator {
     }
 
     void init() {
+      Serial.println("trislator | init");
+
       output.writeRange(OUTOFF, -1, 8, -1, 19, "11111111111");
       output.writeRange(OUTOFF, 2, 3, 2, 6, "1111");
       output.write(OUTOFF, 2, 3 + 0, false);
@@ -279,15 +281,19 @@ class Trislator {
     }
 
     void fini() {
+      Serial.println("trislator | fini");
+
       show(
         D, D, D, D, D, D,
         D, D, D, D, false
       );
       output.write(OUTOFF, 2, 7, true);
       finished = true;
+      moduleFinished++;
     }
 
     void miss() {
+      mis++;
     }
 
     void loop() {

@@ -55,23 +55,28 @@ class Caesar {
     }
 
     void init() {
+      Serial.println("caesar | init");
+
       original = random(0, 26);
       origLength = morseLength[original];
-      Serial.print("orig: ");
+      Serial.print("caesar | orig: ");
       Serial.write('A' + original);
       Serial.print(" ");
       Serial.println(morseCode[original]);
 
       shiftAmount = random(1, 8);
-      if (YB == 0) Serial.print("left ");
-      if (YB == 3) Serial.print("right ");
-      Serial.print("shift: ");
-      Serial.println(shiftAmount);
+
+      // Serial.print("caesar | ");
+      // if (YB == 0) Serial.print("left ");
+      // if (YB == 3) Serial.print("right ");
+      // Serial.print("shift: ");
+      // Serial.println(shiftAmount);
 
       if (YB == 0) answer = leftShift (original, shiftAmount);
       if (YB == 3) answer = rightShift(original, shiftAmount);
+
       ansLength = morseLength[answer];
-      Serial.print("ans : ");
+      Serial.print("caesar | ans : ");
       Serial.write('A' + answer);
       Serial.print(" ");
       Serial.println(morseCode[answer]);
@@ -124,6 +129,8 @@ class Caesar {
     }
 
     void fini() {
+      Serial.println("caesar | fini");
+
       output.write(OUTOFF, 1, 0, 1);
       output.writeRange(OUTOFF, 0, 0, 0, 7, "00000000");
       finished++;
@@ -135,6 +142,8 @@ class Caesar {
     }
 
     void miss() {
+      mis++;
+
       strcpy(led, ledBackup);
       output.writeRange(OUTOFF, 0, 0, 0, 7, led);
     }
@@ -149,12 +158,12 @@ class Caesar {
       bool hold    = input.readHold(INOFF, 0, 2);
 
       if (pressed) {
-        Serial.println("pressed");
+        Serial.println("caesar | pressed");
         user[idx] = '0';
         // bitWrite(user, 3 - idx, 0);
       }
       if (hold) {
-        Serial.println("hold");
+        Serial.println("caesar | hold");
         user[idx] = '1';
         // bitWrite(user, 3 - idx, 1);
       }

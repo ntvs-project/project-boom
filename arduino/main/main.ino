@@ -1,5 +1,5 @@
 // SINGLE, FULL
-#define SINGLE
+#define FULL
 // DEBUG, NODEBUG
 #define NODEBUG
 
@@ -7,7 +7,7 @@
 #include <TM1637Display.h>
 
 #include "output.h"
-#include "input.h" // CHANGE
+#include "input_bar.h" // CHANGE
 
 #define CLK 3
 #define DIO 4
@@ -15,12 +15,13 @@
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 1 // CHANGE
-#define INPUT_AMOUNT  0 // CHANGE
-#define BOARD_AMOUNT  1 // CHANGE
+#define OUTPUT_AMOUNT 5 // CHANGE
+#define INPUT_AMOUNT  2 // CHANGE
+#define BOARD_AMOUNT  2 // CHANGE
 
 uint8_t YB, Y, B, mis;
 uint8_t moduleFinished = 0;
+bool    bycrEnabled = false;
 
 Output output(8, 9, 10, OUTPUT_AMOUNT);
 Input input(11, 12, 13, INPUT_AMOUNT);
@@ -32,20 +33,20 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 #include "folour.h"
 #include "grey.h"
 #include "caesar.h"
-#include "tune.h"
 #include "trislator.h"
+#include "tune.h"
 #include "test.h"
 
 #ifdef FULL
-MB mb(3, 3);
-Folour folour(0, 0); // 1, 0 (bar)
-Grey   grey(2, 1);
-Caesar caesar(2, 1);
+MB mb(0, 0);
+Folour folour(1, 0); // 1, 0 (bar)
+Grey   grey  (3, 1);
+Caesar caesar(3, 1);
 #endif
 
 #ifdef SINGLE // CHANGE
 MB mb(0, 0);
-// Trislator trislator(0, 0);
+Tune tune(0, 0);
 #endif
 
 void setup() {
@@ -68,15 +69,15 @@ void setup() {
   #endif
 
   #ifdef SINGLE // CHANGE
-  // trislator.init();
   mb.init();
+  tune.init();
   #endif
 }
 
 void loop() {
   #ifdef DEBUG
   mis = 0;
-  // mb.resetTimer();
+  mb.resetTimer();
   #endif
 
   output.simpleUpdate();
@@ -104,11 +105,11 @@ void loop() {
   #endif
 
   #ifdef SINGLE // CHANGE
-  // switch (trislator.check()) {
-  //   case  1: trislator.fini(); break;
-  //   case  0: trislator.miss(); break;
-  //   case -1: break;
-  // }
+  switch (tune.check()) {
+    case  1: tune.fini(); break;
+    case  0: tune.miss(); break;
+    case -1: break;
+  }
   #endif
 
   #ifdef FULL
@@ -116,6 +117,10 @@ void loop() {
   if (!folour.finished) folour.loop();
 
   if (moduleFinished == BOARD_AMOUNT - 1) {
+    if (!bycrEnabled) {
+      bycrEnabled = true;
+      Serial.println("bycr Enabled");
+    }
     buzzer.loop();
 
     if (Y != B) {
@@ -127,8 +132,7 @@ void loop() {
   #endif
 
   #ifdef SINGLE // CHANGE
-  // if (!trislator.finished) trislator.loop();
-  buzzer.loop();
   mb.loop();
+  if (!tune.finished) tune.loop();
   #endif
 }

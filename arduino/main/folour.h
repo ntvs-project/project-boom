@@ -77,6 +77,8 @@ class Folour {
     }
 
     void init() {
+      Serial.println("folour | init");
+
       prev = millis();
       blinkPrev = millis();
 
@@ -90,6 +92,16 @@ class Folour {
         swap(patterns[i][idx], patterns[i][length]);
         patternLen[i]++;
       }
+
+      Serial.print("folour | ans: ");
+      for (int i=0; i<4; i++) {
+        switch (answer[i]) {
+          case 4: Serial.print("R "); break;
+          case 2: Serial.print("G "); break;
+          case 1: Serial.print("B "); break;
+        }
+      }
+      Serial.println();
     }
 
     int8_t check() {
@@ -105,6 +117,8 @@ class Folour {
     }
 
     void fini() {
+      Serial.println("folour | fini");
+
       output.write(OUTOFF, 1, 4, 1);
       finished = true;
       moduleFinished++;
@@ -142,7 +156,8 @@ class Folour {
       for (int btnIdx=0; btnIdx < 4; btnIdx++) {
         if (input.readReleased(INOFF, -1, btnIdx)) {
           bitWrite(fixed, 3 - btnIdx, !bitRead(fixed, 3 - btnIdx));
-          // Serial.println(3 - btnIdx);
+          Serial.print("folour | pressed: ");
+          Serial.println(3 - btnIdx);
         }
       }
     }
