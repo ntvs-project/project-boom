@@ -3,185 +3,271 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project BOOM - 拆彈手冊實境模擬</title>
-<link rel="stylesheet" href="css/style.css?v=20261126e">
+<title>Project BOOM</title>
+<link rel="stylesheet" href="css/style.css?v=20261126pure">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 </head>
-<body class="ktane-theme">
+<body class="bomb-app">
 
-<!-- 頂部警示斜紋飾條 -->
-<div class="hazard-stripe-bar top"></div>
+  <!-- 右上角極簡手冊懸浮鈕 -->
+  <button id="manualFloatingBtn" class="manual-floating-btn" title="查閱拆彈手冊">📘</button>
 
-<!-- ================= 炸彈主畫面 (使用 main.pdf 原始遊戲主圖，開局直接玩) ================= -->
-<section id="gameScreen" class="screen">
+  <!-- 炸彈主體機箱 (純 CSS 繪製 3x2 模組，不含任何多餘外框與開始按鈕) -->
+  <main class="bomb-viewport">
+    <div class="bomb-chassis" id="bombChassis">
 
-  <!-- 頂部簡報導航列 -->
-  <header class="bomb-top-bar">
-    <div class="bomb-badge">
-      <span class="status-indicator live"></span>
-      <span class="bomb-id">ORDNANCE: PROJECT BOOM (115學年度)</span>
-    </div>
-    <div class="bomb-top-controls">
-      <button class="tool-btn" id="openManualBtn">📖 拆彈手冊 (MANUAL)</button>
-      <button class="tool-btn danger" id="resetRoundBtn">🔄 重新開始本局</button>
-    </div>
-  </header>
+      <!-- 6 大模組插槽 -->
+      <div class="bomb-grid" id="bombGrid">
 
-  <!-- 提示文字 -->
-  <div class="bomb-interaction-tip">
-    🔍 點擊炸彈上的任一模組即可<strong>放大到畫面中間</strong>開始拆解！右上角將隨時顯示剩餘時間與黃藍指示燈。
-  </div>
+        <!-- 1. 左上：四色按鈕 (Four-Color) -->
+        <div class="module-bay" id="bay-fourColor" data-module="fourColor">
+          <div class="bay-screw tl"></div>
+          <div class="bay-screw tr"></div>
+          <div class="bay-screw bl"></div>
+          <div class="bay-screw br"></div>
+          <div class="bay-solved-led" id="led-status-fourColor" title="解除狀態燈"></div>
 
-  <!-- 炸彈手提機殼主圖容器（尺寸完美符合 main.pdf 的 bomb.png: 1149 x 769） -->
-  <div class="bomb-chassis-wrapper">
-    <div class="bomb-board" id="bombBoard">
-      <!-- 原始手冊底圖 -->
-      <img src="images/bomb.png" alt="Bomb Chassis" class="bomb-bg-img" id="bombBgImg">
+          <div class="bay-inner-plate fc-plate">
+            <div class="fc-leds-row">
+              <div class="fc-led-socket"><div class="fc-led-bulb" id="fc-led-0"></div></div>
+              <div class="fc-led-socket"><div class="fc-led-bulb" id="fc-led-1"></div></div>
+              <div class="fc-led-socket"><div class="fc-led-bulb" id="fc-led-2"></div></div>
+              <div class="fc-led-socket"><div class="fc-led-bulb" id="fc-led-3"></div></div>
+            </div>
+            <div class="fc-btns-row">
+              <button class="fc-push-btn" id="fc-btn-0" data-idx="0"></button>
+              <button class="fc-push-btn" id="fc-btn-1" data-idx="1"></button>
+              <button class="fc-push-btn" id="fc-btn-2" data-idx="2"></button>
+              <button class="fc-push-btn" id="fc-btn-3" data-idx="3"></button>
+            </div>
+          </div>
+        </div>
 
-      <!-- ============ 6 大熱區與即時燈號疊加層 ============ -->
+        <!-- 2. 中上：主板 (Mainboard - 計時器 / 失誤燈 / YB指示燈) -->
+        <div class="module-bay mainboard-bay" id="bay-mainboard">
+          <div class="bay-screw tl"></div>
+          <div class="bay-screw tr"></div>
+          <div class="bay-screw bl"></div>
+          <div class="bay-screw br"></div>
 
-      <!-- 1. 左上：四色按鈕 (Four-Color) -->
-      <div class="module-bay-hotspot" id="hotspot-fourColor" data-module="fourColor" title="點擊放大：四色按鈕">
-        <div class="bay-status-led" id="led-status-fourColor"></div>
-        <div class="hover-inspect-badge">🔍 點擊操作</div>
-      </div>
+          <div class="bay-inner-plate mb-plate">
+            <div class="mb-top-section">
+              <div class="mb-display-screen">
+                <span class="mb-display-digits" id="mainboardTimer">05:00</span>
+              </div>
+              <div class="mb-yb-col">
+                <div class="mb-yb-indicator yellow" id="mbYbY" title="Yellow LED"></div>
+                <div class="mb-yb-indicator blue" id="mbYbB" title="Blue LED"></div>
+              </div>
+            </div>
+            <div class="mb-strikes-row">
+              <div class="mb-strike-dot" id="mbStrike1"></div>
+              <div class="mb-strike-dot" id="mbStrike2"></div>
+              <div class="mb-strike-dot" id="mbStrike3"></div>
+            </div>
+          </div>
+        </div>
 
-      <!-- 2. 中上：主板 (Mainboard - 計時器 / 失誤燈 / YB指示燈) -->
-      <div class="module-bay-hotspot mainboard-hotspot" id="hotspot-mainboard" title="炸彈主板核心">
-        <!-- 數位 7 段計時器疊加顯示 (精準對齊圖片顯示螢幕) -->
-        <div class="main-timer-overlay" id="mainboardTimer">05:00</div>
-        <!-- 3 個紅色失誤指示燈疊加 (精準對齊圖片 3 個紅燈) -->
-        <span class="mb-strike-dot strike-1" id="mbStrike1"></span>
-        <span class="mb-strike-dot strike-2" id="mbStrike2"></span>
-        <span class="mb-strike-dot strike-3" id="mbStrike3"></span>
-        <!-- 黃藍特殊指示燈疊加 (精準對齊圖片右側黃藍燈) -->
-        <span class="mb-yb-dot yb-yellow" id="mbYbY"></span>
-        <span class="mb-yb-dot yb-blue" id="mbYbB"></span>
-      </div>
+        <!-- 3. 右上：格雷 / 凱撒密碼 (Grey / Caesar) -->
+        <div class="module-bay" id="bay-greyCaesar" data-module="greyCaesar">
+          <div class="bay-screw tl"></div>
+          <div class="bay-screw tr"></div>
+          <div class="bay-screw bl"></div>
+          <div class="bay-screw br"></div>
+          <div class="bay-solved-led" id="led-status-greyCaesar"></div>
 
-      <!-- 3. 右上：格雷 / 凱撒密碼 (Grey / Caesar) -->
-      <div class="module-bay-hotspot" id="hotspot-greyCaesar" data-module="greyCaesar" title="點擊放大：格雷/凱撒密碼">
-        <div class="bay-status-led" id="led-status-greyCaesar"></div>
-        <div class="hover-inspect-badge">🔍 點擊操作</div>
-      </div>
+          <div class="bay-inner-plate cipher-plate">
+            <div class="cipher-lcd-screen">
+              <div class="cipher-header">
+                <span class="cipher-tag" id="cipherTypeTag">CIPHER</span>
+                <span class="cipher-shift" id="cipherShiftTag"></span>
+              </div>
+              <div class="cipher-code" id="cipherCodeDisplay">...</div>
+              <div class="cipher-input" id="cipherInputDisplay">_</div>
+            </div>
+            <div class="cipher-keypad" id="cipherKeypad">
+              <!-- 按鈕由 JS 動態填入 -->
+            </div>
+          </div>
+        </div>
 
-      <!-- 4. 左下：三角翻譯 (Trislator) -->
-      <div class="module-bay-hotspot" id="hotspot-trislator" data-module="trislator" title="點擊放大：三角翻譯">
-        <div class="bay-status-led" id="led-status-trislator"></div>
-        <div class="hover-inspect-badge">🔍 點擊操作</div>
-      </div>
+        <!-- 4. 左下：三角翻譯 (Trislator) -->
+        <div class="module-bay" id="bay-trislator" data-module="trislator">
+          <div class="bay-screw tl"></div>
+          <div class="bay-screw tr"></div>
+          <div class="bay-screw bl"></div>
+          <div class="bay-screw br"></div>
+          <div class="bay-solved-led" id="led-status-trislator"></div>
 
-      <!-- 5. 中下：頻率調變 (Resonance / Tune) -->
-      <div class="module-bay-hotspot" id="hotspot-tune" data-module="tune" title="點擊放大：頻率調變">
-        <div class="bay-status-led" id="led-status-tune"></div>
-        <div class="hover-inspect-badge">🔍 點擊操作</div>
-      </div>
+          <div class="bay-inner-plate trislator-plate">
+            <div class="tri-lcd-screen">
+              <div class="tri-line-1" id="trislatorQLine">cos 87°</div>
+              <div class="tri-line-2" id="trislatorInputLine">INPUT: .___</div>
+            </div>
+            <div class="tri-keypad-matrix">
+              <button class="tri-btn" data-k="1">1</button>
+              <button class="tri-btn" data-k="2">2</button>
+              <button class="tri-btn" data-k="3">3</button>
+              <button class="tri-btn letter" data-k="A">A</button>
 
-      <!-- 6. 右下：資料排序 (Sorting / Tros) -->
-      <div class="module-bay-hotspot" id="hotspot-sort" data-module="sort" title="點擊放大：資料排序">
-        <div class="bay-status-led" id="led-status-sort"></div>
-        <div class="hover-inspect-badge">🔍 點擊操作</div>
-      </div>
-    </div>
-  </div>
-</section>
+              <button class="tri-btn" data-k="4">4</button>
+              <button class="tri-btn" data-k="5">5</button>
+              <button class="tri-btn" data-k="6">6</button>
+              <button class="tri-btn letter" data-k="B">B</button>
 
-<!-- ================= 放大後的模組居中操作視窗 (ZOOMED FOCUS VIEW) ================= -->
-<div id="moduleFocusOverlay" class="focus-overlay hidden">
+              <button class="tri-btn" data-k="7">7</button>
+              <button class="tri-btn" data-k="8">8</button>
+              <button class="tri-btn" data-k="9">9</button>
+              <button class="tri-btn letter" data-k="C">C</button>
 
-  <!-- 右上角常駐 HUD（計時器、失誤次數、黃藍指示燈狀態） -->
-  <aside class="focus-top-hud">
-    <div class="hud-box">
+              <button class="tri-btn fn" data-k="*">*</button>
+              <button class="tri-btn" data-k="0">0</button>
+              <button class="tri-btn fn" data-k="#">#</button>
+              <button class="tri-btn letter" data-k="D">D</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. 中下：頻率調變 (Resonance / Tune) -->
+        <div class="module-bay" id="bay-tune" data-module="tune">
+          <div class="bay-screw tl"></div>
+          <div class="bay-screw tr"></div>
+          <div class="bay-screw bl"></div>
+          <div class="bay-screw br"></div>
+          <div class="bay-solved-led" id="led-status-tune"></div>
+
+          <div class="bay-inner-plate tune-plate">
+            <div class="tune-lcd-screen">
+              <span class="tune-lbl">RESONANCE TARGET</span>
+              <span class="tune-val" id="tuneTargetVal">ROW: 0</span>
+            </div>
+            <div class="tune-sliders-grid">
+              <div class="tune-dial-row" data-param="f">
+                <span class="dial-name">f</span>
+                <button class="dial-btn prev">◄</button>
+                <span class="dial-val" id="tuneVal-f">--</span>
+                <button class="dial-btn next">►</button>
+              </div>
+              <div class="tune-dial-row" data-param="L">
+                <span class="dial-name">L</span>
+                <button class="dial-btn prev">◄</button>
+                <span class="dial-val" id="tuneVal-L">--</span>
+                <button class="dial-btn next">►</button>
+              </div>
+              <div class="tune-dial-row" data-param="C">
+                <span class="dial-name">C</span>
+                <button class="dial-btn prev">◄</button>
+                <span class="dial-val" id="tuneVal-C">--</span>
+                <button class="dial-btn next">►</button>
+              </div>
+              <div class="tune-dial-row" data-param="R">
+                <span class="dial-name">R</span>
+                <button class="dial-btn prev">◄</button>
+                <span class="dial-val" id="tuneVal-R">--</span>
+                <button class="dial-btn next">►</button>
+              </div>
+            </div>
+            <button class="tune-confirm-btn" id="tuneSubmitBtn">TUNE</button>
+          </div>
+        </div>
+
+        <!-- 6. 右下：資料排序 (Sorting / Tros) -->
+        <div class="module-bay" id="bay-sort" data-module="sort">
+          <div class="bay-screw tl"></div>
+          <div class="bay-screw tr"></div>
+          <div class="bay-screw bl"></div>
+          <div class="bay-screw br"></div>
+          <div class="bay-solved-led" id="led-status-sort"></div>
+
+          <div class="bay-inner-plate sort-plate">
+            <div class="sort-header">
+              <div class="sort-seg7-display" id="sortSeg7Svg"></div>
+              <div class="sort-lamp-socket">
+                <div class="sort-orange-lamp" id="sortOrangeLamp"></div>
+                <span class="lamp-lbl">LAMP</span>
+              </div>
+            </div>
+            <div class="sort-slots-row">
+              <div class="ic-slot" data-slot="0"><span class="slot-idx">1</span><span class="slot-chip" id="chip-slot-0">-</span></div>
+              <div class="ic-slot" data-slot="1"><span class="slot-idx">2</span><span class="slot-chip" id="chip-slot-1">-</span></div>
+              <div class="ic-slot" data-slot="2"><span class="slot-idx">3</span><span class="slot-chip" id="chip-slot-2">-</span></div>
+              <div class="ic-slot" data-slot="3"><span class="slot-idx">4</span><span class="slot-chip" id="chip-slot-3">-</span></div>
+            </div>
+            <div class="sort-chips-bank" id="sortChipsBank">
+              <button class="chip-item" data-chip="A">IC-A</button>
+              <button class="chip-item" data-chip="B">IC-B</button>
+              <button class="chip-item" data-chip="C">IC-C</button>
+              <button class="chip-item" data-chip="D">IC-D</button>
+            </div>
+            <button class="sort-submit-btn" id="sortSubmitBtn">INSERT</button>
+          </div>
+        </div>
+
+      </div><!-- #bombGrid -->
+    </div><!-- #bombChassis -->
+  </main>
+
+  <!-- 放大檢視右上角常駐 HUD（計時器、失誤燈號、黃藍指示燈） -->
+  <aside id="zoomedTopHud" class="zoomed-top-hud hidden">
+    <div class="hud-hud-box">
       <!-- 倒數計時器 -->
-      <div class="hud-section hud-timer-section">
-        <div class="hud-title">REMAINING</div>
-        <div class="hud-timer-display" id="hudTimerDisplay">05:00</div>
+      <div class="hud-item timer-item">
+        <span class="hud-lbl">TIMER</span>
+        <span class="hud-timer-digits" id="hudTimerDisplay">05:00</span>
       </div>
-
-      <!-- 失誤次數 (STRIKES) -->
-      <div class="hud-section hud-strikes-section">
-        <div class="hud-title">STRIKES</div>
-        <div class="hud-strikes-holder" id="hudStrikesHolder">
-          <span class="hud-strike-x" data-n="1">✕</span>
-          <span class="hud-strike-x" data-n="2">✕</span>
-          <span class="hud-strike-x" data-n="3">✕</span>
+      <!-- 3 盞失誤燈號 -->
+      <div class="hud-item strikes-item">
+        <span class="hud-lbl">STRIKES</span>
+        <div class="hud-strikes-lamps">
+          <span class="hud-strike-dot" id="hudStrike1">✕</span>
+          <span class="hud-strike-dot" id="hudStrike2">✕</span>
+          <span class="hud-strike-dot" id="hudStrike3">✕</span>
         </div>
       </div>
-
-      <!-- 黃藍特殊指示燈 (INDICATORS) -->
-      <div class="hud-section hud-yb-section">
-        <div class="hud-title">INDICATORS</div>
+      <!-- 黃藍指示燈 -->
+      <div class="hud-item yb-item">
+        <span class="hud-lbl">YB</span>
         <div class="hud-yb-lamps">
-          <div class="hud-lamp-group">
-            <span class="hud-lamp-led yellow" id="hudYbY"></span>
-            <span class="hud-lamp-name">Y</span>
-          </div>
-          <div class="hud-lamp-group">
-            <span class="hud-lamp-led blue" id="hudYbB"></span>
-            <span class="hud-lamp-name">B</span>
-          </div>
+          <span class="hud-lamp-led yellow" id="hudYbY">Y</span>
+          <span class="hud-lamp-led blue" id="hudYbB">B</span>
         </div>
       </div>
+      <!-- 返回全貌按鈕 -->
+      <button class="hud-close-btn" id="hudCloseBtn" title="返回全貌 (ESC)">✕</button>
     </div>
   </aside>
 
-  <!-- 放大畫面左上方：返回全貌按鈕 -->
-  <div class="focus-back-bar">
-    <button class="focus-back-btn" id="zoomOutBtn">
-      <span class="back-arrow">←</span> 返回炸彈全貌 (ESC)
-    </button>
-  </div>
-
-  <!-- 畫面中央：放大的模組本體操作機箱 -->
-  <div class="focus-center-console">
-    <div class="focus-console-header">
-      <span class="console-status-led" id="focusModuleStatusLed"></span>
-      <h2 class="console-title" id="focusModuleTitle">模組操作</h2>
-    </div>
-
-    <!-- 各模組的動態互動內容容器 -->
-    <div class="focus-console-body" id="focusModuleContent">
-      <!-- 點擊不同模組時在此動態渲染 -->
-    </div>
-  </div>
-</div>
-
-<!-- ================= 拆彈手冊彈出視窗 ================= -->
-<div id="manualModal" class="manual-modal hidden">
-  <div class="manual-backdrop" id="manualBackdrop"></div>
-  <div class="manual-window">
-    <div class="manual-header">
-      <div class="binder-rings">
-        <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+  <!-- 拆彈手冊視窗 -->
+  <div id="manualModal" class="manual-modal hidden">
+    <div class="manual-backdrop" id="manualBackdrop"></div>
+    <div class="manual-window">
+      <div class="manual-header">
+        <h2>PROJECT BOOM 拆彈操作手冊 (MANUAL)</h2>
+        <button class="manual-close-btn" id="manualCloseBtn">✕</button>
       </div>
-      <h2>PROJECT BOOM 拆彈操作手冊 (手冊第 1~12 頁精華)</h2>
-      <button class="manual-close-btn" id="manualCloseBtn">✕ 關閉手冊</button>
-    </div>
-    <div class="manual-body" id="manualBody">
-      <!-- 由 reference-table.js 與 app.js 動態渲染 -->
+      <div class="manual-body" id="manualBody"></div>
     </div>
   </div>
-</div>
 
-<!-- ================= 結算視窗 (勝利 / 爆炸) ================= -->
-<div id="resultModal" class="result-modal hidden">
-  <div class="result-backdrop"></div>
-  <div class="result-card" id="resultCard">
-    <div class="result-icon" id="resultIcon">💥</div>
-    <h2 class="result-title" id="resultTitle">孩子，你炸了！</h2>
-    <p class="result-desc" id="resultDesc">失誤累積達 3 次，炸彈已被引爆。</p>
-    <div class="result-stats" id="resultStats"></div>
-    <div class="result-actions">
-      <button class="ktane-btn primary-btn" id="restartGameBtn">🔄 重新開始拆彈 (5分鐘挑戰)</button>
+  <!-- 結算視窗 -->
+  <div id="resultModal" class="result-modal hidden">
+    <div class="result-backdrop"></div>
+    <div class="result-card" id="resultCard">
+      <div class="result-icon" id="resultIcon">💥</div>
+      <h2 class="result-title" id="resultTitle">孩子，你炸了！</h2>
+      <p class="result-desc" id="resultDesc">失誤累積達 3 次，炸彈已被引爆。</p>
+      <div class="result-stats" id="resultStats"></div>
+      <div class="result-actions">
+        <button class="restart-game-btn" id="restartGameBtn">🔄 重新挑戰 (5分鐘)</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- 腳本引入 -->
-<script src="js/sound-fx.js?v=20261126f"></script>
-<script src="js/reference-table.js?v=20261126f"></script>
-<script src="js/app.js?v=20261126f"></script>
+  <!-- 腳本引入 -->
+  <script src="js/sound-fx.js?v=20261126pure"></script>
+  <script src="js/reference-table.js?v=20261126pure"></script>
+  <script src="js/app.js?v=20261126pure"></script>
 </body>
 </html>
