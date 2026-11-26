@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project BOOM - 拆彈手冊實境模擬</title>
+<link rel="stylesheet" href="css/style.css?v=20261126e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="ktane-theme">
+
+<!-- 頂部警示斜紋飾條 -->
+<div class="hazard-stripe-bar top"></div>
+
+<!-- ================= 主選單畫面 ================= -->
+<section id="mainMenuScreen" class="screen">
+  <div class="menu-metal-box">
+    <div class="serial-badge">
+      <span class="badge-lbl">SERIAL NO.</span>
+      <span class="badge-val">BM-8086-TW</span>
+    </div>
+    <h1 class="game-main-title">Project BOOM</h1>
+    <p class="game-subtitle">KEEP TALKING AND DEFUSE THE BOMB</p>
+    <div class="warning-banner">⚠ 警告：差之毫釐，謬以千里 ⚠</div>
+
+    <div class="menu-actions">
+      <button class="ktane-btn primary-btn" id="quickStartBtn" style="background: linear-gradient(135deg, #e74c3c, #c0392b); border-color: #ff7675; box-shadow: 0 0 16px rgba(231,76,60,0.6); margin-bottom: 12px; width: 100%; font-size: 1.15rem;">
+        <span class="btn-icon">💥</span> 立即啟動炸彈任務 (快速開局)
+      </button>
+      <button class="ktane-btn secondary-btn" id="goSetupBtn">
+        <span class="btn-icon">⚙</span> 自訂任務配置 (SETUP)
+      </button>
+      <button class="ktane-btn ghost-btn" id="menuOpenManualBtn">
+        <span class="btn-icon">📖</span> 查閱拆彈手冊 (MANUAL)
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 任務配置畫面 (無存檔功能) ================= -->
+<section id="setupScreen" class="screen hidden">
+  <div class="setup-metal-card">
+    <div class="card-header">
+      <span class="header-led red"></span>
+      <h2>任務配置面板 (CONFIG)</h2>
+      <span class="header-led green"></span>
+    </div>
+
+    <div class="card-content">
+      <div class="setup-section">
+        <div class="section-title">［ 啟動模組 ］</div>
+        <div class="mod-checkboxes-grid">
+          <label class="ktane-check-item">
+            <input type="checkbox" class="mod-check" value="fourColor" checked>
+            <span class="check-box"></span>
+            <span class="check-text">【四色按鈕】(Four-Color)</span>
+          </label>
+          <label class="ktane-check-item">
+            <input type="checkbox" class="mod-check" value="greyCaesar" checked>
+            <span class="check-box"></span>
+            <span class="check-text">【格雷 / 凱撒密碼】(Cipher)</span>
+          </label>
+          <label class="ktane-check-item">
+            <input type="checkbox" class="mod-check" value="trislator" checked>
+            <span class="check-box"></span>
+            <span class="check-text">【三角翻譯】(Trislator)</span>
+          </label>
+          <label class="ktane-check-item">
+            <input type="checkbox" class="mod-check" value="tune" checked>
+            <span class="check-box"></span>
+            <span class="check-text">【頻率調變】(Resonance)</span>
+          </label>
+          <label class="ktane-check-item">
+            <input type="checkbox" class="mod-check" value="sort" checked>
+            <span class="check-box"></span>
+            <span class="check-text">【資料排序】(Data Sorting)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="setup-section">
+        <div class="section-title">［ 遊戲模式 (MODE) ］</div>
+        <div class="mode-radios">
+          <label class="ktane-radio-item">
+            <input type="radio" name="manualMode" value="single" checked>
+            <span class="radio-dot"></span>
+            <span class="radio-text">單人模式（畫面右上角可隨時展開拆彈手冊）</span>
+          </label>
+          <label class="ktane-radio-item">
+            <input type="radio" name="manualMode" value="double">
+            <span class="radio-dot"></span>
+            <span class="radio-text">雙人模式（拆彈者僅能看炸彈，由另一人持 main.pdf 手冊語音溝通）</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="setup-grid-row">
+        <div class="setup-col">
+          <div class="section-title">［ 倒數計時器 ］</div>
+          <select id="timeLimitSelect" class="ktane-select">
+            <option value="60">01:00 (1 分鐘極限挑戰)</option>
+            <option value="180">03:00 (3 分鐘緊湊)</option>
+            <option value="300" selected>05:00 (5 分鐘標準)</option>
+            <option value="600">10:00 (10 分鐘充裕)</option>
+          </select>
+        </div>
+
+        <div class="setup-col">
+          <div class="section-title">［ 失誤上限 (STRIKES) ］</div>
+          <select id="maxStrikesSelect" class="ktane-select">
+            <option value="1">1 次失誤即爆炸 (死鬥)</option>
+            <option value="2">2 次失誤</option>
+            <option value="3" selected>3 次失誤 (手冊標準規則)</option>
+            <option value="5">5 次失誤 (練習)</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="err-msg" id="setupErr"></p>
+
+      <div class="setup-actions">
+        <button class="ktane-btn ghost-btn" id="setupBackBtn">← 返回主選單</button>
+        <button class="ktane-btn primary-btn" id="setupStartBtn">💥 武裝並啟動炸彈！</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 炸彈主畫面 (使用 main.pdf 原始遊戲主圖) ================= -->
+<section id="gameScreen" class="screen hidden">
+
+  <!-- 頂部簡報導航列 -->
+  <header class="bomb-top-bar">
+    <div class="bomb-badge">
+      <span class="status-indicator live"></span>
+      <span class="bomb-id">ORDNANCE: PROJECT BOOM (115學年度)</span>
+    </div>
+    <div class="bomb-top-controls">
+      <button class="tool-btn" id="openManualBtn">📖 拆彈手冊 (MANUAL)</button>
+      <button class="tool-btn danger" id="backToMenuBtn">✕ 放棄任務</button>
+    </div>
+  </header>
+
+  <!-- 提示文字 -->
+  <div class="bomb-interaction-tip">
+    🔍 點擊任一模組即可<strong>放大到畫面中間</strong>開始操作！右上角將隨時顯示剩餘時間與特殊指示燈。
+  </div>
+
+  <!-- 炸彈手提機殼主圖容器（尺寸完美符合 main.pdf 的 bomb.png: 1000 x 673） -->
+  <div class="bomb-chassis-wrapper">
+    <div class="bomb-board" id="bombBoard">
+      <!-- 原始手冊底圖 -->
+      <img src="images/bomb.png" alt="Bomb Chassis" class="bomb-bg-img" id="bombBgImg">
+
+      <!-- ============ 6 大熱區與即時燈號疊加層 ============ -->
+
+      <!-- 1. 左上：四色按鈕 (Four-Color) -->
+      <div class="module-bay-hotspot" id="hotspot-fourColor" data-module="fourColor" title="點擊放大：四色按鈕">
+        <div class="bay-status-led" id="led-status-fourColor"></div>
+        <div class="hover-inspect-badge">🔍 點擊操作</div>
+      </div>
+
+      <!-- 2. 中上：主板 (Mainboard - 計時器 / 失誤燈 / YB指示燈) -->
+      <div class="module-bay-hotspot mainboard-hotspot" id="hotspot-mainboard" title="炸彈主板核心">
+        <!-- 數位 7 段計時器疊加顯示 -->
+        <div class="main-timer-overlay" id="mainboardTimer">05:00</div>
+        <!-- 3 個紅色失誤指示燈疊加 -->
+        <div class="main-strikes-overlay">
+          <span class="mb-strike-dot" id="mbStrike1"></span>
+          <span class="mb-strike-dot" id="mbStrike2"></span>
+          <span class="mb-strike-dot" id="mbStrike3"></span>
+        </div>
+        <!-- 黃藍特殊指示燈疊加 -->
+        <div class="main-yb-overlay">
+          <span class="mb-yb-dot yellow" id="mbYbY"></span>
+          <span class="mb-yb-dot blue" id="mbYbB"></span>
+        </div>
+      </div>
+
+      <!-- 3. 右上：格雷 / 凱撒密碼 (Grey / Caesar) -->
+      <div class="module-bay-hotspot" id="hotspot-greyCaesar" data-module="greyCaesar" title="點擊放大：格雷/凱撒密碼">
+        <div class="bay-status-led" id="led-status-greyCaesar"></div>
+        <div class="hover-inspect-badge">🔍 點擊操作</div>
+      </div>
+
+      <!-- 4. 左下：三角翻譯 (Trislator) -->
+      <div class="module-bay-hotspot" id="hotspot-trislator" data-module="trislator" title="點擊放大：三角翻譯">
+        <div class="bay-status-led" id="led-status-trislator"></div>
+        <div class="hover-inspect-badge">🔍 點擊操作</div>
+      </div>
+
+      <!-- 5. 中下：頻率調變 (Resonance / Tune) -->
+      <div class="module-bay-hotspot" id="hotspot-tune" data-module="tune" title="點擊放大：頻率調變">
+        <div class="bay-status-led" id="led-status-tune"></div>
+        <div class="hover-inspect-badge">🔍 點擊操作</div>
+      </div>
+
+      <!-- 6. 右下：資料排序 (Sorting / Tros) -->
+      <div class="module-bay-hotspot" id="hotspot-sort" data-module="sort" title="點擊放大：資料排序">
+        <div class="bay-status-led" id="led-status-sort"></div>
+        <div class="hover-inspect-badge">🔍 點擊操作</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 放大後的模組居中操作視窗 (ZOOMED FOCUS VIEW) ================= -->
+<div id="moduleFocusOverlay" class="focus-overlay hidden">
+
+  <!-- 右上角常駐 HUD（計時器、失誤次數、黃藍指示燈狀態） -->
+  <aside class="focus-top-hud">
+    <div class="hud-box">
+      <!-- 倒數計時器 -->
+      <div class="hud-section hud-timer-section">
+        <div class="hud-title">REMAINING</div>
+        <div class="hud-timer-display" id="hudTimerDisplay">05:00</div>
+      </div>
+
+      <!-- 失誤次數 (STRIKES) -->
+      <div class="hud-section hud-strikes-section">
+        <div class="hud-title">STRIKES</div>
+        <div class="hud-strikes-holder" id="hudStrikesHolder">
+          <span class="hud-strike-x" data-n="1">✕</span>
+          <span class="hud-strike-x" data-n="2">✕</span>
+          <span class="hud-strike-x" data-n="3">✕</span>
+        </div>
+      </div>
+
+      <!-- 黃藍特殊指示燈 (INDICATORS) -->
+      <div class="hud-section hud-yb-section">
+        <div class="hud-title">INDICATORS</div>
+        <div class="hud-yb-lamps">
+          <div class="hud-lamp-group">
+            <span class="hud-lamp-led yellow" id="hudYbY"></span>
+            <span class="hud-lamp-name">Y</span>
+          </div>
+          <div class="hud-lamp-group">
+            <span class="hud-lamp-led blue" id="hudYbB"></span>
+            <span class="hud-lamp-name">B</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 放大畫面左上方：返回全貌按鈕 -->
+  <div class="focus-back-bar">
+    <button class="focus-back-btn" id="zoomOutBtn">
+      <span class="back-arrow">←</span> 返回炸彈全貌 (ESC)
+    </button>
+  </div>
+
+  <!-- 畫面中央：放大的模組本體操作機箱 -->
+  <div class="focus-center-console">
+    <div class="focus-console-header">
+      <span class="console-status-led" id="focusModuleStatusLed"></span>
+      <h2 class="console-title" id="focusModuleTitle">模組操作</h2>
+    </div>
+
+    <!-- 各模組的動態互動內容容器 -->
+    <div class="focus-console-body" id="focusModuleContent">
+      <!-- 點擊不同模組時在此動態渲染 -->
+    </div>
+  </div>
+</div>
+
+<!-- ================= 拆彈手冊彈出視窗 ================= -->
+<div id="manualModal" class="manual-modal hidden">
+  <div class="manual-backdrop" id="manualBackdrop"></div>
+  <div class="manual-window">
+    <div class="manual-header">
+      <div class="binder-rings">
+        <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+      </div>
+      <h2>PROJECT BOOM 拆彈操作手冊 (手冊第 1~12 頁精華)</h2>
+      <button class="manual-close-btn" id="manualCloseBtn">✕ 關閉手冊</button>
+    </div>
+    <div class="manual-body" id="manualBody">
+      <!-- 由 reference-table.js 與 app.js 動態渲染 -->
+    </div>
+  </div>
+</div>
+
+<!-- ================= 結算視窗 (勝利 / 爆炸) ================= -->
+<div id="resultModal" class="result-modal hidden">
+  <div class="result-backdrop"></div>
+  <div class="result-card" id="resultCard">
+    <div class="result-icon" id="resultIcon">💥</div>
+    <h2 class="result-title" id="resultTitle">孩子，你炸了！</h2>
+    <p class="result-desc" id="resultDesc">失誤累積達 3 次，炸彈已被引爆。</p>
+    <div class="result-stats" id="resultStats"></div>
+    <div class="result-actions">
+      <button class="ktane-btn primary-btn" id="restartGameBtn">🔄 再挑戰一次</button>
+      <button class="ktane-btn ghost-btn" id="resultMenuBtn">🏠 返回主選單</button>
+    </div>
+  </div>
+</div>
+
+<!-- 腳本引入 -->
+<script src="js/sound-fx.js?v=20261126e"></script>
+<script src="js/reference-table.js?v=20261126e"></script>
+<script src="js/app.js?v=20261126e"></script>
+</body>
+</html>
