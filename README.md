@@ -23,7 +23,6 @@
 - [Canva](https://canva.link/cj269q2w8vbrt4i)
 - [Canva - View](https://canva.link/uwmv3buu2oc3tob)
 - [Weekly Report](https://docs.google.com/document/d/12VB6ftjOkwtuL6mbW5b98M41vK7fTd3oYpBO7-_2hzg/edit?usp=sharing)
-- [作品說明書](report/新北市立新北高工115學年度校內學生專題實作競賽_作品說明書.docx)
 
 ---
 
