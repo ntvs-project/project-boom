@@ -1,8 +1,8 @@
 
-enum segmentEnum { D, D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, DA, DB, DC, DD, DE, DF, DG, DH, DI, DJ, DL, DN, DO, DP, DQ, DS, DT, DU, DY, DZ, DDEG, DEQ, D_ };
-enum buttonEnum  { BTN1, BTN2, BTN3, BTNA, BTN4, BTN5, BTN6, BTNB, BTN7, BTN8, BTN9, BTNC, BTNK, BTN0, BTNH, BTND };
-enum digitStateEnum { DIGIT_ON, DIGIT_OFF };
-const char segment[][8] = {
+enum trislatorSegmentEnum { D, D0, D1, D2, D3, D4, D5, D6, D7, D8, D9, DA, DB, DC, DD, DE, DF, DG, DH, DI, DJ, DL, DN, DO, DP, DQ, DS, DT, DU, DY, DZ, DDEG, DEQ, D_ };
+enum trislatorButtonEnum  { BTN1, BTN2, BTN3, BTNA, BTN4, BTN5, BTN6, BTNB, BTN7, BTN8, BTN9, BTNC, BTNK, BTN0, BTNH, BTND };
+enum trislatorDigitStateEnum { DIGIT_ON, DIGIT_OFF };
+const char trislatorSegment[][8] = {
   "0000000", // D
   "1111110", // D0
   "0110000", // D1
@@ -77,20 +77,37 @@ const int memTrislatorTrigPatterns[][2][5] PROGMEM = {
   { { DS, DE, DC, D7, D7 }, { D4, D4, D4, D5 } },
 };
 
-const int memTrislatorVocabPatternsLength = 8;
+const int memTrislatorVocabPatternsLength = 26;
 const int memTrislatorVocabPatterns[][2][6] PROGMEM = {
-  // { { DP, DL, D_, DN, DT }, { DA } },
-  // { { D_, DL, DI, DN, DD }, { DB } },
-  // { { DS, DO, DN, DI, D_ }, { DC } },
-  // { { DF, DO, DU, DN, D_ }, { DD } },
-  { { DP, DI, DZ, DZ, D_, D  }, { DA } },
-  { { D_, DP, DP, DL, DE, D  }, { DA } },
-  { { DP, D_, DU, DS, DE, D  }, { DA } },
-  { { D_, DA, DS, DI, DC, D  }, { DB } },
-  { { DT, DA, D_, DL, DE, D  }, { DB } },
-  { { DJ, DU, DI, D_, DE, D  }, { DC } },
-  { { DE, DF, DF, DE, D_, DT }, { DC } },
+  { { D_, DS, DS, DI, DS, DT }, { DA } },
+  { { DC, D_, DU, DS, DE, DD }, { DA } },
+  { { DD, DO, DN, D_, DT, DE }, { DA } },
+  { { DG, DL, D_, DN, DC, DE }, { DA } },
+  { { DS, D_, DF, DE, DT, DY }, { DA } },
+  { { DS, DI, DG, DN, D_, DL }, { DA } },
+  { { DT, D_, DL, DE, DN, DT }, { DA } }, // 7
+
+  { { D_, DO, DU, DN, DC, DE }, { DB } },
+  { { D_, DL, DE, DS, DS, D  }, { DB } },
+  { { D_, DL, DI, DN, DD, D  }, { DB } },
+  { { D_, DU, DL, DL, DY, D  }, { DB } },
+  { { DL, DA, D_, DE, DL, D  }, { DB } }, // 5
+
+  { { DA, D_, DT, DU, DA, DL }, { DC } },
+  { { DA, DS, DP, DE, D_, DT }, { DC } },
   { { D_, DO, DU, DP, DL, DE }, { DC } },
+  { { DE, D_, DH, DO, DE, DD }, { DC } },
+  { { DE, D_, DH, DO, DE, DS }, { DC } },
+  { { DE, DF, DF, DE, D_, DT }, { DC } },
+  { { DO, DC, D_, DU, DP, DY }, { DC } }, // 7
+
+  { { DD, DE, DF, DE, DN, D_ }, { DD } },
+  { { D_, DE, DS, DI, DG, DN }, { DD } },
+  { { DI, DN, D_, DE, DE, DD }, { DD } },
+  { { DP, DA, DU, DS, DE, D_ }, { DD } },
+  { { DS, DI, DP, DP, DE, D_ }, { DD } },
+  { { DA, D_, DO, DP, DT, D  }, { DD } },
+  { { DI, D_, DE, DA, DL, D  }, { DD } }, // 7
 };
 
 class Trislator {
@@ -142,17 +159,27 @@ class Trislator {
 
     void processInput() {
       if (checkButton(BTNH)) {
-        if (phase == 1 &&
-            user[0] == answer[0] &&
-            user[1] == answer[1] &&
-            user[2] == answer[2] &&
-            user[3] == answer[3]) {
-          phase = 2;
+        if (phase == 1) {
+          if (user[0] == answer[0] &&
+              user[1] == answer[1] &&
+              user[2] == answer[2] &&
+              user[3] == answer[3]) {
+            phase = 2;
+            return;
+          } else {
+            if (user[0] == D_ && user[1] == D_ && user[2] == D_ && user[3] == D_) return;
+            miss();
+          }
         }
-        if (phase == 2 && user[4] == answer[4]) {
-          phase = 1;
-          iteration++;
-          initPhase();
+        if (phase == 2) {
+          if (user[4] == answer[4]) {
+            phase = 1;
+            iteration++;
+            initPhase();
+            return;
+          } else {
+            miss();
+          }
         }
       }
 
@@ -166,6 +193,7 @@ class Trislator {
 
       for (int i=0; i<4; i++) {
         if (checkButton(CHAR_BTN_LIST[i])) {
+          if (phase == 1) return miss();
           user[inputIdx] = CHAR_LIST[i];
           inputIdx++;
         }
@@ -173,6 +201,7 @@ class Trislator {
 
       for (int i=0; i<10; i++) {
         if (checkButton(DIGIT_BTN_LIST[i])) {
+          if (phase == 2) return miss();
           user[inputIdx] = DIGIT_LIST[i];
           inputIdx++;
         }
@@ -180,7 +209,7 @@ class Trislator {
     }
 
     void setSegment(int digit, bool dp=false) {
-      output.writeRange(OUTOFF, 0, 0, 0, 6, segment[digit]);
+      output.writeRange(OUTOFF, 0, 0, 0, 6, trislatorSegment[digit]);
       output.write(OUTOFF, 0, 7, dp);
     }
 
@@ -215,12 +244,14 @@ class Trislator {
       memcpy_P(patternVocab, memTrislatorVocabPatterns[vocabIdx[iteration]][0], 6 * sizeof(int));
       memcpy_P(answer + 4,   memTrislatorVocabPatterns[vocabIdx[iteration]][1], 1 * sizeof(int));
 
+      Serial.print("trislator | answer: ");
       for (int i=0; i < 4; i++) {
         Serial.print(answer[i] - 1);
-        Serial.print(" ");
+        // Serial.print(" ");
       }
+      Serial.print("[");
       Serial.write(answer[4] - 1 + 55);
-      Serial.println();
+      Serial.println("]");
     }
 
   public:

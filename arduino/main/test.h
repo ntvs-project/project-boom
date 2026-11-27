@@ -5,17 +5,16 @@ class Test {
     uint8_t OUTOFF;
 
   public:
+    bool finished = false;
+
     Test(uint8_t outputOffset, uint8_t inputOffset) {
       OUTOFF = outputOffset;
       INOFF  = inputOffset;
     }
 
     void init() {
-      output.writeRange(OUTOFF, 0, 0, 0, 7, "11111111");
-      output.writeRange(OUTOFF, 1, 0, 2, 2, "00000000000");
-      // output.write(OUTOFF, 2, 7, true);
-      output.writeRange(OUTOFF, 2, 3, 2, 6, "1111");
-      output.write(OUTOFF, 2, 3 + 0, false);
+      output.write(OUTOFF, 0, 0, true);
+      output.writeRange(OUTOFF, 0, 1, 0, 7, "1111111");
     }
 
     int8_t check() {
@@ -28,19 +27,8 @@ class Test {
     }
 
     void loop() {
-      for (int i=0; i < 4; i++) {
-        output.write(OUTOFF, 2, 3 + i, false);
-        output.simpleUpdate();
-        input.update();
-        
-        for (int j=0; j < 4; j++) {
-          Serial.print( input.readRaw(INOFF, 0, j) );
-        }
-        Serial.print(" ");
-        
-        output.write(OUTOFF, 2, 3 + i, true);
-        output.simpleUpdate();
+      if (input.readReleased(OUTOFF, 1, 4)) {
+        Serial.println("test | pressed");
       }
-      Serial.println();
     }
 };

@@ -34,7 +34,7 @@ class MB {
     }
 
     void miss() {
-      Serial.println("MB: boom");
+      Serial.println("MB | BOOM");
       buzzer.beep(3000, 0, NOTE_C8);
       while (true) {
         buzzer.loop();
@@ -53,11 +53,12 @@ class MB {
       Y  = (YB >> 1);
       B  = (YB % 2);
 
-      Serial.println("\n-----");
-      Serial.print("YB: ");
+      Serial.println("\n-----------------");
+      Serial.println("  Project BOOM");
+      Serial.print("     YB: ");
       Serial.print(Y);
       Serial.print(B);
-      Serial.println("\n-----");
+      Serial.println("\n-----------------");
 
       digitalWrite(YELLOW, Y);
       digitalWrite(BLUE  , B);
@@ -95,8 +96,6 @@ class MB {
       if (Serial.available()) {
         Serial.readStringUntil('\n');
         mis++;
-        Serial.print("MB: mis=");
-        Serial.println(mis);
       }
 
       if ( millis() - blinkPrev >= (500 - 100 * mis) ) {
@@ -104,6 +103,9 @@ class MB {
       }
 
       if (mis != prevMis) {
+        Serial.print("MB | mis: ");
+        Serial.println(mis);
+
         output.write(OUTOFF, 0, 2, mis >= 1);
         output.write(OUTOFF, 0, 3, mis >= 2);
         output.write(OUTOFF, 0, 4, mis >= 3);

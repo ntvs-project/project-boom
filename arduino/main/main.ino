@@ -1,5 +1,5 @@
 // SINGLE, FULL
-#define FULL
+#define SINGLE
 // DEBUG, NODEBUG
 #define NODEBUG
 
@@ -7,7 +7,7 @@
 #include <TM1637Display.h>
 
 #include "output.h"
-#include "input_bar.h" // CHANGE
+#include "input.h" // CHANGE
 
 #define CLK 3
 #define DIO 4
@@ -15,9 +15,9 @@
 #define YELLOW 7
 #define BLUE   6
 
-#define OUTPUT_AMOUNT 5 // CHANGE
+#define OUTPUT_AMOUNT 1 // CHANGE
 #define INPUT_AMOUNT  2 // CHANGE
-#define BOARD_AMOUNT  2 // CHANGE
+#define BOARD_AMOUNT  1 // CHANGE
 
 uint8_t YB, Y, B, mis;
 uint8_t moduleFinished = 0;
@@ -35,6 +35,7 @@ ezBuzzer buzzer(BUZZER, BUZZER_TYPE_PASSIVE);
 #include "caesar.h"
 #include "trislator.h"
 #include "tune.h"
+#include "tros.h"
 #include "test.h"
 
 #ifdef FULL
@@ -46,7 +47,7 @@ Caesar caesar(3, 1);
 
 #ifdef SINGLE // CHANGE
 MB mb(0, 0);
-Tune tune(0, 0);
+Tros tros(0, 0);
 #endif
 
 void setup() {
@@ -66,11 +67,12 @@ void setup() {
   } else {
     caesar.init();
   }
+  // trislator.init();
   #endif
 
   #ifdef SINGLE // CHANGE
   mb.init();
-  tune.init();
+  tros.init();
   #endif
 }
 
@@ -102,12 +104,17 @@ void loop() {
       case -1: break;
     }
   }
+  // switch (trislator.check()) {
+  //   case  1: trislator.fini(); break;
+  //   case  0: trislator.miss(); break;
+  //   case -1: break;
+  // }
   #endif
 
   #ifdef SINGLE // CHANGE
-  switch (tune.check()) {
-    case  1: tune.fini(); break;
-    case  0: tune.miss(); break;
+  switch (tros.check()) {
+    case  1: tros.fini(); break;
+    case  0: tros.miss(); break;
     case -1: break;
   }
   #endif
@@ -129,10 +136,11 @@ void loop() {
       caesar.loop();
     }
   }
+  // if (!trislator.finished) trislator.loop();
   #endif
 
   #ifdef SINGLE // CHANGE
   mb.loop();
-  if (!tune.finished) tune.loop();
+  if (!tros.finished) tros.loop();
   #endif
 }
