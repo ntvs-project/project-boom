@@ -27,4 +27,4 @@
 
 ---
 
-![](assets/bomb.png)
+![](assets/bomb/bomb.jpg)
