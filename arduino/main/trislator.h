@@ -313,6 +313,7 @@ class Trislator {
 
     void fini() {
       Serial.println("trislator | fini");
+      iteration++;
 
       show(
         D, D, D, D, D, D,

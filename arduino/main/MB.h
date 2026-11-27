@@ -55,7 +55,7 @@ class MB {
 
       Serial.println("\n-----------------");
       Serial.println("  Project BOOM");
-      Serial.print("     YB: ");
+      Serial.print  ("     YB: ");
       Serial.print(Y);
       Serial.print(B);
       Serial.println("\n-----------------");
