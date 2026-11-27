@@ -1,4 +1,5 @@
-.stfolder/
+.stfolder*/*
+
 *-backups/
 z/*
 report/weekly/img/
